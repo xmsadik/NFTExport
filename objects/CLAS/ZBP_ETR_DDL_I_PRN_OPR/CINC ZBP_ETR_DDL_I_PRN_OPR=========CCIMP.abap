@@ -11,7 +11,7 @@ CLASS lhc_zetr_ddl_i_prn_opr DEFINITION INHERITING FROM cl_abap_behavior_handler
       call_adobe IMPORTING iv_form_name      TYPE string
                            iv_template_name  TYPE string
                            iv_xml            TYPE string
-                           iv_queue_name     TYPE string
+                           iv_queue_name     TYPE string OPTIONAL
                            iv_comm_scenario  TYPE if_com_management=>ty_cscn_id
                            iv_comm_system_id TYPE if_com_management=>ty_cs_id
                            iv_service_id     TYPE if_com_management=>ty_cscn_outb_srv_id
@@ -19,6 +19,16 @@ CLASS lhc_zetr_ddl_i_prn_opr DEFINITION INHERITING FROM cl_abap_behavior_handler
                            ev_response_code  TYPE int4
                            ev_response_text  TYPE string
                  RAISING   cx_http_dest_provider_error.
+
+
+    TYPES: BEGIN OF ty_abap_parmbind,
+             name  TYPE c LENGTH 30,
+             kind  TYPE c LENGTH 1,
+             value TYPE REF TO data,
+           END OF ty_abap_parmbind.
+
+    TYPES: ty_abap_parmbind_tab TYPE STANDARD TABLE OF ty_abap_parmbind WITH DEFAULT KEY.
+
 
   PRIVATE SECTION.
 
@@ -32,14 +42,22 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
   METHOD get_instance_authorizations.
   ENDMETHOD.
 
+
   METHOD prepare_pdf.
 
     DATA: fs_structure TYPE REF TO data,
           lv_content   TYPE string.
 
+
+    DATA: meth  TYPE string,
+          class TYPE string,
+          ptab  TYPE ty_abap_parmbind_tab,
+          etab  TYPE abap_excpbind_tab.
+
     FIELD-SYMBOLS <fs_xml> TYPE any.
 
     SELECT SINGLE * FROM zetr_t_exp124 WHERE button_id = @iv_button_id INTO @DATA(ls_print_operation).
+    SELECT *        FROM zetr_t_exp125 WHERE button_id = @iv_button_id INTO TABLE @DATA(lt_print_parameters).
     IF ls_print_operation IS NOT INITIAL.
 
       CREATE DATA fs_structure TYPE (ls_print_operation-form_str_name).
@@ -47,7 +65,7 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
 
       ""Move Corresponding
       TRY.
-          CALL TRANSFORMATION (ls_print_operation-form_trns_name) SOURCE (ls_print_operation-form_trns_source) = <fs_xml> RESULT XML DATA(lv_xml).
+          CALL TRANSFORMATION (ls_print_operation-form_trns_name) SOURCE (ls_print_operation-form_trns_source) = <fs_xml> result xml data(lv_xml).
           DATA(lv_string) = cl_web_http_utility=>encode_x_base64( unencoded = lv_xml ).
 
           call_adobe( EXPORTING iv_form_name      = ls_print_operation-form_name
@@ -68,6 +86,8 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
       ENDTRY.
     ENDIF.
   ENDMETHOD.
+
+
 
 
   METHOD call_adobe.
