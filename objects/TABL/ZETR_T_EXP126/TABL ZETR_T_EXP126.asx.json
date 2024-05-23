@@ -4,7 +4,7 @@
   "data":
   [
    {
-    "TABNAME":"ZETR_T_EXP125",
+    "TABNAME":"ZETR_T_EXP126",
     "AS4LOCAL":"L",
     "AS4VERS":0,
     "TABCLASS":"TRANSP",
@@ -67,11 +67,11 @@
   "data":
   [
    {
-    "TABNAME":"ZETR_T_EXP125",
+    "TABNAME":"ZETR_T_EXP126",
     "DDLANGUAGE":"E",
     "AS4LOCAL":"N",
     "AS4VERS":0,
-    "DDTEXT":"Export Print field table"
+    "DDTEXT":"Export text type"
    }
   ]
  },
@@ -80,73 +80,7 @@
   "data":
   [
    {
-    "TABNAME":"ZETR_T_EXP125",
-    "FIELDNAME":"BUTTON_ID",
-    "AS4LOCAL":"N",
-    "AS4VERS":0,
-    "POSITION":2,
-    "KEYFLAG":"X",
-    "MANDATORY":"",
-    "ROLLNAME":"",
-    "CHECKTABLE":"",
-    "ADMINFIELD":"0",
-    "INTTYPE":"X",
-    "INTLEN":4,
-    "REFTABLE":"",
-    "PRECFIELD":"",
-    "REFFIELD":"",
-    "CONROUT":"",
-    "NOTNULL":"X",
-    "DATATYPE":"INT4",
-    "LENG":10,
-    "DECIMALS":0,
-    "DOMNAME":"",
-    "SHLPORIGIN":"",
-    "TABLETYPE":"",
-    "DEPTH":0,
-    "COMPTYPE":"",
-    "REFTYPE":"",
-    "LANGUFLAG":"",
-    "DBPOSITION":0,
-    "ANONYMOUS":"",
-    "OUTPUTSTYLE":0,
-    "SRS_ID":0
-   },
-   {
-    "TABNAME":"ZETR_T_EXP125",
-    "FIELDNAME":"CLASSNAME",
-    "AS4LOCAL":"N",
-    "AS4VERS":0,
-    "POSITION":3,
-    "KEYFLAG":"X",
-    "MANDATORY":"",
-    "ROLLNAME":"",
-    "CHECKTABLE":"",
-    "ADMINFIELD":"0",
-    "INTTYPE":"C",
-    "INTLEN":1000,
-    "REFTABLE":"",
-    "PRECFIELD":"",
-    "REFFIELD":"",
-    "CONROUT":"",
-    "NOTNULL":"X",
-    "DATATYPE":"CHAR",
-    "LENG":500,
-    "DECIMALS":0,
-    "DOMNAME":"",
-    "SHLPORIGIN":"",
-    "TABLETYPE":"",
-    "DEPTH":0,
-    "COMPTYPE":"",
-    "REFTYPE":"",
-    "LANGUFLAG":"",
-    "DBPOSITION":0,
-    "ANONYMOUS":"",
-    "OUTPUTSTYLE":0,
-    "SRS_ID":0
-   },
-   {
-    "TABNAME":"ZETR_T_EXP125",
+    "TABNAME":"ZETR_T_EXP126",
     "FIELDNAME":"MANDT",
     "AS4LOCAL":"N",
     "AS4VERS":0,
@@ -179,25 +113,25 @@
     "SRS_ID":0
    },
    {
-    "TABNAME":"ZETR_T_EXP125",
-    "FIELDNAME":"METHOD_NAME",
+    "TABNAME":"ZETR_T_EXP126",
+    "FIELDNAME":"OBJECT_CATEGORY",
     "AS4LOCAL":"N",
     "AS4VERS":0,
-    "POSITION":4,
+    "POSITION":2,
     "KEYFLAG":"X",
     "MANDATORY":"",
     "ROLLNAME":"",
     "CHECKTABLE":"",
     "ADMINFIELD":"0",
     "INTTYPE":"C",
-    "INTLEN":1000,
+    "INTLEN":20,
     "REFTABLE":"",
     "PRECFIELD":"",
     "REFFIELD":"",
     "CONROUT":"",
     "NOTNULL":"X",
     "DATATYPE":"CHAR",
-    "LENG":500,
+    "LENG":10,
     "DECIMALS":0,
     "DOMNAME":"",
     "SHLPORIGIN":"",
@@ -212,91 +146,25 @@
     "SRS_ID":0
    },
    {
-    "TABNAME":"ZETR_T_EXP125",
-    "FIELDNAME":"PARAMS",
+    "TABNAME":"ZETR_T_EXP126",
+    "FIELDNAME":"TEXT_KEY",
     "AS4LOCAL":"N",
     "AS4VERS":0,
-    "POSITION":5,
+    "POSITION":3,
     "KEYFLAG":"X",
     "MANDATORY":"",
     "ROLLNAME":"",
     "CHECKTABLE":"",
     "ADMINFIELD":"0",
     "INTTYPE":"C",
-    "INTLEN":510,
-    "REFTABLE":"",
-    "PRECFIELD":"",
-    "REFFIELD":"",
-    "CONROUT":"",
-    "NOTNULL":"X",
-    "DATATYPE":"CHAR",
-    "LENG":255,
-    "DECIMALS":0,
-    "DOMNAME":"",
-    "SHLPORIGIN":"",
-    "TABLETYPE":"",
-    "DEPTH":0,
-    "COMPTYPE":"",
-    "REFTYPE":"",
-    "LANGUFLAG":"",
-    "DBPOSITION":0,
-    "ANONYMOUS":"",
-    "OUTPUTSTYLE":0,
-    "SRS_ID":0
-   },
-   {
-    "TABNAME":"ZETR_T_EXP125",
-    "FIELDNAME":"PARAMS_TYPE",
-    "AS4LOCAL":"N",
-    "AS4VERS":0,
-    "POSITION":6,
-    "KEYFLAG":"",
-    "MANDATORY":"",
-    "ROLLNAME":"",
-    "CHECKTABLE":"",
-    "ADMINFIELD":"0",
-    "INTTYPE":"C",
-    "INTLEN":2,
-    "REFTABLE":"",
-    "PRECFIELD":"",
-    "REFFIELD":"",
-    "CONROUT":"",
-    "NOTNULL":"",
-    "DATATYPE":"CHAR",
-    "LENG":1,
-    "DECIMALS":0,
-    "DOMNAME":"",
-    "SHLPORIGIN":"",
-    "TABLETYPE":"",
-    "DEPTH":0,
-    "COMPTYPE":"",
-    "REFTYPE":"",
-    "LANGUFLAG":"",
-    "DBPOSITION":0,
-    "ANONYMOUS":"",
-    "OUTPUTSTYLE":0,
-    "SRS_ID":0
-   },
-   {
-    "TABNAME":"ZETR_T_EXP125",
-    "FIELDNAME":"VALUE",
-    "AS4LOCAL":"N",
-    "AS4VERS":0,
-    "POSITION":7,
-    "KEYFLAG":"",
-    "MANDATORY":"",
-    "ROLLNAME":"",
-    "CHECKTABLE":"",
-    "ADMINFIELD":"0",
-    "INTTYPE":"g",
     "INTLEN":8,
     "REFTABLE":"",
     "PRECFIELD":"",
     "REFFIELD":"",
     "CONROUT":"",
-    "NOTNULL":"",
-    "DATATYPE":"STRG",
-    "LENG":0,
+    "NOTNULL":"X",
+    "DATATYPE":"CHAR",
+    "LENG":4,
     "DECIMALS":0,
     "DOMNAME":"",
     "SHLPORIGIN":"",
@@ -317,45 +185,17 @@
   "data":
   [
    {
-    "TABNAME":"ZETR_T_EXP125",
+    "TABNAME":"ZETR_T_EXP126",
     "DDLANGUAGE":"E",
     "AS4LOCAL":"N",
-    "FIELDNAME":"BUTTON_ID",
+    "FIELDNAME":"OBJECT_CATEGORY",
     "DDTEXT":""
    },
    {
-    "TABNAME":"ZETR_T_EXP125",
+    "TABNAME":"ZETR_T_EXP126",
     "DDLANGUAGE":"E",
     "AS4LOCAL":"N",
-    "FIELDNAME":"CLASSNAME",
-    "DDTEXT":""
-   },
-   {
-    "TABNAME":"ZETR_T_EXP125",
-    "DDLANGUAGE":"E",
-    "AS4LOCAL":"N",
-    "FIELDNAME":"METHOD_NAME",
-    "DDTEXT":""
-   },
-   {
-    "TABNAME":"ZETR_T_EXP125",
-    "DDLANGUAGE":"E",
-    "AS4LOCAL":"N",
-    "FIELDNAME":"PARAMS",
-    "DDTEXT":""
-   },
-   {
-    "TABNAME":"ZETR_T_EXP125",
-    "DDLANGUAGE":"E",
-    "AS4LOCAL":"N",
-    "FIELDNAME":"PARAMS_TYPE",
-    "DDTEXT":""
-   },
-   {
-    "TABNAME":"ZETR_T_EXP125",
-    "DDLANGUAGE":"E",
-    "AS4LOCAL":"N",
-    "FIELDNAME":"VALUE",
+    "FIELDNAME":"TEXT_KEY",
     "DDTEXT":""
    }
   ]
@@ -365,7 +205,7 @@
   "data":
   [
    {
-    "TABNAME":"ZETR_T_EXP125",
+    "TABNAME":"ZETR_T_EXP126",
     "AS4LOCAL":"N",
     "AS4VERS":0,
     "TABKAT":"0",
@@ -394,7 +234,7 @@
   "data":
   [
    {
-    "TYPENAME":"ZETR_T_EXP125",
+    "TYPENAME":"ZETR_T_EXP126",
     "STATE":"N",
     "TYPEKIND":"TABL"
    }
@@ -407,7 +247,7 @@
    {
     "PGMID":"R3TR",
     "OBJECT":"TABL",
-    "OBJ_NAME":"ZETR_T_EXP125",
+    "OBJ_NAME":"ZETR_T_EXP126",
     "KORRNUM":"",
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP_CUSTOMER",
@@ -424,8 +264,8 @@
     "CRELEASE":"",
     "DELFLAG":"",
     "TRANSLTTXT":"",
-    "CREATED_ON":"2024-05-21",
-    "CHECK_DATE":"2024-05-21",
+    "CREATED_ON":"2024-05-22",
+    "CHECK_DATE":"2024-05-22",
     "CHECK_CFG":""
    }
   ]

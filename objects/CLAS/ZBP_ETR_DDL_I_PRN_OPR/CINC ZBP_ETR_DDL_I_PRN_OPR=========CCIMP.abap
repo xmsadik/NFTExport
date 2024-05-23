@@ -3,6 +3,7 @@ CLASS lhc_zetr_ddl_i_prn_opr DEFINITION INHERITING FROM cl_abap_behavior_handler
   PUBLIC SECTION.
     CLASS-METHODS:
       prepare_pdf IMPORTING iv_button_id     TYPE string
+                            iv_export_no     TYPE zetr_e_filen
                   EXPORTING ev_pdf           TYPE string
                             ev_response_code TYPE int4
                             ev_response_text TYPE string
@@ -29,6 +30,13 @@ CLASS lhc_zetr_ddl_i_prn_opr DEFINITION INHERITING FROM cl_abap_behavior_handler
 
     TYPES: ty_abap_parmbind_tab TYPE STANDARD TABLE OF ty_abap_parmbind WITH DEFAULT KEY.
 
+    TYPES: BEGIN OF ty_abap_excpbind,
+             name  TYPE c LENGTH 30,
+             value TYPE i,
+           END OF ty_abap_excpbind.
+
+    TYPES : ty_abap_excpbind_tab TYPE STANDARD TABLE OF ty_abap_excpbind WITH DEFAULT KEY.
+
 
   PRIVATE SECTION.
 
@@ -48,11 +56,10 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
     DATA: fs_structure TYPE REF TO data,
           lv_content   TYPE string.
 
-
     DATA: meth  TYPE string,
           class TYPE string,
           ptab  TYPE ty_abap_parmbind_tab,
-          etab  TYPE abap_excpbind_tab.
+          etab  TYPE ty_abap_excpbind_tab.
 
     FIELD-SYMBOLS <fs_xml> TYPE any.
 
@@ -63,6 +70,38 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
       CREATE DATA fs_structure TYPE (ls_print_operation-form_str_name).
       ASSIGN fs_structure->* TO <fs_xml>.
 
+      DATA(p_tab) = VALUE abap_parmbind_tab( FOR wa IN lt_print_parameters ( name  = wa-params
+                                                                             value = REF #( wa-value )
+                                                                             kind  = wa-params_type ) ).
+*        ptab = VALUE abap_parmbind_tab( (  name = 'aaa' value = ref #( '1'  ) kind = 'S' )  ).
+
+*      LOOP AT lt_print_parameters ASSIGNING FIELD-SYMBOL(<fs_print_params>).
+*        APPEND INITIAL LINE TO ptab ASSIGNING FIELD-SYMBOL(<fs_ptab>).
+*        <fs_ptab>-name  = <fs_print_params>-params.
+*        <fs_ptab>-value = REF #( <fs_print_params>-value )  .
+*        <fs_ptab>-kind  = <fs_print_params>-params_type.
+*      ENDLOOP.
+
+
+*      etab = VALUE #( ( name = 'OTHERS' value = 4 ) ).
+      DATA(e_tab) = VALUE abap_excpbind_tab(  ).
+*
+      TRY.
+          CALL METHOD (class)=>(meth)
+            PARAMETER-TABLE
+            p_tab
+            EXCEPTION-TABLE
+            e_tab.
+          CASE sy-subrc.
+            WHEN 1.
+              ...
+              ...
+          ENDCASE.
+        CATCH cx_sy_dyn_call_error INTO DATA(exc_ref).
+          exc_ref->get_text(  ).
+*          MESSAGE exc_ref->get_text( ) TYPE 'I'.
+      ENDTRY.
+
       ""Move Corresponding
       TRY.
           CALL TRANSFORMATION (ls_print_operation-form_trns_name) SOURCE (ls_print_operation-form_trns_source) = <fs_xml> result xml data(lv_xml).
@@ -71,7 +110,7 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
           call_adobe( EXPORTING iv_form_name      = ls_print_operation-form_name
                                 iv_template_name  = ls_print_operation-form_name
                                 iv_xml            = lv_string
-                                iv_queue_name     = ls_print_operation-form_name
+*                                iv_queue_name     = ls_print_operation-form_name
                                 iv_comm_scenario  = ls_print_operation-comm_scenario
                                 iv_comm_system_id = ls_print_operation-comm_system_id
                                 iv_service_id     = ls_print_operation-service_id
@@ -82,13 +121,9 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
 
         CATCH cx_root INTO DATA(lo_root).
           DATA(lv_message) = lo_root->get_longtext( ).
-
       ENDTRY.
     ENDIF.
   ENDMETHOD.
-
-
-
 
   METHOD call_adobe.
     DATA: ls_req      TYPE zetr_s_req_bod,
@@ -100,12 +135,11 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
                                                                                       comm_system_id = iv_comm_system_id
                                                                                       service_id     = iv_service_id ).
           CATCH cx_http_dest_provider_error INTO DATA(lo_error).
-
         ENDTRY.
 
         TRY.
             DATA(lo_client) = cl_web_http_client_manager=>create_by_http_destination( lo_dest ).
-          CATCH  cx_web_http_client_error INTO DATA(lo_client_error).
+          CATCH cx_web_http_client_error INTO DATA(lo_client_error).
         ENDTRY.
 
         DATA(lo_request) = lo_client->get_http_request( ).
@@ -122,12 +156,8 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
         ls_req-print_not_allowed  = abap_false.
 
         TRY.
-            CALL METHOD /ui2/cl_json=>serialize
-              EXPORTING
-                data        = ls_req
-                pretty_name = /ui2/cl_json=>pretty_mode-camel_case
-              RECEIVING
-                r_json      = DATA(lv_body).
+            DATA(lv_body) = /ui2/cl_json=>serialize( EXPORTING data        = ls_req
+                                                               pretty_name = /ui2/cl_json=>pretty_mode-camel_case ).
 
           CATCH cx_root INTO DATA(lc_root).
             DATA(lv_message) = lc_root->get_longtext( ).
@@ -154,19 +184,6 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
             lv_message = lc_root->get_longtext( ).
         ENDTRY.
         ev_pdf = ls_response-filecontent.
-*        IF ev_pdf IS NOT INITIAL.
-*          send_queue(
-*            EXPORTING
-*              iv_queue_name    = iv_queue_name
-*              iv_pdf           = ev_pdf
-*            IMPORTING
-*              ev_response_code = ev_response_code
-*              ev_response_text = ev_response_text
-*          ).
-*        ELSE.
-*          ev_response_code = 400.
-*          ev_response_text = 'Çıktı alınırken hata alındı'.
-*        ENDIF.
 
       CATCH cx_fp_fdp_error cx_fp_ads_util INTO DATA(ls_data).
         lv_message = ls_data->get_longtext( ).

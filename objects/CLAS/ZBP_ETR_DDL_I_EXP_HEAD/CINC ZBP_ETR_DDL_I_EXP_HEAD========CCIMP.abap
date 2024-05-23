@@ -52,17 +52,21 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
     lv_filen = |{ number_range_key ALPHA = OUT }|.
 
-    SELECT * FROM i_textobjecttypetext
-     WHERE textobjectcategory = 'VBBK'
-       AND textobjecttype     LIKE 'TX%'
-       AND language           = @sy-langu
+    SELECT * FROM zetr_ddl_c_txt_typ
+     WHERE language = @sy-langu
       INTO TABLE @DATA(lt_texts).
+
+*    SELECT * FROM i_textobjecttypetext
+*     WHERE textobjectcategory = 'VBBK'
+*       AND textobjecttype     LIKE 'TX%'
+*       AND language           = @sy-langu
+*      INTO TABLE @DATA(lt_texts).
 
 
     LOOP AT lt_texts ASSIGNING FIELD-SYMBOL(<fs_text>).
       APPEND INITIAL LINE TO lt_exporttext ASSIGNING FIELD-SYMBOL(<fs_exporttext>).
       <fs_exporttext>-filen      = lv_filen.
-      <fs_exporttext>-objecttype = <fs_text>-textobjecttype.
+      <fs_exporttext>-objecttype = <fs_text>-textkey.
     ENDLOOP.
 
 *    ENDIF.
