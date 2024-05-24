@@ -9,6 +9,11 @@ CLASS lhc_zetr_ddl_i_export_invh DEFINITION INHERITING FROM cl_abap_behavior_han
     METHODS navigatednewpage FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_export_invh~navigatednewpage RESULT result.
 
+
+    METHODS getpdf FOR MODIFY
+      IMPORTING keys FOR ACTION zetr_ddl_i_export_invh~getpdf RESULT result.
+
+
 ENDCLASS.
 
 CLASS lhc_zetr_ddl_i_export_invh IMPLEMENTATION.
@@ -17,6 +22,24 @@ CLASS lhc_zetr_ddl_i_export_invh IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD navigatednewpage.
+
+  ENDMETHOD.
+
+  METHOD getpdf.
+    LOOP AT keys INTO DATA(ls_key).
+
+      TRY.
+          zbp_etr_ddl_i_prn_opr=>prepare_pdf( EXPORTING iv_button_id       = '1'
+                                                        iv_export_no       = ls_key-fileexportnumber
+                                                        iv_billingdocument = ls_key-billingdocument
+                                              IMPORTING ev_pdf             = DATA(lv_pdf)
+                                                        ev_response_code   = DATA(lv_response_code)
+                                                        ev_response_text   = DATA(lv_response_text) ).
+        CATCH cx_http_dest_provider_error.
+          "handle exception
+      ENDTRY.
+
+    ENDLOOP.
 
   ENDMETHOD.
 
@@ -114,6 +137,7 @@ CLASS lhc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_handle
     METHODS releasetoaccounting FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_exp_head~releasetoaccounting.
 
+
 ENDCLASS.
 
 CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
@@ -125,5 +149,7 @@ CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
     DATA(lv_deneme) = 1.
 
   ENDMETHOD.
+
+
 
 ENDCLASS.

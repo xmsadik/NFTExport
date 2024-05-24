@@ -9,6 +9,7 @@ define behavior for ZETR_DDL_C_EXP_HEADER
 
   action releaseToAccounting;
 
+
   use association _InvoiceHeader;
   use association _InvoiceItem;
   use association _Texts;
@@ -18,8 +19,8 @@ define behavior for ZETR_DDL_C_EXP_HEADER
 define behavior for ZETR_DDL_C_EXP_INVH
 {
 
+  use action getpdf;
   action navigatedNewPage;
-  //use update;
   use delete;
 
   use association _ExportFile;
@@ -28,10 +29,6 @@ define behavior for ZETR_DDL_C_EXP_INVH
 
 define behavior for ZETR_DDL_C_EXP_INVI
 {
-
-
-
-  //use update;
   use delete;
 
   use association _ExportFile;

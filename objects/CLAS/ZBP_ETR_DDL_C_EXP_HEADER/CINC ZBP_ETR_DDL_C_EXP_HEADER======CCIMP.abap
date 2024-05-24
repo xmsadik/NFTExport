@@ -5,6 +5,8 @@ CLASS lhc_zetr_ddl_c_exp_header DEFINITION INHERITING FROM cl_abap_behavior_hand
     METHODS releasetoaccounting FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_c_exp_header~releasetoaccounting.
 
+
+
 ENDCLASS.
 
 CLASS lhc_zetr_ddl_c_exp_header IMPLEMENTATION.
@@ -32,6 +34,7 @@ CLASS lhc_zetr_ddl_c_exp_invh DEFINITION INHERITING FROM cl_abap_behavior_handle
 
     METHODS navigatednewpage FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_c_exp_invh~navigatednewpage.
+
 
 ENDCLASS.
 
