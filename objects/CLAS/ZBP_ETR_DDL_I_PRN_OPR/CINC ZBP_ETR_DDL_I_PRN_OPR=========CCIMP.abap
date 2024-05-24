@@ -38,6 +38,8 @@ CLASS lhc_zetr_ddl_i_prn_opr DEFINITION INHERITING FROM cl_abap_behavior_handler
     TYPES : ty_abap_excpbind_tab TYPE STANDARD TABLE OF ty_abap_excpbind WITH DEFAULT KEY.
 
 
+    INTERFACES if_oo_adt_classrun.
+
   PRIVATE SECTION.
 
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
@@ -189,4 +191,9 @@ CLASS lhc_zetr_ddl_i_prn_opr IMPLEMENTATION.
         lv_message = ls_data->get_longtext( ).
     ENDTRY.
   ENDMETHOD.
+
+  METHOD if_oo_adt_classrun~main.
+    prepare_pdf(  iv_button_id = '3' iv_export_no = '1000000014'  ).
+  ENDMETHOD.
+
 ENDCLASS.
