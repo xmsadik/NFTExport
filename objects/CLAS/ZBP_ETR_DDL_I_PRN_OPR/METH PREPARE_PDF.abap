@@ -1,6 +1,7 @@
   METHOD prepare_pdf.
     DATA: fs_structure TYPE REF TO data,
-          lv_content   TYPE string.
+          lv_content   TYPE string,
+          lv_structure TYPE string.
 
     DATA: meth  TYPE string,
           class TYPE string.
@@ -11,7 +12,9 @@
     SELECT *        FROM zetr_t_exp125 WHERE button_id = @iv_button_id INTO TABLE @DATA(lt_print_parameters).
     IF ls_print_operation IS NOT INITIAL AND lt_print_parameters[] IS NOT INITIAL .
 
-      CREATE DATA fs_structure TYPE (ls_print_operation-form_str_name).
+      lv_structure =  ls_print_operation-form_str_name.
+
+      CREATE DATA fs_structure TYPE (lv_structure).
       ASSIGN fs_structure->* TO <fs_xml>.
 
       DATA(p_tab) = VALUE abap_parmbind_tab( FOR wa IN lt_print_parameters ( name  = wa-params
