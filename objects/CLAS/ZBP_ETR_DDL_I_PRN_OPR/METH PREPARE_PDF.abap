@@ -12,10 +12,10 @@
     SELECT *        FROM zetr_t_exp125 WHERE button_id = @iv_button_id INTO TABLE @DATA(lt_print_parameters).
     IF ls_print_operation IS NOT INITIAL AND lt_print_parameters[] IS NOT INITIAL .
 
-      lv_structure =  ls_print_operation-form_str_name.
+*      lv_structure =  ls_print_operation-form_str_name.
 
-      CREATE DATA fs_structure TYPE (lv_structure).
-      ASSIGN fs_structure->* TO <fs_xml>.
+*      CREATE DATA fs_structure TYPE (lv_structure).
+*      ASSIGN fs_structure->* TO <fs_xml>.
 
       DATA(p_tab) = VALUE abap_parmbind_tab( FOR wa IN lt_print_parameters ( name  = wa-params
                                                                              value = REF #( wa-value )
@@ -25,13 +25,10 @@
       class = VALUE #( lt_print_parameters[ 1 ]-classname    OPTIONAL ).
       meth  = VALUE #( lt_print_parameters[ 1 ]-method_name  OPTIONAL ).
 
-
       TRY.
           CALL METHOD (class)=>(meth)
-            PARAMETER-TABLE
-            p_tab
-            EXCEPTION-TABLE
-            e_tab.
+            PARAMETER-TABLE p_tab
+            EXCEPTION-TABLE e_tab.
           CASE sy-subrc.
             WHEN 1.
               ...
@@ -44,6 +41,7 @@
 
       ""Move Corresponding
       TRY.
+*          DATA lv_xml TYPE string.
           CALL TRANSFORMATION (ls_print_operation-form_trns_name) SOURCE (ls_print_operation-form_trns_source) = <fs_xml> result xml data(lv_xml).
           DATA(lv_string) = cl_web_http_utility=>encode_x_base64( unencoded = lv_xml ).
 
