@@ -26,7 +26,7 @@ persistent table zetr_t_r102
 lock dependent by _ExportFile
 authorization dependent by _ExportFile
 {
-  action getpdf result [1] ZETR_DDL_I_CONTENT;
+  action getpdf parameter zetr_ddl_i_button  result [1] ZETR_DDL_I_CONTENT;
   action navigatedNewPage result [1] $self;
 
   mapping for zetr_t_r102
