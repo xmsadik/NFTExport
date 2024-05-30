@@ -12,7 +12,7 @@ define behavior for ZETR_DDL_C_EXP_HEADER
 
   use association _InvoiceHeader;
   use association _InvoiceItem;
-  use association _Texts;
+  use association _Texts { create; }
 }
 
 
@@ -38,7 +38,6 @@ define behavior for ZETR_DDL_C_EXP_INVI
 
 define behavior for ZETR_DDL_C_EXP_TXT
 {
-
   use update;
   use delete;
 
