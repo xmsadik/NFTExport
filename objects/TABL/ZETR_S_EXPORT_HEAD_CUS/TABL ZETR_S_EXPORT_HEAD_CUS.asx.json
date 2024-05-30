@@ -444,7 +444,7 @@
    },
    {
     "TABNAME":"ZETR_S_EXPORT_HEAD_CUS",
-    "FIELDNAME":"CONTRACT_NO",
+    "FIELDNAME":"CONTRACTNO",
     "AS4LOCAL":"N",
     "AS4VERS":0,
     "POSITION":44,
@@ -675,7 +675,7 @@
    },
    {
     "TABNAME":"ZETR_S_EXPORT_HEAD_CUS",
-    "FIELDNAME":"EIORI",
+    "FIELDNAME":"EORI",
     "AS4LOCAL":"N",
     "AS4VERS":0,
     "POSITION":43,
@@ -1541,14 +1541,14 @@
     "TABNAME":"ZETR_S_EXPORT_HEAD_CUS",
     "DDLANGUAGE":"E",
     "AS4LOCAL":"N",
-    "FIELDNAME":"CONTRACT_NO",
+    "FIELDNAME":"CONTRACTNO",
     "DDTEXT":""
    },
    {
     "TABNAME":"ZETR_S_EXPORT_HEAD_CUS",
     "DDLANGUAGE":"E",
     "AS4LOCAL":"N",
-    "FIELDNAME":"EIORI",
+    "FIELDNAME":"EORI",
     "DDTEXT":""
    }
   ]
