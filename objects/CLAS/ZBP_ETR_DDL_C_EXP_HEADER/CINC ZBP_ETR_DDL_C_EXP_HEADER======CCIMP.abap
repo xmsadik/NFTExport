@@ -12,14 +12,22 @@ ENDCLASS.
 CLASS lhc_zetr_ddl_c_exp_header IMPLEMENTATION.
 
   METHOD releasetoaccounting.
+    DATA: lt_export TYPE TABLE OF zetr_t_r101.
 
-    MODIFY ENTITIES OF zetr_ddl_c_exp_header IN LOCAL MODE
-       ENTITY zetr_ddl_c_exp_header
-        UPDATE
-         FROM VALUE #( FOR key IN keys INDEX INTO i ( %tky = key-%tky
-                                              isaccounting = 'X'   ) )
-       REPORTED DATA(updated_reported).
+    DATA(ls_keys) = VALUE #( keys[ 1 ]  OPTIONAL ).
 
+    IF ls_keys IS NOT INITIAL.
+      SELECT SINGLE * FROM zetr_t_r101 WHERE filen = @ls_keys-filen INTO @DATA(ls_r101) .
+    ENDIF.
+
+    LOOP AT keys ASSIGNING FIELD-SYMBOL(<fs_key>).
+      APPEND INITIAL LINE TO lt_export ASSIGNING FIELD-SYMBOL(<fs_export>).
+      MOVE-CORRESPONDING ls_r101 TO <fs_export>.
+      <fs_export>-filen         = <fs_key>-filen.
+      <fs_export>-isaccounting  =  SWITCH #( <fs_export>-isaccounting WHEN abap_true  THEN abap_false
+                                                                      WHEN abap_false THEN abap_true ).
+    ENDLOOP.
+    MODIFY zetr_t_r101 FROM TABLE @lt_export.
 
     APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
                                         number   = '004'

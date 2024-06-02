@@ -12,7 +12,6 @@ CLASS lhc_zetr_ddl_i_export_invh DEFINITION INHERITING FROM cl_abap_behavior_han
     METHODS getpdf FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_export_invh~getpdf RESULT result.
 
-
 ENDCLASS.
 
 CLASS lhc_zetr_ddl_i_export_invh IMPLEMENTATION.
