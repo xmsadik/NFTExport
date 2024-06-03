@@ -14,7 +14,10 @@ authorization master ( instance )
       Bankname    = bankname;
       iban        = iban;
       Swift       = swift;
+      Waers       = Waers;
     }
+
+  field ( readonly : update ) Bankcountry, Bankname;
   create;
   update;
   delete;
