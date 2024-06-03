@@ -36,20 +36,73 @@ IN LOCAL MODE ENTITY zetr_ddl_i_exp_inv_head_rpt
 
     IF invoice_key-%param IS NOT INITIAL.
       lv_document = invoice_key-%param.
-      zcl_etr_export_process=>create_filen_orders( iv_document_no = lv_document
-                                                   iv_vbeln       = invoice_key-billingdocument ).
 
-      APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
-                                          number   = '000'
-                                          severity = if_abap_behv_message=>severity-success
-                                          v1       = |{ invoice_key-billingdocument } numaralı belge { lv_document } numaralı ihracat dosyasına eklenmiştir.| ) ) TO reported-zetr_ddl_i_exp_inv_head_rpt.
+      SELECT SINGLE *
+               FROM zetr_t_r101
+              WHERE filen = @lv_document
+               INTO @DATA(ls_export).
+
+      IF ls_export-iban IS NOT INITIAL.
+
+        SELECT SINGLE *
+                 FROM zetr_t_exp122
+                WHERE iban = @ls_export-iban
+                 INTO @DATA(ls_iban).
+
+        SELECT SINGLE billingdocument, transactioncurrency
+                 FROM i_billingdocument
+                WHERE billingdocument EQ @invoice_key-billingdocument
+                 INTO @DATA(ls_document).
+
+        IF ls_iban-waers EQ ls_document-transactioncurrency.
+          zcl_etr_export_process=>create_filen_orders( iv_document_no = lv_document
+                                                       iv_vbeln       = invoice_key-billingdocument ).
+        ELSE.
+
+          APPEND VALUE #( %msg = new_message( id       = 'ZETR_COMMON'
+                                              number   = '000'
+                                              severity = if_abap_behv_message=>severity-error
+                                              v1       = |{ invoice_key-billingdocument } numaralı belgenin para birimi { ls_iban-bankname } ile eşleşmemektedir.| ) ) TO reported-zetr_ddl_i_exp_inv_head_rpt.
+
+        ENDIF.
+
+      ELSE.
+
+        zcl_etr_export_process=>create_filen_orders( iv_document_no = lv_document
+                                                     iv_vbeln       = invoice_key-billingdocument ).
+
+        APPEND VALUE #( %msg = new_message( id       = 'ZETR_COMMON'
+                                            number   = '000'
+                                            severity = if_abap_behv_message=>severity-success
+                                            v1       = |{ invoice_key-billingdocument } numaralı belge { lv_document } numaralı ihracat dosyasına eklenmiştir.| ) ) TO reported-zetr_ddl_i_exp_inv_head_rpt.
+      ENDIF.
     ELSE.
-      APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
+      APPEND VALUE #( %msg = new_message( id       = 'ZETR_COMMON'
                                           number   = '000'
                                           severity = if_abap_behv_message=>severity-error
                                           v1       = 'Lütfen belge numarası giriniz.' ) ) TO reported-zetr_ddl_i_exp_inv_head_rpt.
 
     ENDIF.
+
+*    DATA(invoice_key) = VALUE #( keys[ 1 ] OPTIONAL ).
+*    DATA(lv_document) = VALUE zetr_e_filen( ).
+*
+*    IF invoice_key-%param IS NOT INITIAL.
+*      lv_document = invoice_key-%param.
+*      zcl_etr_export_process=>create_filen_orders( iv_document_no = lv_document
+*                                                   iv_vbeln       = invoice_key-billingdocument ).
+*
+*      APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
+*                                          number   = '000'
+*                                          severity = if_abap_behv_message=>severity-success
+*                                          v1       = |{ invoice_key-billingdocument } numaralı belge { lv_document } numaralı ihracat dosyasına eklenmiştir.| ) ) TO reported-zetr_ddl_i_exp_inv_head_rpt.
+*    ELSE.
+*      APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
+*                                          number   = '000'
+*                                          severity = if_abap_behv_message=>severity-error
+*                                          v1       = 'Lütfen belge numarası giriniz.' ) ) TO reported-zetr_ddl_i_exp_inv_head_rpt.
+*
+*    ENDIF.
   ENDMETHOD.
 
 ENDCLASS.
