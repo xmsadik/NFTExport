@@ -13,6 +13,7 @@ define behavior for ZETR_DDL_C_EXP_HEADER
   use association _InvoiceHeader;
   use association _InvoiceItem;
   use association _Texts { create; }
+  use association _BillingDocument;
 }
 
 
@@ -40,6 +41,15 @@ define behavior for ZETR_DDL_C_EXP_TXT
 {
   use update;
   use delete;
+
+  use association _ExportFile;
+
+}
+
+define behavior for ZETR_DDL_C_BIL_DOC
+{
+
+  action releaseToAccountingBilDoc;
 
   use association _ExportFile;
 

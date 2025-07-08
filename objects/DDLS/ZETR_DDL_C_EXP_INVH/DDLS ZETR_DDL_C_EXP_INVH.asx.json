@@ -12,7 +12,7 @@
     "SOURCE":"@EndUserText.label: 'Export Document Invoice Header'\r\n@Metadata.allowExtensions: true\r\n@AccessControl.authorizationCheck: #NOT_REQUIRED\r\ndefine view entity ZETR_DDL_C_EXP_INVH\r\n  as projection on ZETR_DDL_I_EXPORT_INVH\r\n{\r\n  key FileExportNumber,\r\n  key BillingDocument,\r\n      @ObjectModel.text.element: [ 'CompanyCodeName' ]\r\n      CompanyCode,\r\n      CompanyCodeName,\r\n      BillingDocumentType,\r\n      BillingDocumentTypeName,\r\n      SalesOrganization,\r\n      SalesOrganizationName,\r\n      DistributionChannel,\r\n      DistributionChannelName,\r\n      Division,\r\n      DivisionName,\r\n      PayerParty,\r\n      PayerPartyName,\r\n      SoldToParty,\r\n      SoldToPartyName,\r\n      TotalNetAmount,\r\n      TotalTaxAmount,\r\n      TransactionCurrency,\r\n      BillingDocumentDate,\r\n      DocumentReferenceID,\r\n      CustomerPaymentTerms,\r\n      CustomerPaymentTermsName,\r\n      IncotermsClassification,\r\n      IncotermsTransferLocation,\r\n      IncotermsVersion,\r\n      CreationDate,\r\n      CreationTime,\r\n      CreatedByUser,\r\n      AccountingTransferStatus,\r\n      AccountingTransferStatusText,\r\n      _ExportFile : redirected to parent ZETR_DDL_C_EXP_HEADER\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"ZETR_DDL_I_EXPORT_INVH\"\n],\n\"ASSOCIATED\":\n[\n\"ZETR_DDL_C_EXP_HEADER\",\n\"ZETR_DDL_I_EXP_HEAD\"\n],\n\"BASE\":\n[\n\"ZETR_DDL_I_EXPORT_INVH\"\n],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
     "PARENTNAME":"",
     "ACTFLAG":"",
-    "CHGFLAG":"542",
+    "CHGFLAG":"J,W4T2Z",
     "SOURCE_TYPE":"P",
     "SOURCE_ORIGIN":"0",
     "ABAP_LANGUAGE_VERSION":"5"

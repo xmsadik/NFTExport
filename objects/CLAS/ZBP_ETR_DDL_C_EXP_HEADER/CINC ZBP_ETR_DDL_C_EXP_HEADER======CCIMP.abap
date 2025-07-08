@@ -1,3 +1,19 @@
+CLASS lhc_zetr_ddl_c_bil_doc DEFINITION INHERITING FROM cl_abap_behavior_handler.
+
+  PRIVATE SECTION.
+
+    METHODS releaseToAccountingBilDoc FOR MODIFY
+      IMPORTING keys FOR ACTION zetr_ddl_c_bil_doc~releasetoaccountingbildoc.
+
+ENDCLASS.
+
+CLASS lhc_zetr_ddl_c_bil_doc IMPLEMENTATION.
+
+  METHOD releasetoaccountingbildoc.
+  ENDMETHOD.
+
+ENDCLASS.
+
 CLASS lhc_zetr_ddl_c_exp_header DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
   PRIVATE SECTION.

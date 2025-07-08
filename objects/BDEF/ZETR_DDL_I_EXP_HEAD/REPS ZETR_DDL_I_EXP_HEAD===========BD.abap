@@ -17,6 +17,7 @@ authorization master ( instance )
   association _InvoiceHeader { create; }
   association _InvoiceItem { create; }
   association _Texts { create; }
+  association _BillingDocument { create; }
 }
 
 
@@ -26,7 +27,7 @@ persistent table zetr_t_r102
 lock dependent by _ExportFile
 authorization dependent by _ExportFile
 {
-  action getpdf parameter zetr_ddl_i_button  result [1] ZETR_DDL_I_CONTENT;
+  action getpdf parameter zetr_ddl_i_button result [1] ZETR_DDL_I_CONTENT;
   action navigatedNewPage result [1] $self;
 
   mapping for zetr_t_r102
@@ -81,5 +82,18 @@ authorization dependent by _ExportFile
   update;
 
   field ( readonly ) TextName, Filen, ObjectType;
+  association _ExportFile;
+}
+
+define behavior for ZETR_DDL_I_BIL_DOC
+
+with unmanaged save
+lock dependent by _ExportFile
+authorization dependent by _ExportFile
+{
+  action releaseToAccountingBilDoc;
+
+
+  field ( readonly ) FileExportNo;
   association _ExportFile;
 }

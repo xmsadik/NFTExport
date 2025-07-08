@@ -1,3 +1,24 @@
+CLASS lhc_zetr_ddl_i_bil_doc DEFINITION INHERITING FROM cl_abap_behavior_handler.
+
+  PRIVATE SECTION.
+
+    METHODS releaseToAccountingBilDoc FOR MODIFY
+      IMPORTING keys FOR ACTION ZETR_DDL_I_BIL_DOC~releaseToAccountingBilDoc.
+    METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
+      IMPORTING keys REQUEST requested_authorizations FOR ZETR_DDL_I_BIL_DOC RESULT result.
+
+ENDCLASS.
+
+CLASS lhc_zetr_ddl_i_bil_doc IMPLEMENTATION.
+
+  METHOD releaseToAccountingBilDoc.
+  ENDMETHOD.
+
+  METHOD get_instance_authorizations.
+  ENDMETHOD.
+
+ENDCLASS.
+
 CLASS lhc_zetr_ddl_i_export_invh DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
   PRIVATE SECTION.
@@ -147,6 +168,23 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
                                                     filen = lv_filen
                                                      ) TO reported-zetr_ddl_i_exp_head.
+    ENDIF.
+
+    IF  delete-zetr_ddl_i_exp_head IS NOT INITIAL.
+      DATA(ls_exp_header_deleted) = VALUE #( delete-zetr_ddl_i_exp_head[ 1 ] OPTIONAL ).
+
+
+      IF ls_exp_header_deleted-filen IS NOT INITIAL.
+        UPDATE zetr_t_r101
+           SET isdeleted = 'X'
+         WHERE filen = @ls_exp_header_deleted-filen.
+      ENDIF.
+
+      APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
+                                                    text     = | { ls_exp_header_deleted-filen } numaralı dosya silinmiştir.| )
+                                                    filen    = lv_filen ) TO reported-zetr_ddl_i_exp_head.
+
+
     ENDIF.
 
   ENDMETHOD.

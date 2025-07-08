@@ -1,5 +1,17 @@
 [
  {
+  "table":"BDEF_WBDATA",
+  "data":
+  [
+   {
+    "BDEF":"ZETR_DDL_C_EXP_ACCOUNT",
+    "R3STATE":"A",
+    "KIND":"T",
+    "VALUE":"BehaviorProjection"
+   }
+  ]
+ },
+ {
   "table":"TADIR",
   "data":
   [

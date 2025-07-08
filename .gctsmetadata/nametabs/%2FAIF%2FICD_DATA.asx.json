@@ -86,6 +86,13 @@
     "TYPE":"C",
     "LENGTH":1,
     "DECIMALS":-1
+   },
+   {
+    "NAME":"MIGRATION_STATUS",
+    "KEY":"",
+    "TYPE":"C",
+    "LENGTH":2,
+    "DECIMALS":-1
    }
   ],
   "properties":
