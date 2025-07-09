@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_ACCOUNT",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2024-03-21",
-    "CHANGED_AT":"11:55:33",
-    "UUID":"BD9214B8A31F1EDEB9EF3D742CEF5FB3",
+    "CHANGED_ON":"2025-07-09",
+    "CHANGED_AT":"08:21:42",
+    "UUID":"FA163EBBCF7E1FE09793B7B5D37EC526",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_ACCOUNT",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'İhracat Masraf Hesapları',\r\n                typeName: 'İhracat Masraf Hesapları',\r\n                title:{ type: #STANDARD, label: 'Masraf Tipi', value: 'Saknr' }\r\n    }\r\n}\r\nannotate view ZETR_DDL_C_EXP_ACCOUNT with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Şirket Kodu',\r\n                 position:        10 }\r\n               ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n             selectionField: [ { position: 10 } ],\r\n         identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n  valueHelpDefinition:[{ entity :{ name :'zetr_ddl_vh_company_codes', element: 'CompanyCode' } } ],\r\n  filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Bukrs;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n            selectionField: [ { position: 20 } ],\r\n        identification: [{ position: 20 }] }\r\n  @Consumption :{\r\n  valueHelpDefinition:[{ entity :{ name :'zetr_DDL_C_CST_TYP', element: 'Ctype' } } ],\r\n  filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Ctype;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n       selectionField: [ { position: 30 } ],\r\n       identification: [{ position: 30 }] }\r\n  Saknr;\r\n  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ],\r\n     selectionField: [ { position: 40 } ],\r\n     identification: [{ position: 40 }] }\r\n  Kostl;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'İhracat Masraf Hesapları',\r\n                typeName: 'İhracat Masraf Hesapları',\r\n                title:{ type: #STANDARD, label: 'Masraf Tipi', value: 'Saknr' }\r\n    }\r\n}\r\nannotate view ZETR_DDL_C_EXP_ACCOUNT with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Şirket Kodu',\r\n                 position:        10 }\r\n               ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n             selectionField: [ { position: 10 } ],\r\n         identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n  valueHelpDefinition:[{ entity :{ name :'I_CompanyCode', element: 'CompanyCode' } } ],\r\n  filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Bukrs;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n            selectionField: [ { position: 20 } ],\r\n        identification: [{ position: 20 }] }\r\n  @Consumption :{\r\n  valueHelpDefinition:[{ entity :{ name :'zetr_DDL_C_CST_TYP', element: 'Ctype' } } ],\r\n  filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Ctype;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n       selectionField: [ { position: 30 } ],\r\n       identification: [{ position: 30 }] }\r\n  Saknr;\r\n  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ],\r\n     selectionField: [ { position: 40 } ],\r\n     identification: [{ position: 40 }] }\r\n  Kostl;\r\n\r\n}"
    }
   ]
  },
@@ -103,7 +103,7 @@
     "ELEMENT":"BUKRS",
     "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
     "ELEMENT_TYPE":"S",
-    "VALUE":"'zetr_ddl_vh_company_codes'"
+    "VALUE":"'I_CompanyCode'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_ACCOUNT",
@@ -325,8 +325,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_EXP_ACCOUNT",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"BD9214B8A31F1EDEB9EF3D742CEF5FB3",
-    "RT_HASH":"F7BC276C77BA3319C225462DDC224C08BCDEC01B",
+    "DT_UUID":"FA163EBBCF7E1FE09793B7B5D37EC526",
+    "RT_HASH":"2F1F21CB5194C3F5F57B4EB4EDE72A829E6188BC",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
@@ -350,10 +350,10 @@
     "DDLXNAME":"ZETR_E_EXP_ACCOUNT",
     "ELEMENT":"BUKRS",
     "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
-    "PATH":"ZETR_DDL_VH_COMPANY_CODES",
+    "PATH":"I_COMPANYCODE",
     "REF_OBJECT_TYPE":"STOB",
     "REF_OBJECT_SUBTYPE":"DO",
-    "REF_OBJECT_NAME":"ZETR_DDL_VH_COMPANY_CODES",
+    "REF_OBJECT_NAME":"I_COMPANYCODE",
     "REF_OBJECT_ELEMENT":""
    },
    {

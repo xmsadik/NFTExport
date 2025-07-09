@@ -87,7 +87,7 @@
     "POSITION":2,
     "KEYFLAG":"X",
     "MANDATORY":"",
-    "ROLLNAME":"ZETR_E_FKART",
+    "ROLLNAME":"",
     "CHECKTABLE":"",
     "ADMINFIELD":"0",
     "INTTYPE":"C",
@@ -104,7 +104,7 @@
     "SHLPORIGIN":"",
     "TABLETYPE":"",
     "DEPTH":0,
-    "COMPTYPE":"E",
+    "COMPTYPE":"",
     "REFTYPE":"",
     "LANGUFLAG":"",
     "DBPOSITION":0,
@@ -144,6 +144,19 @@
     "ANONYMOUS":"",
     "OUTPUTSTYLE":0,
     "SRS_ID":0
+   }
+  ]
+ },
+ {
+  "table":"DD03T",
+  "data":
+  [
+   {
+    "TABNAME":"ZETR_T_EXP121",
+    "DDLANGUAGE":"E",
+    "AS4LOCAL":"N",
+    "FIELDNAME":"FKART",
+    "DDTEXT":""
    }
   ]
  },
