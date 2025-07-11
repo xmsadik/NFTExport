@@ -9,7 +9,7 @@
 
         LOOP AT lt_output ASSIGNING FIELD-SYMBOL(<ls_output>).
           lv_billingdocument = |{ <ls_output>-billingdocument }|.
-          <ls_output>-documenturl = 'https://' && zcl_etr_regulative_common=>get_ui_url( ) && '/ui#BillingDocument-displayRedacted&/BillingDocument(' && lv_billingdocument  && ')'.
+          <ls_output>-documenturl = 'https://' && get_ui_url( ) && '/ui#BillingDocument-displayRedacted&/BillingDocument(' && lv_billingdocument  && ')'.
         ENDLOOP.
 
       CATCH cx_root INTO DATA(lx_root).
