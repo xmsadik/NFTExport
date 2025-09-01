@@ -77,7 +77,7 @@ ENDCLASS.
 CLASS lsc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_saver.
 
   PROTECTED SECTION.
-    METHODS save_modified REDEFINITION.
+    METHODS save_modified  REDEFINITION .
 
 
 ENDCLASS.
