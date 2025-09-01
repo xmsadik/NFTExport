@@ -35,6 +35,7 @@ CLASS lhc_zetr_ddl_i_export_invh DEFINITION INHERITING FROM cl_abap_behavior_han
     METHODS getpdf FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_export_invh~getpdf RESULT result.
 
+
 ENDCLASS.
 
 CLASS lhc_zetr_ddl_i_export_invh IMPLEMENTATION.
@@ -78,9 +79,52 @@ CLASS lsc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_saver.
   PROTECTED SECTION.
     METHODS save_modified REDEFINITION.
 
+
 ENDCLASS.
 
 CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
+
+*  METHOD fillreadonlyfields.
+*
+*    READ ENTITIES OF zetr_ddl_i_bil_doc IN LOCAL MODE
+*  ENTITY zetr_ddl_i_bil_doc
+*  FIELDS (  filen bukrs )
+*  WITH CORRESPONDING #( keys )
+*  RESULT DATA(lt_data).
+*
+*    SELECT
+*         i_paymenttermsconditionstext~paymentterms,
+*         i_paymenttermsconditionstext~paymenttermsvaliditymonthday,
+*         i_paymenttermsconditionstext~language,
+*         i_paymenttermsconditionstext~paymenttermsconditiondesc
+*      FROM i_paymenttermsconditionstext
+*      WHERE language = 'T'
+*        AND paymentterms LIKE 'N0%'
+*      INTO TABLE @DATA(lt_payment).
+*
+*    READ TABLE lt_payment TRANSPORTING NO FIELDS WHERE paymentterms = lt_data[ 1 ]-sapodemekosulu AND  paymenttermsconditiondesc = lt_data[ 1 ]-odemekosuluadi.
+*    IF  sy-subrc = 0.
+*      DELETE lt_data WHERE odemekosuluadi IS NOT INITIAL.
+*    ENDIF.
+*
+*    CHECK lt_data IS NOT INITIAL.
+*
+*    LOOP AT keys INTO DATA(ls_key).
+*      LOOP AT lt_data INTO DATA(ls_data) WHERE marwizvadekod = ls_key-marwizvadekod.
+*
+*        READ TABLE lt_payment INTO DATA(ls_payment) WITH KEY paymentterms = ls_data-sapodemekosulu.
+*        IF sy-subrc EQ 0.
+*
+*          MODIFY ENTITIES OF zi_marvizsatcdemekoulu_s IN LOCAL MODE
+*          ENTITY marvizsatcdemekoulu
+*          UPDATE FIELDS (  odemekosuluadi )
+*          WITH VALUE #( ( %tky = ls_key-%tky
+*                          odemekosuluadi     = ls_payment-paymenttermsconditiondesc   %control-odemekosuluadi     = if_abap_behv=>mk-on ) ).
+*        ENDIF.
+*
+*      ENDLOOP.
+*    ENDLOOP.
+*  ENDMETHOD.
 
 
   METHOD save_modified.
@@ -137,10 +181,13 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
         INSERT zetr_t_exp123 FROM TABLE @lt_exporttext.
       ENDIF.
 
-      APPEND VALUE #(
-                        %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
-                                                    text     = |{ lv_filen } yaratılmıştır.| )
-                                                        filen = lv_filen ) TO reported-zetr_ddl_i_exp_head.
+*      APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
+*                                                    text     = |{ lv_filen } yaratılmıştır.| )
+*                                                    filen = lv_filen ) TO reported-zetr_ddl_i_exp_head.
+
+      APPEND VALUE #( %key = VALUE #( filen = lv_filen )
+                      %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
+                                                    text     = |{ lv_filen } yaratılmıştır.| ) ) TO reported-zetr_ddl_i_exp_head.
 
 
 

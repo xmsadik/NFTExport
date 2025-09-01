@@ -9,8 +9,13 @@ authorization master ( instance )
   create;
   update;
   delete;
-  field ( readonly ) Filen;
+  field ( readonly ) Filen, Pymty;
   field ( mandatory : create ) Kunrg, Bldat, Bukrs;
+
+
+
+//  determination FillReadOnlyFields on modify { field Filen; create; update; }
+//  side effects { field Bukrs affects field Filen; }
 
   action releaseToAccounting;
 

@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_BIL_DOC",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2024-08-23",
-    "CHANGED_AT":"12:13:53",
-    "UUID":"055B4DF6A2A01EEF98A9253AC1416162",
+    "CHANGED_ON":"2025-09-01",
+    "CHANGED_AT":"08:12:44",
+    "UUID":"FA163EBBCF7E1FE0A1E16DF3B88AA5C5",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_BIL_DOC",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Billing Document',\r\n                typeName: 'Billing Document',\r\n                title:{ type: #STANDARD, label: 'Billing Document', value: 'FileExportNo' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_C_BIL_DOC with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Billing Document',\r\n                 position:        10 }\r\n               ]\r\n\r\n\r\n  @UI: { lineItem:       [ { type: #FOR_ACTION, dataAction: 'releaseToAccountingBilDoc', label: 'Muhasebeleştir' ,invocationGrouping: #ISOLATED }  ], identification: [{ position: 10 }] }\r\n  FileExportNo;\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ]}\r\n  OutboundDelivery;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Billing Document',\r\n                typeName: 'Billing Document',\r\n                title:{ type: #STANDARD, label: 'Billing Document', value: 'FileExportNo' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_C_BIL_DOC with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Billing Document',\r\n                 position:        10 }\r\n               ]\r\n\r\n\r\n  @UI: {  identification: [{ position: 10 }] }\r\n  FileExportNo;\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ]}\r\n  OutboundDelivery;\r\n\r\n}"
    }
   ]
  },
@@ -121,34 +121,6 @@
    },
    {
     "DDLXNAME":"ZETR_E_EXP_BIL_DOC",
-    "ELEMENT":"FILEEXPORTNO",
-    "NAME":"UI.LINEITEM$1$.DATAACTION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"'releaseToAccountingBilDoc'"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_BIL_DOC",
-    "ELEMENT":"FILEEXPORTNO",
-    "NAME":"UI.LINEITEM$1$.INVOCATIONGROUPING",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#ISOLATED"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_BIL_DOC",
-    "ELEMENT":"FILEEXPORTNO",
-    "NAME":"UI.LINEITEM$1$.LABEL",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"'Muhasebeleştir'"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_BIL_DOC",
-    "ELEMENT":"FILEEXPORTNO",
-    "NAME":"UI.LINEITEM$1$.TYPE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#FOR_ACTION"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_BIL_DOC",
     "ELEMENT":"OUTBOUNDDELIVERY",
     "NAME":"UI.LINEITEM$1$.IMPORTANCE",
     "ELEMENT_TYPE":"S",
@@ -194,13 +166,6 @@
     "ELEMENT":"FILEEXPORTNO",
     "NAME":"UI.FACET$1$.LABEL",
     "TEXT":"Billing Document"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_BIL_DOC",
-    "DDLANGUAGE":"E",
-    "ELEMENT":"FILEEXPORTNO",
-    "NAME":"UI.LINEITEM$1$.LABEL",
-    "TEXT":"Muhasebeleştir"
    }
   ]
  },
@@ -213,8 +178,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_BIL_DOC",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"055B4DF6A2A01EEF98A9253AC1416162",
-    "RT_HASH":"3D07742376BFC6B1401D284F20E1517D21C34254",
+    "DT_UUID":"FA163EBBCF7E1FE0A1E16DF3B88AA5C5",
+    "RT_HASH":"BCD67D9B5A9E4D9679D0ACBBFE9704EA59472388",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
