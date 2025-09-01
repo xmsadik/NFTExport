@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Tax Code"
+    "ALT_SMART_LINK_TITLE":"Tax Code",
+    "DESCRIPTION":"Tax Code"
    },
    {
     "APP_ID":"ZETR_TAX_CDE_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"İşlem Vergi Kodları"
+    "ALT_SMART_LINK_TITLE":"İşlem Vergi Kodları",
+    "DESCRIPTION":"İşlem Vergi Kodları"
    }
   ]
  },

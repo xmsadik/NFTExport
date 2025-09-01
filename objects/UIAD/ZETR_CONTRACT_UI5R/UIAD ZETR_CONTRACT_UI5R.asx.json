@@ -137,7 +137,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Contract"
+    "ALT_SMART_LINK_TITLE":"Contract",
+    "DESCRIPTION":"Contract"
    }
   ]
  },

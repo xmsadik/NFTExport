@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Duty Code"
+    "ALT_SMART_LINK_TITLE":"Duty Code",
+    "DESCRIPTION":"Duty Code"
    },
    {
     "APP_ID":"ZETR_DTY_CDE_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Gümrük Kodları"
+    "ALT_SMART_LINK_TITLE":"Gümrük Kodları",
+    "DESCRIPTION":"Gümrük Kodları"
    }
   ]
  },

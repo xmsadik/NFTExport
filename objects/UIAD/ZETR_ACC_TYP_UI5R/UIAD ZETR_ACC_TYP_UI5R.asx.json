@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Account Type"
+    "ALT_SMART_LINK_TITLE":"Account Type",
+    "DESCRIPTION":"Account Type"
    },
    {
     "APP_ID":"ZETR_ACC_TYP_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Hesap Tipi"
+    "ALT_SMART_LINK_TITLE":"Hesap Tipi",
+    "DESCRIPTION":"Hesap Tipi"
    }
   ]
  },

@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Cost Type"
+    "ALT_SMART_LINK_TITLE":"Cost Type",
+    "DESCRIPTION":"Cost Type"
    },
    {
     "APP_ID":"ZETR_CST_TYP_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Masraf Tipi"
+    "ALT_SMART_LINK_TITLE":"Masraf Tipi",
+    "DESCRIPTION":"Masraf Tipi"
    }
   ]
  },

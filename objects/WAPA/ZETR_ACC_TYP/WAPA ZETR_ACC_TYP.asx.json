@@ -550,7 +550,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -580,7 +583,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -610,7 +616,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -640,7 +649,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -670,7 +682,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -700,7 +715,10 @@
     "IS_START_PAGE":"X",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -730,7 +748,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -760,7 +781,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -790,7 +814,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -820,7 +847,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -850,7 +880,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -880,7 +913,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    },
    {
     "APPLNAME":"ZETR_ACC_TYP",
@@ -910,7 +946,10 @@
     "IS_START_PAGE":"",
     "LAYOUTLANGU":"E",
     "NO_SCRIPT":"",
-    "DELTA_HANDLING":""
+    "DELTA_HANDLING":"",
+    "HASHED_FILENAME":"",
+    "TRANSLATION_ID":"",
+    "NO_TRANSLATION":""
    }
   ]
  },

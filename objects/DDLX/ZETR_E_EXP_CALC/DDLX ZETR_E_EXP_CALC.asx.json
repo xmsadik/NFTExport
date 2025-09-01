@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_CALC",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-07-09",
-    "CHANGED_AT":"14:20:20",
-    "UUID":"FA163EBBCF7E1FE09799FB02C89AE526",
+    "CHANGED_ON":"2025-07-28",
+    "CHANGED_AT":"14:58:35",
+    "UUID":"FA163EBBCF7E1FE09AF86ABB2ADD455D",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_CALC",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Masraf Dağıtım Hesaplama',\r\n                typeName: 'Masraf Dağıtım Hesaplama',\r\n                title:{ type: #STANDARD, label: 'Masraf Dağıtım Hesaplama', value: 'Bukrs' }\r\n    }\r\n}\r\nannotate view ZETR_DDL_I_EXP_CALC with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                   purpose:         #STANDARD,\r\n                   type:            #IDENTIFICATION_REFERENCE,\r\n                   label:           'Masraf Dağıtım Hesaplama',\r\n                   position:        10 }\r\n                 ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n     selectionField: [ { position: 10 } ],\r\n     identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n  valueHelpDefinition:[{ entity :{ name :'I_CompanyCode', element: 'CompanyCode' } } ],\r\n  filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Bukrs;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n     selectionField: [ { position: 20 } ],\r\n     identification: [{ position: 20 }] }\r\n  Ctype;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n         selectionField: [ { position: 30 } ],\r\n         identification: [{ position: 30 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'ZETR_VH_CALTY_EXP', element: 'Value' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Calty;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Masraf Dağıtım Hesaplama',\r\n                typeName: 'Masraf Dağıtım Hesaplama',\r\n                title:{ type: #STANDARD, label: 'Masraf Dağıtım Hesaplama', value: 'Bukrs' }\r\n    }\r\n}\r\nannotate view ZETR_DDL_I_EXP_CALC with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                   purpose:         #STANDARD,\r\n                   type:            #IDENTIFICATION_REFERENCE,\r\n                   label:           'Masraf Dağıtım Hesaplama',\r\n                   position:        10 }\r\n                 ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n     selectionField: [ { position: 10 } ],\r\n     identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n  valueHelpDefinition:[{ entity :{ name :'I_CompanyCode', element: 'CompanyCode' } } ],\r\n  filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Bukrs;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n     selectionField: [ { position: 20 } ],\r\n     identification: [{ position: 20 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'I_CostCenterCategory', element: 'CostCenterCategory' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Ctype;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n         selectionField: [ { position: 30 } ],\r\n         identification: [{ position: 30 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'ZETR_VH_CALTY_EXP', element: 'Value' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Calty;\r\n\r\n}"
    }
   ]
  },
@@ -227,6 +227,34 @@
    {
     "DDLXNAME":"ZETR_E_EXP_CALC",
     "ELEMENT":"CTYPE",
+    "NAME":"CONSUMPTION.FILTER.MULTIPLESELECTIONS",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"false"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "ELEMENT":"CTYPE",
+    "NAME":"CONSUMPTION.FILTER.SELECTIONTYPE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#SINGLE"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "ELEMENT":"CTYPE",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.ELEMENT",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'CostCenterCategory'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "ELEMENT":"CTYPE",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'I_CostCenterCategory'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "ELEMENT":"CTYPE",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"20"
@@ -297,8 +325,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_I_EXP_CALC",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"FA163EBBCF7E1FE09799FB02C89AE526",
-    "RT_HASH":"FF8334876C79AC40C1BD092530E763E5647EBA57",
+    "DT_UUID":"FA163EBBCF7E1FE09AF86ABB2ADD455D",
+    "RT_HASH":"18630735AE25C5C5DE6A20D8E526D271ED1502D3",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
@@ -336,6 +364,16 @@
     "REF_OBJECT_TYPE":"STOB",
     "REF_OBJECT_SUBTYPE":"DO",
     "REF_OBJECT_NAME":"ZETR_VH_CALTY_EXP",
+    "REF_OBJECT_ELEMENT":""
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "ELEMENT":"CTYPE",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
+    "PATH":"I_COSTCENTERCATEGORY",
+    "REF_OBJECT_TYPE":"STOB",
+    "REF_OBJECT_SUBTYPE":"DO",
+    "REF_OBJECT_NAME":"I_COSTCENTERCATEGORY",
     "REF_OBJECT_ELEMENT":""
    }
   ]

@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Border Cross"
+    "ALT_SMART_LINK_TITLE":"Border Cross",
+    "DESCRIPTION":"Border Cross"
    },
    {
     "APP_ID":"ZETR_BRD_CRSS_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Sınır Kapısı"
+    "ALT_SMART_LINK_TITLE":"Sınır Kapısı",
+    "DESCRIPTION":"Sınır Kapısı"
    }
   ]
  },

@@ -137,7 +137,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Invoice Type"
+    "ALT_SMART_LINK_TITLE":"Invoice Type",
+    "DESCRIPTION":"Invoice Type"
    }
   ]
  },

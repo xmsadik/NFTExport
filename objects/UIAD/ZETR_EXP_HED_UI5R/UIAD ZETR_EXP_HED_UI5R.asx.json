@@ -33,7 +33,7 @@
     "REFRESH_INTERVALL":0,
     "DISPLAY_NUMBER_UNIT":"",
     "FLAVOR_ID":"",
-    "CHANGED_AT":"+020240624113744",
+    "CHANGED_AT":"+020250901063103",
     "CHANGED_BY":"SAP_CUSTOMER",
     "MASTERLANG":"",
     "ACH_COMPONENT":"",
@@ -61,7 +61,7 @@
     "TILE_TYPE":"S",
     "CUSTOM_TILE_TYPE":"",
     "DEFAULT_TILE":"X",
-    "TILE_CONFIG_STRING":"",
+    "TILE_CONFIG_STRING":"{\"tileConfiguration\":\"{\\\"display_icon_url\\\":\\\"\\\",\\\"display_info_text\\\":\\\"\\\",\\\"display_title_text\\\":\\\"Export Portal\\\",\\\"display_subtitle_text\\\":\\\"\\\",\\\"navigation_use_semantic_object\\\":true,\\\"navigation_target_url\\\":\\\"#Export-manage\\\",\\\"navigation_semantic_object\\\":\\\"Export\\\",\\\"navigation_semantic_action\\\":\\\"manage\\\",\\\"navigation_semantic_parameters\\\":\\\"\\\",\\\"display_search_keywords\\\":\\\"\\\",\\\"display_number_unit\\\":\\\"\\\",\\\"service_url\\\":\\\"\\\",\\\"service_refresh_interval\\\":0}\"}",
     "TILE_ICON":"",
     "TILE_PARAMETERS":"",
     "SERVICE_BASE_URL":"",
@@ -98,44 +98,6 @@
   ]
  },
  {
-  "table":"SUI_TM_MM_APPPB",
-  "data":
-  [
-   {
-    "APP_ID":"ZETR_EXP_HED_UI5R",
-    "TILE_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_AL",
-    "BAG_ID":"                                                                                                  1",
-    "NAME":"display_title_text",
-    "TRANSLATABLE":"",
-    "VALUE":"Export Portal"
-   },
-   {
-    "APP_ID":"ZETR_EXP_HED_UI5R",
-    "TILE_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_AL",
-    "BAG_ID":"                                                                                                  2",
-    "NAME":"display_subtitle_text",
-    "TRANSLATABLE":"",
-    "VALUE":""
-   },
-   {
-    "APP_ID":"ZETR_EXP_HED_UI5R",
-    "TILE_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_AL",
-    "BAG_ID":"                                                                                                  3",
-    "NAME":"display_info_text",
-    "TRANSLATABLE":"",
-    "VALUE":""
-   },
-   {
-    "APP_ID":"ZETR_EXP_HED_UI5R",
-    "TILE_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_AL",
-    "BAG_ID":"                                                                                                  4",
-    "NAME":"display_search_keywords",
-    "TRANSLATABLE":"",
-    "VALUE":""
-   }
-  ]
- },
- {
   "table":"SUI_TM_MM_APPT",
   "data":
   [
@@ -146,7 +108,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Export Portal"
+    "ALT_SMART_LINK_TITLE":"Export Portal",
+    "DESCRIPTION":"Export"
    },
    {
     "APP_ID":"ZETR_EXP_HED_UI5R",
@@ -155,7 +118,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"İhracat kokpiti"
+    "ALT_SMART_LINK_TITLE":"İhracat kokpiti",
+    "DESCRIPTION":"İhracat"
    }
   ]
  },
@@ -183,8 +147,8 @@
     "CRELEASE":"",
     "DELFLAG":"",
     "TRANSLTTXT":"",
-    "CREATED_ON":"2024-06-24",
-    "CHECK_DATE":"2024-06-24",
+    "CREATED_ON":"2025-09-01",
+    "CHECK_DATE":"2025-09-01",
     "CHECK_CFG":""
    }
   ]

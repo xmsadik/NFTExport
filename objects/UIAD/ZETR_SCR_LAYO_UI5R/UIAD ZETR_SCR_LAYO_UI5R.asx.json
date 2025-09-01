@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"Screen Parameters",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"ScreenLayout"
+    "ALT_SMART_LINK_TITLE":"ScreenLayout",
+    "DESCRIPTION":"ScreenLayout"
    },
    {
     "APP_ID":"ZETR_SCR_LAYO_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"Ekran Parametreleri",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Ekran Düzeni"
+    "ALT_SMART_LINK_TITLE":"Ekran Düzeni",
+    "DESCRIPTION":"Ekran Düzeni"
    }
   ]
  },

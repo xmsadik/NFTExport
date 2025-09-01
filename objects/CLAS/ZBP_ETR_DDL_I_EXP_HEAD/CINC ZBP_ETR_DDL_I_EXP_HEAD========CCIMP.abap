@@ -2,16 +2,18 @@ CLASS lhc_zetr_ddl_i_bil_doc DEFINITION INHERITING FROM cl_abap_behavior_handler
 
   PRIVATE SECTION.
 
-    METHODS releaseToAccountingBilDoc FOR MODIFY
-      IMPORTING keys FOR ACTION ZETR_DDL_I_BIL_DOC~releaseToAccountingBilDoc.
+    METHODS releasetoaccountingbildoc FOR MODIFY
+      IMPORTING keys FOR ACTION zetr_ddl_i_bil_doc~releasetoaccountingbildoc.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
-      IMPORTING keys REQUEST requested_authorizations FOR ZETR_DDL_I_BIL_DOC RESULT result.
+      IMPORTING keys REQUEST requested_authorizations FOR zetr_ddl_i_bil_doc RESULT result.
+
+*         METHODS adjust_numbers REDEFINITION.
 
 ENDCLASS.
 
 CLASS lhc_zetr_ddl_i_bil_doc IMPLEMENTATION.
 
-  METHOD releaseToAccountingBilDoc.
+  METHOD releasetoaccountingbildoc.
   ENDMETHOD.
 
   METHOD get_instance_authorizations.
@@ -41,7 +43,6 @@ CLASS lhc_zetr_ddl_i_export_invh IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD navigatednewpage.
-
   ENDMETHOD.
 
   METHOD getpdf.
@@ -105,6 +106,8 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
                                                         returncode        = DATA(number_range_return_code)
                                                         returned_quantity = DATA(number_range_returned_quantity) ).
 
+
+
         CATCH cx_nr_object_not_found cx_number_ranges INTO DATA(lo_number).
           APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-error
                                                         text     = lo_number->get_text( ) ) ) TO reported-zetr_ddl_i_exp_head.
@@ -134,9 +137,13 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
         INSERT zetr_t_exp123 FROM TABLE @lt_exporttext.
       ENDIF.
 
-      APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
+      APPEND VALUE #(
+                        %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
                                                     text     = |{ lv_filen } yaratılmıştır.| )
                                                         filen = lv_filen ) TO reported-zetr_ddl_i_exp_head.
+
+
+
     ENDIF.
 
     IF update-zetr_ddl_i_exp_head IS NOT INITIAL.

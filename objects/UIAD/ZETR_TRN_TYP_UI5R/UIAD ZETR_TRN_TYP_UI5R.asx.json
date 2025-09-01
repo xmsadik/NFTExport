@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Transport Type"
+    "ALT_SMART_LINK_TITLE":"Transport Type",
+    "DESCRIPTION":"Transport Type"
    },
    {
     "APP_ID":"ZETR_TRN_TYP_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Sevkiyat Şekli"
+    "ALT_SMART_LINK_TITLE":"Sevkiyat Şekli",
+    "DESCRIPTION":"Sevkiyat Şekli"
    }
   ]
  },

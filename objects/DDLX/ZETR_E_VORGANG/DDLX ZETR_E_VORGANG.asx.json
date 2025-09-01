@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_VORGANG",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2023-12-08",
-    "CHANGED_AT":"13:50:31",
-    "UUID":"77E41BC4D9AD1EDEA5BA18117B0F5EC9",
+    "CHANGED_ON":"2025-08-06",
+    "CHANGED_AT":"07:25:24",
+    "UUID":"FA163EBBCF7E1FE09CD2D09358B0857B",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_VORGANG",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'İşlem vergi kodları',\r\n                typeName: 'İşlem vergi kodları',\r\n                title:{ type: #STANDARD, label: 'İşlem vergi kodları', value: 'Vorgang' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_I_VORGANG with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Masraf Belge Türleri',\r\n                 position:        10 }\r\n               ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n         selectionField: [ { position: 10 } ],\r\n         identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'ZEXP_VH_VORGANG', element: 'Value' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Vorgang;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n       selectionField: [ { position: 20 } ],\r\n       identification: [{ position: 20 }] }\r\n  Blart;\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'İşlem vergi kodları',\r\n                typeName: 'İşlem vergi kodları',\r\n                title:{ type: #STANDARD, label: 'İşlem vergi kodları', value: 'Vorgang' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_I_VORGANG with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Masraf Belge Türleri',\r\n                 position:        10 }\r\n               ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n         selectionField: [ { position: 10 } ],\r\n         identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'ZEXP_VH_VORGANG', element: 'Value' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Vorgang;\r\n\r\n  @UI.hidden: true\r\n  VorgangText;\r\n\r\n\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n       selectionField: [ { position: 20 } ],\r\n       identification: [{ position: 20 }] }\r\n  Blart;\r\n\r\n  @UI.hidden: true\r\n  GLAccountTypeName;\r\n}"
    }
   ]
  },
@@ -104,6 +104,13 @@
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"20"
+   },
+   {
+    "DDLXNAME":"ZETR_E_VORGANG",
+    "ELEMENT":"GLACCOUNTTYPENAME",
+    "NAME":"UI.HIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
    },
    {
     "DDLXNAME":"ZETR_E_VORGANG",
@@ -195,6 +202,13 @@
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"10"
+   },
+   {
+    "DDLXNAME":"ZETR_E_VORGANG",
+    "ELEMENT":"VORGANGTEXT",
+    "NAME":"UI.HIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"true"
    }
   ]
  },
@@ -241,8 +255,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_I_VORGANG",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"77E41BC4D9AD1EDEA5BA18117B0F5EC9",
-    "RT_HASH":"64D1F92D188E360AB2A5019275C911D3A7D800FF",
+    "DT_UUID":"FA163EBBCF7E1FE09CD2D09358B0857B",
+    "RT_HASH":"1A6C1A81688925D4C062141CD0D9540F960FED30",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }

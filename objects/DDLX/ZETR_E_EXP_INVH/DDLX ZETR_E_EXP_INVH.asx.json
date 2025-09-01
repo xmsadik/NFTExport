@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_INVH",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2024-02-28",
-    "CHANGED_AT":"10:26:01",
-    "UUID":"AB54FC360F6F1EDEB5C47890A2023F7F",
+    "CHANGED_ON":"2025-08-21",
+    "CHANGED_AT":"12:52:24",
+    "UUID":"FA163EBBCF7E1FE09FD1B5E29F5A859E",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_INVH",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Fatura başlık',\r\n                typeName: 'Fatura başlık',\r\n                title:{ type: #STANDARD, label: 'Fatura başlık', value: 'BillingDocument' }\r\n           }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_INVH with\r\n{\r\n  @UI.facet: [ { id:              'Invoice',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Fatura başlık',\r\n                 position:        10 }]\r\n\r\n  @UI.hidden: false\r\n  FileExportNumber;\r\n  @UI: { lineItem:       [ { type: #FOR_ACTION, dataAction: 'navigatedNewPage', label: 'Invoice Added' ,invocationGrouping: #ISOLATED } , \r\n                           { position: 10 } ], identification: [{ position: 10 }] }\r\n  BillingDocument;\r\n  @UI: { lineItem:       [ { position: 20 } ], identification: [{ position: 20 }] }\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 30 } ], identification: [{ position: 30 }] }\r\n  BillingDocumentType;\r\n  @UI: { lineItem:       [ { position: 40 } ] , identification: [{ position: 40 }] }\r\n  SalesOrganization;\r\n  @UI: { lineItem:       [ { position: 50 } ] , identification: [{ position: 50 }] }\r\n  DistributionChannel;\r\n  @UI: { lineItem:       [ { position: 60 } ] , identification: [{ position: 60 }] }\r\n  Division;\r\n  @UI: { lineItem:       [ { position: 70 } ] , identification: [{ position: 70 }] }\r\n  PayerParty;\r\n  @UI: { lineItem:       [ { position: 80 } ] ,  identification: [{ position: 80 }] }\r\n  SoldToParty;\r\n  @UI: { lineItem:       [ { position: 90 } ] , identification: [{ position: 90 }] }\r\n  TotalNetAmount;\r\n  @UI: { lineItem:       [ { position: 100 } ] , identification: [{ position: 100 }] }\r\n  TotalTaxAmount;\r\n  @UI: { lineItem:       [ { position: 110 } ] , identification: [{ position: 110 }] }\r\n  TransactionCurrency;\r\n  @UI: { lineItem:       [ { position: 120 } ] , identification: [{ position: 120 }] }\r\n  BillingDocumentDate;\r\n  @UI: { lineItem:       [ { position: 130 } ] , identification: [{ position: 130 }] }\r\n  DocumentReferenceID;\r\n  @UI: { lineItem:       [ { position: 140 } ] , identification: [{ position: 140 }] }\r\n  CustomerPaymentTerms;\r\n  @UI: { lineItem:       [ { position: 150 } ] , identification: [{ position: 150 }] }\r\n  IncotermsClassification;\r\n  @UI: { lineItem:       [ { position: 160 } ] , identification: [{ position: 160 }] }\r\n  IncotermsTransferLocation;\r\n  @UI: { lineItem:       [ { position: 170 } ] , identification: [{ position: 170 }] }\r\n  IncotermsVersion;\r\n  @UI: { lineItem:       [ { position: 180 } ] , identification: [{ position: 180 }] }\r\n  CreationDate;\r\n  @UI: { lineItem:       [ { position: 190 } ] , identification: [{ position: 190 }] }\r\n  CreationTime;\r\n  @UI: { lineItem:       [ { position: 200 } ] , identification: [{ position: 200 }] }\r\n  CreatedByUser;\r\n  @UI: { lineItem:       [ { position: 210 } ] , identification: [{ position: 210 }] }\r\n  AccountingTransferStatus;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Fatura başlık',\r\n                typeName: 'Fatura başlık',\r\n                title:{ type: #STANDARD, label: 'Fatura başlık', value: 'BillingDocument' }\r\n           }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_INVH with\r\n{\r\n  @UI.facet: [ { id:              'Invoice',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Fatura başlık',\r\n                 position:        10 }]\r\n\r\n  @UI.hidden: false\r\n  FileExportNumber;\r\n  @UI: { lineItem:       [ { type: #FOR_ACTION, dataAction: 'navigatedNewPage', label: 'Invoice Added' ,invocationGrouping: #ISOLATED } ,\r\n                           { position: 10 } ], identification: [{ position: 10 }] }\r\n  BillingDocument;\r\n  @UI: { lineItem:       [ { position: 20 } ], identification: [{ position: 20 }] }\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 30 } ], identification: [{ position: 30 }] }\r\n  BillingDocumentType;\r\n  @UI: { lineItem:       [ { position: 40 } ] , identification: [{ position: 40 }] }\r\n  SalesOrganization;\r\n  @UI: { lineItem:       [ { position: 50 } ] , identification: [{ position: 50 }] }\r\n  DistributionChannel;\r\n  @UI: { lineItem:       [ { position: 60 } ] , identification: [{ position: 60 }] }\r\n  Division;\r\n  @UI: { lineItem:       [ { position: 70 } ] , identification: [{ position: 70 }] }\r\n  PayerParty;\r\n  @UI: { lineItem:       [ { position: 80 } ] ,  identification: [{ position: 80 }] }\r\n  SoldToParty;\r\n  @UI: { lineItem:       [ { position: 90 } ] , identification: [{ position: 90 }] }\r\n  TotalNetAmount;\r\n  @UI: { lineItem:       [ { position: 100 } ] , identification: [{ position: 100 }] }\r\n  TotalTaxAmount;\r\n  @UI: { lineItem:       [ { position: 110 } ] , identification: [{ position: 110 }] }\r\n  TransactionCurrency;\r\n  @UI: { lineItem:       [ { position: 120 } ] , identification: [{ position: 120 }] }\r\n  BillingDocumentDate;\r\n  @UI: { lineItem:       [ { position: 130 } ] , identification: [{ position: 130 }] }\r\n  DocumentReferenceID;\r\n  @UI: { lineItem:       [ { position: 140 } ] , identification: [{ position: 140 }] }\r\n  CustomerPaymentTerms;\r\n  @UI: { lineItem:       [ { position: 150 } ] , identification: [{ position: 150 }] }\r\n  IncotermsClassification;\r\n  @UI: { lineItem:       [ { position: 160 } ] , identification: [{ position: 160 }] }\r\n  IncotermsTransferLocation;\r\n  @UI: { lineItem:       [ { position: 170 } ] , identification: [{ position: 170 }] }\r\n  IncotermsVersion;\r\n  @UI: { lineItem:       [ { position: 180 } ] , identification: [{ position: 180 }] }\r\n  CreationDate;\r\n  @UI: { lineItem:       [ { position: 190 } ] , identification: [{ position: 190 }] }\r\n  CreationTime;\r\n  @UI: { lineItem:       [ { position: 200 } ] , identification: [{ position: 200 }] }\r\n  CreatedByUser;\r\n  @UI: { lineItem:       [ { position: 210 } ] , identification: [{ position: 210 }] }\r\n  AccountingTransferStatus;\r\n  @UI: { lineItem:       [ { position: 210 } ] , identification: [{ position: 220 }] }\r\n  TotalSubtotalAmount;\r\n\r\n}"
    }
   ]
  },
@@ -415,6 +415,20 @@
    },
    {
     "DDLXNAME":"ZETR_E_EXP_INVH",
+    "ELEMENT":"TOTALSUBTOTALAMOUNT",
+    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"220"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVH",
+    "ELEMENT":"TOTALSUBTOTALAMOUNT",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"210"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVH",
     "ELEMENT":"TOTALTAXAMOUNT",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
@@ -493,8 +507,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_EXP_INVH",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"AB54FC360F6F1EDEB5C47890A2023F7F",
-    "RT_HASH":"E559E2D9CA3095267B03D666723AB3C5DA4540F5",
+    "DT_UUID":"FA163EBBCF7E1FE09FD1B5E29F5A859E",
+    "RT_HASH":"87D9DBA6769A29A71C8729B80DDB385BA35E75AF",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }

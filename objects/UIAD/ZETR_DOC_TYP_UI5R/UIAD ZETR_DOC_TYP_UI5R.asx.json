@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Export Document Type"
+    "ALT_SMART_LINK_TITLE":"Export Document Type",
+    "DESCRIPTION":"Export Document Type"
    },
    {
     "APP_ID":"ZETR_DOC_TYP_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"İhracat Dosya Türleri"
+    "ALT_SMART_LINK_TITLE":"İhracat Dosya Türleri",
+    "DESCRIPTION":"İhracat Dosya Türleri"
    }
   ]
  },

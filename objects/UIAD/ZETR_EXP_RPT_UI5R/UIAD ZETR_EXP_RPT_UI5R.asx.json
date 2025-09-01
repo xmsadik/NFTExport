@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Export report"
+    "ALT_SMART_LINK_TITLE":"Export report",
+    "DESCRIPTION":"Export report"
    },
    {
     "APP_ID":"ZETR_EXP_RPT_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"İhracat Raporu"
+    "ALT_SMART_LINK_TITLE":"İhracat Raporu",
+    "DESCRIPTION":"İhracat Raporu"
    }
   ]
  },

@@ -146,7 +146,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Invoice Choose"
+    "ALT_SMART_LINK_TITLE":"Invoice Choose",
+    "DESCRIPTION":"Invoice Choose"
    },
    {
     "APP_ID":"ZETR_INV_CHS_UI5R",
@@ -155,7 +156,8 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"İhracat Dosyası Fatura Seçimi"
+    "ALT_SMART_LINK_TITLE":"İhracat Dosyası Fatura Seçimi",
+    "DESCRIPTION":"İhracat Dosyası Fatura Seçimi"
    }
   ]
  },
