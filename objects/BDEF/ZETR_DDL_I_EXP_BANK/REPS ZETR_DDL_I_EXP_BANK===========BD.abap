@@ -17,7 +17,7 @@ authorization master ( instance )
       Waers       = Waers;
     }
 
-  field ( readonly : update ) Bankcountry, Bankname;
+  field ( readonly : update ) Bankcountry, Bankname, Waers;
   create;
   update;
   delete;

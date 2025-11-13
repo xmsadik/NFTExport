@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2024-07-22",
-    "CHANGED_AT":"13:42:05",
-    "UUID":"055B4DF6A2A01EEF928605C2C62E0108",
+    "CHANGED_ON":"2025-09-05",
+    "CHANGED_AT":"11:06:49",
+    "UUID":"FA163EBBCF7E1FE0A2C90D5881DC05D5",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI.selectionPresentationVariant: [{\r\nqualifier: 'Header',\r\ntext: 'Based on export file'\r\n }]\r\n\r\nannotate entity ZETR_DDL_C_EXP_HEAD_RPR with\r\n{\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  filen;\r\n  @UI: { lineItem:[ { position: 20, importance: #HIGH } ] }\r\n  expty;\r\n\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  bukrs;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  descr;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  bldat;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  extco;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n\r\n  extrg;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  desco;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  desrg;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  pymty;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  trnty;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n\r\n  cuscd;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n\r\n  cofrp;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  cusof;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n\r\n  sfrrp;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  shpfr;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n\r\n  bfrrp;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  brofr;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n\r\n  extfn;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  rexdt;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  cedno;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  ceddt;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  shpdt;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  shpno;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  extdt;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  desdt;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  nopck;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  clsed;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  fldel;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  chind;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  bankl;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  iban;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  BankName;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  BankBranch;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  kunrg;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n\r\n  inc01;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  inc02;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  lcnum;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  plaka;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  snrkp;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  ucsno;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  ucstr;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  hzrtr;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  beyts;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  beysa;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  beyty;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  hatbl;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  gemia;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  sefno;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  sbeyt;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  bolnumber;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  brgew;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  ntgew;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  gewei;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  volum;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  voleh;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  erdat;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  ernam;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  erzet;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  aedat;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  aezet;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  aenam;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  reffn;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  incno;\r\n  @UI: { lineItem:[ { position: 10, importance: #HIGH } ] }\r\n  AssignmentReference;\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI.selectionPresentationVariant: [{\r\n  qualifier: 'Header',\r\n  text: 'Based on export file'\r\n}]\r\nannotate entity ZETR_DDL_C_EXP_HEAD_RPR with\r\n{\r\n  /* 01 */\r\n  @UI: { lineItem:[ { position: 10,  importance: #HIGH } ] } @EndUserText.label: 'Dosya numarası'\r\n  filen;\r\n  /* 02 */\r\n  @UI: { lineItem:[ { position: 20,  importance: #HIGH } ] } @EndUserText.label: 'İhracat dosyası türü'\r\n  expty;\r\n  /* 03 */\r\n  @UI: { lineItem:[ { position: 30,  importance: #HIGH } ] } @EndUserText.label: 'Açıklama'\r\n  descr;\r\n  /* 04 */\r\n  @UI: { lineItem:[ { position: 40,  importance: #HIGH } ] } @EndUserText.label: 'Çıkış Ülkesi'\r\n  extco;\r\n  /* 05 */\r\n  @UI: { lineItem:[ { position: 50,  importance: #HIGH } ] } @EndUserText.label: 'Çıkış Yeri'\r\n  extrg;\r\n  /* 06 */\r\n  @UI: { lineItem:[ { position: 60,  importance: #HIGH } ] } @EndUserText.label: 'Varış Ülkesi'\r\n  desco;\r\n  /* 07 */\r\n  @UI: { lineItem:[ { position: 70,  importance: #HIGH } ] } @EndUserText.label: 'Varış Yeri'\r\n  desrg;\r\n  /* 08 */\r\n  @UI: { lineItem:[ { position: 80,  importance: #HIGH } ] } @EndUserText.label: 'Sevkiyat Türü'\r\n  trnty;\r\n  /* 09 */\r\n  @UI: { lineItem:[ { position: 90,  importance: #HIGH } ] } @EndUserText.label: 'İlgili Kişi1'\r\n  cofrp;\r\n  /* 10 */\r\n  @UI: { lineItem:[ { position: 100, importance: #HIGH } ] } @EndUserText.label: 'Gümrük Temsilcisi'\r\n  cusof;\r\n\r\n  /* 11 */ /* Gümrük Temsilcisi Tanımı -> teknik alan adı lazım */\r\n  /* 12 */\r\n  @UI: { lineItem:[ { position: 120, importance: #HIGH } ] } @EndUserText.label: 'İlgili Kişi2'\r\n  sfrrp;\r\n  /* 13 */\r\n  @UI: { lineItem:[ { position: 130, importance: #HIGH } ] } @EndUserText.label: 'Nakliye Firması'\r\n  shpfr;\r\n  /* 14 */ /* Nakliye Firması Tanım -> teknik alan adı lazım */\r\n  /* 15 */\r\n  @UI: { lineItem:[ { position: 150, importance: #HIGH } ] } @EndUserText.label: 'İlgili Kişi3'\r\n  bfrrp;\r\n  /* 16 */\r\n  @UI: { lineItem:[ { position: 160, importance: #HIGH } ] } @EndUserText.label: 'Komisyoncu'\r\n  brofr;\r\n  /* 17 */ /* Komisyoncu Tanım -> teknik alan adı lazım */\r\n\r\n  /* 18 */\r\n  @UI: { lineItem:[ { position: 180, importance: #HIGH } ] } @EndUserText.label: 'E-fatura numarası'\r\n  extfn;\r\n  /* 19 */\r\n  @UI: { lineItem:[ { position: 190, importance: #HIGH } ] } @EndUserText.label: 'İntaç Tarihi'\r\n  rexdt;\r\n  /* 20 */\r\n  @UI: { lineItem:[ { position: 200, importance: #HIGH } ] } @EndUserText.label: 'GÇB No'\r\n  cedno;\r\n  /* 21 */\r\n  @UI: { lineItem:[ { position: 210, importance: #HIGH } ] } @EndUserText.label: 'GÇB Tarihi'\r\n  ceddt;\r\n  /* 22 */\r\n  @UI: { lineItem:[ { position: 220, importance: #HIGH } ] } @EndUserText.label: 'Nakliye Tarihi'\r\n  shpdt;\r\n  /* 23 */\r\n  @UI: { lineItem:[ { position: 230, importance: #HIGH } ] } @EndUserText.label: 'Nakliye No'\r\n  shpno;\r\n  /* 24 */\r\n  @UI: { lineItem:[ { position: 240, importance: #HIGH } ] } @EndUserText.label: 'Çıkış Tarihi'\r\n  extdt;\r\n  /* 25 */\r\n  @UI: { lineItem:[ { position: 250, importance: #HIGH } ] } @EndUserText.label: 'Varış Tarihi'\r\n  desdt;\r\n  /* 26 */\r\n  @UI: { lineItem:[ { position: 260, importance: #HIGH } ] } @EndUserText.label: 'Kap adedi'\r\n  nopck;\r\n  /* 27 */\r\n  @UI: { lineItem:[ { position: 270, importance: #HIGH } ] } @EndUserText.label: 'Kapalı Durumu'\r\n  clsed;\r\n  /* 28 */\r\n  @UI: { lineItem:[ { position: 280, importance: #HIGH } ] } @EndUserText.label: 'Silme Durumu'\r\n  fldel;\r\n  /* 29 */\r\n  @UI: { lineItem:[ { position: 290, importance: #HIGH } ] } @EndUserText.label: 'Ağırlık / Hacim Değiştir'\r\n  chind;\r\n  /* 30 */\r\n  @UI: { lineItem:[ { position: 300, importance: #HIGH } ] } @EndUserText.label: 'Banka Anahtarı'\r\n  bankl;\r\n\r\n  /* 31 */ /* Unnamed: 37 -> atlandı */\r\n  /* 32 */ /* Unnamed: 38 -> atlandı */\r\n  /* 33 */ /* Ödeyen -> teknik alan adı lazım */\r\n  /* 34 */\r\n  @UI: { lineItem:[ { position: 340, importance: #HIGH } ] } @EndUserText.label: 'LC No'\r\n  lcnum;\r\n  /* 35 */\r\n  @UI: { lineItem:[ { position: 350, importance: #HIGH } ] } @EndUserText.label: 'Plaka'\r\n  plaka;\r\n  /* 36 */ /* Sınır Kapısı -> teknik alan adı lazım */\r\n  /* 37 */\r\n  @UI: { lineItem:[ { position: 370, importance: #HIGH } ] } @EndUserText.label: 'Uçuş No'\r\n  ucsno;\r\n  /* 38 */\r\n  @UI: { lineItem:[ { position: 380, importance: #HIGH } ] } @EndUserText.label: 'Uçuş Tarihi'\r\n  ucstr;\r\n  /* 39 */ /* Hazıredim Tarihi -> teknik alan adı lazım */\r\n  /* 40 */ /* Beyanname Teslim Tarihi -> teknik alan adı lazım */\r\n  /* 41 */ /* Beyanname Teslim Saati -> teknik alan adı lazım */\r\n  /* 42 */ /* Beyanname Teslim Yeri -> teknik alan adı lazım */\r\n\r\n  /* 43 */\r\n  @UI: { lineItem:[ { position: 430, importance: #HIGH } ] } @EndUserText.label: 'Gemi Adı'\r\n  gemia;\r\n  /* 44 */\r\n  @UI: { lineItem:[ { position: 440, importance: #HIGH } ] } @EndUserText.label: 'Sefer No'\r\n  sefno;\r\n  /* 45 */\r\n  @UI: { lineItem:[ { position: 450, importance: #HIGH } ] } @EndUserText.label: 'Konşimento No'\r\n  bolnumber;\r\n\r\n  /* 46 */\r\n  @UI: { lineItem:[ { position: 460, importance: #HIGH } ] } @EndUserText.label: 'Brüt Ağırlık'\r\n  brgew;\r\n  /* 47 */\r\n  @UI: { lineItem:[ { position: 470, importance: #HIGH } ] } @EndUserText.label: 'Net Ağırlık'\r\n  ntgew;\r\n  /* 48 */\r\n  @UI: { lineItem:[ { position: 480, importance: #HIGH } ] } @EndUserText.label: 'Ağırlık Birimi'\r\n  gewei;\r\n  /* 49 */\r\n  @UI: { lineItem:[ { position: 490, importance: #HIGH } ] } @EndUserText.label: 'Hacim'\r\n  volum;\r\n  /* 50 */\r\n  @UI: { lineItem:[ { position: 500, importance: #HIGH } ] } @EndUserText.label: 'Hacim Birimi'\r\n  voleh;\r\n\r\n  /* 51 */ /* Dosya Tarihi -> teknik alan adı lazım */\r\n  /* 52 */\r\n  @UI: { lineItem:[ { position: 520, importance: #HIGH } ] } @EndUserText.label: 'Değişiklik Saati'\r\n  aezet;\r\n  /* 53 */\r\n  @UI: { lineItem:[ { position: 530, importance: #HIGH } ] } @EndUserText.label: 'Değiştiren'\r\n  aenam;\r\n  /* 54 */ /* Teşvik No -> teknik alan adı lazım */\r\n  /* 55 */\r\n  @UI: { lineItem:[ { position: 550, importance: #HIGH } ] } @EndUserText.label: 'Yaratan'\r\n  ernam;\r\n}"
    }
   ]
  },
@@ -58,17 +58,10 @@
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"AEDAT",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"AENAM",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"AEDAT",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'Değiştiren'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -82,7 +75,14 @@
     "ELEMENT":"AENAM",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"530"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"AEZET",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Değişiklik Saati'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -96,35 +96,14 @@
     "ELEMENT":"AEZET",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"520"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"ASSIGNMENTREFERENCE",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"BANKL",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"ASSIGNMENTREFERENCE",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BANKBRANCH",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BANKBRANCH",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'Banka Anahtarı'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -138,63 +117,14 @@
     "ELEMENT":"BANKL",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"300"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BANKNAME",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"BFRRP",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BANKNAME",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BEYSA",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BEYSA",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BEYTS",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BEYTS",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BEYTY",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BEYTY",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'İlgili Kişi3'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -208,21 +138,14 @@
     "ELEMENT":"BFRRP",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"150"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BLDAT",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"BOLNUMBER",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BLDAT",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'Konşimento No'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -236,7 +159,14 @@
     "ELEMENT":"BOLNUMBER",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"450"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"BRGEW",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Brüt Ağırlık'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -250,7 +180,14 @@
     "ELEMENT":"BRGEW",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"460"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"BROFR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Komisyoncu'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -264,21 +201,14 @@
     "ELEMENT":"BROFR",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"160"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BUKRS",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"CEDDT",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"BUKRS",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'GÇB Tarihi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -292,7 +222,14 @@
     "ELEMENT":"CEDDT",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"210"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"CEDNO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'GÇB No'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -306,7 +243,14 @@
     "ELEMENT":"CEDNO",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"200"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"CHIND",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Ağırlık / Hacim Değiştir'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -320,7 +264,14 @@
     "ELEMENT":"CHIND",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"290"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"CLSED",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Kapalı Durumu'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -334,7 +285,14 @@
     "ELEMENT":"CLSED",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"270"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"COFRP",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'İlgili Kişi1'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -348,21 +306,14 @@
     "ELEMENT":"COFRP",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"90"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"CUSCD",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"CUSOF",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"CUSCD",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'Gümrük Temsilcisi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -376,7 +327,14 @@
     "ELEMENT":"CUSOF",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"100"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"DESCO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Varış Ülkesi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -390,7 +348,14 @@
     "ELEMENT":"DESCO",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"60"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"DESCR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Açıklama'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -404,7 +369,14 @@
     "ELEMENT":"DESCR",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"30"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"DESDT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Varış Tarihi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -418,7 +390,14 @@
     "ELEMENT":"DESDT",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"250"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"DESRG",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Varış Yeri'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -432,21 +411,14 @@
     "ELEMENT":"DESRG",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"70"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"ERDAT",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"ERNAM",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"ERDAT",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'Yaratan'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -460,21 +432,14 @@
     "ELEMENT":"ERNAM",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"550"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"ERZET",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"EXPTY",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"ERZET",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'İhracat dosyası türü'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -493,6 +458,13 @@
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
     "ELEMENT":"EXTCO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Çıkış Ülkesi'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"EXTCO",
     "NAME":"UI.LINEITEM$1$.IMPORTANCE",
     "ELEMENT_TYPE":"S",
     "VALUE":"#HIGH"
@@ -502,7 +474,14 @@
     "ELEMENT":"EXTCO",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"40"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"EXTDT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Çıkış Tarihi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -516,7 +495,14 @@
     "ELEMENT":"EXTDT",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"240"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"EXTFN",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'E-fatura numarası'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -530,7 +516,14 @@
     "ELEMENT":"EXTFN",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"180"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"EXTRG",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Çıkış Yeri'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -544,7 +537,14 @@
     "ELEMENT":"EXTRG",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"50"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"FILEN",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Dosya numarası'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -563,6 +563,13 @@
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
     "ELEMENT":"FLDEL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Silme Durumu'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"FLDEL",
     "NAME":"UI.LINEITEM$1$.IMPORTANCE",
     "ELEMENT_TYPE":"S",
     "VALUE":"#HIGH"
@@ -572,7 +579,14 @@
     "ELEMENT":"FLDEL",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"280"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"GEMIA",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Gemi Adı'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -586,7 +600,14 @@
     "ELEMENT":"GEMIA",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"430"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"GEWEI",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Ağırlık Birimi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -600,105 +621,14 @@
     "ELEMENT":"GEWEI",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"480"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"HATBL",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"LCNUM",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"HATBL",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"HZRTR",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"HZRTR",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"IBAN",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"IBAN",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"INC01",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"INC01",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"INC02",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"INC02",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"INCNO",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"INCNO",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"KUNRG",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"KUNRG",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'LC No'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -712,7 +642,14 @@
     "ELEMENT":"LCNUM",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"340"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"NOPCK",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Kap adedi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -726,7 +663,14 @@
     "ELEMENT":"NOPCK",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"260"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"NTGEW",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Net Ağırlık'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -740,7 +684,14 @@
     "ELEMENT":"NTGEW",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"470"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"PLAKA",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Plaka'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -754,35 +705,14 @@
     "ELEMENT":"PLAKA",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"350"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"PYMTY",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"REXDT",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"PYMTY",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"REFFN",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"REFFN",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'İntaç Tarihi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -796,21 +726,14 @@
     "ELEMENT":"REXDT",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"190"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"SBEYT",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"SEFNO",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"SBEYT",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'Sefer No'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -824,7 +747,14 @@
     "ELEMENT":"SEFNO",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"440"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"SFRRP",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'İlgili Kişi2'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -838,7 +768,14 @@
     "ELEMENT":"SFRRP",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"120"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"SHPDT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Nakliye Tarihi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -852,7 +789,14 @@
     "ELEMENT":"SHPDT",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"220"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"SHPFR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Nakliye Firması'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -866,7 +810,14 @@
     "ELEMENT":"SHPFR",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"130"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"SHPNO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Nakliye No'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -880,21 +831,14 @@
     "ELEMENT":"SHPNO",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"230"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"SNRKP",
-    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT":"TRNTY",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"#HIGH"
-   },
-   {
-    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
-    "ELEMENT":"SNRKP",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"'Sevkiyat Türü'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -908,7 +852,14 @@
     "ELEMENT":"TRNTY",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"80"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"UCSNO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Uçuş No'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -922,7 +873,14 @@
     "ELEMENT":"UCSNO",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"370"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"UCSTR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Uçuş Tarihi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -936,7 +894,14 @@
     "ELEMENT":"UCSTR",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"380"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"VOLEH",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Hacim Birimi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -950,7 +915,14 @@
     "ELEMENT":"VOLEH",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"500"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "ELEMENT":"VOLUM",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Hacim'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
@@ -964,7 +936,7 @@
     "ELEMENT":"VOLUM",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"10"
+    "VALUE":"490"
    }
   ]
  },
@@ -978,6 +950,300 @@
     "ELEMENT":"",
     "NAME":"UI.SELECTIONPRESENTATIONVARIANT$1$.TEXT",
     "TEXT":"Based on export file"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"AENAM",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Değiştiren"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"AEZET",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Değişiklik Saati"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"BANKL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Banka Anahtarı"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"BFRRP",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"İlgili Kişi3"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"BOLNUMBER",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Konşimento No"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"BRGEW",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Brüt Ağırlık"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"BROFR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Komisyoncu"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"CEDDT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"GÇB Tarihi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"CEDNO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"GÇB No"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"CHIND",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Ağırlık / Hacim Değiştir"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"CLSED",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Kapalı Durumu"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"COFRP",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"İlgili Kişi1"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"CUSOF",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Gümrük Temsilcisi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"DESCO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Varış Ülkesi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"DESCR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Açıklama"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"DESDT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Varış Tarihi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"DESRG",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Varış Yeri"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"ERNAM",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Yaratan"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"EXPTY",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"İhracat dosyası türü"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"EXTCO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Çıkış Ülkesi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"EXTDT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Çıkış Tarihi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"EXTFN",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"E-fatura numarası"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"EXTRG",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Çıkış Yeri"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"FILEN",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Dosya numarası"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"FLDEL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Silme Durumu"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"GEMIA",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Gemi Adı"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"GEWEI",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Ağırlık Birimi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"LCNUM",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"LC No"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"NOPCK",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Kap adedi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"NTGEW",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Net Ağırlık"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"PLAKA",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Plaka"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"REXDT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"İntaç Tarihi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"SEFNO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Sefer No"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"SFRRP",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"İlgili Kişi2"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"SHPDT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Nakliye Tarihi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"SHPFR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Nakliye Firması"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"SHPNO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Nakliye No"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"TRNTY",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Sevkiyat Türü"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"UCSNO",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Uçuş No"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"UCSTR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Uçuş Tarihi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"VOLEH",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Hacim Birimi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_RPR_HEAD",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"VOLUM",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Hacim"
    }
   ]
  },
@@ -990,8 +1256,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_EXP_HEAD_RPR",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"055B4DF6A2A01EEF928605C2C62E0108",
-    "RT_HASH":"1AE0885C061822339A3A9AAE2CC9F20399639CA6",
+    "DT_UUID":"FA163EBBCF7E1FE0A2C90D5881DC05D5",
+    "RT_HASH":"9D94576AA60254E770B0F4CF097CB00D36BDE8DE",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }

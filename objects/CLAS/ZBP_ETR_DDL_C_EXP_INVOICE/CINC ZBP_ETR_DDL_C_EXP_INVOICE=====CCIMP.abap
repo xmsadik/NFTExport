@@ -31,10 +31,6 @@ CLASS lhc_zetr_ddl_c_exp_invoice IMPLEMENTATION.
      ALL FIELDS WITH CORRESPONDING #( keys )
          RESULT DATA(invoices).
 
-
-
-    DATA lv_export_no TYPE zetr_e_filen.
-
     TYPES: BEGIN OF tys_invoices,
              billingdocument TYPE i_billingdocument-billingdocument,
            END OF tys_invoices.
@@ -43,6 +39,15 @@ CLASS lhc_zetr_ddl_c_exp_invoice IMPLEMENTATION.
 
     DATA(lt_split)    = VALUE string_table( ).
     DATA(invoice_key) = VALUE #( keys[ 1 ] OPTIONAL ).
+    DATA lv_export_no TYPE zetr_e_filen.
+
+
+*    " --- Hesaplamalar
+    DATA(lv_weight_unit) = VALUE string( ).
+    DATA(lv_volume_unit) = VALUE string( ).
+    DATA(lv_gross_total) = 0.
+    DATA(lv_net_total)   = 0.
+    DATA(lv_vol_total)   = 0.
 
     IF invoice_key-%param IS NOT INITIAL.
       DATA(lv_invoice_keys) = invoice_key-%param-content.
@@ -73,17 +78,41 @@ CLASS lhc_zetr_ddl_c_exp_invoice IMPLEMENTATION.
              itemnetweight,
              itemweightunit,
              itemvolume,
-             itemvolumeunit
+             itemvolumeunit,
+             salesdocument
         FROM i_billingdocumentitem
          FOR ALL ENTRIES IN @lt_invoices
        WHERE billingdocument = @lt_invoices-billingdocument
         INTO TABLE @DATA(lt_billingdocumentitem).
 
-      SELECT salesdocument,referencesddocument, shippingtype
-        FROM i_salesdocument
-     FOR ALL ENTRIES IN @lt_invoices
-       WHERE referencesddocument = @lt_invoices-billingdocument
-        INTO TABLE @DATA(lt_salesdocument).
+
+      IF lt_billingdocumentitem IS NOT INITIAL.
+        SELECT salesdocument, referencesddocument, shippingtype
+          FROM i_salesdocument
+       FOR ALL ENTRIES IN @lt_billingdocumentitem
+         WHERE salesdocument = @lt_billingdocumentitem-salesdocument
+          INTO TABLE @DATA(lt_salesdocument).
+
+        SELECT partnerbasic~customer
+          FROM i_billingdocitempartnerbasic AS partnerbasic
+        FOR ALL ENTRIES IN @lt_billingdocumentitem
+          WHERE billingdocument     = @lt_billingdocumentitem-billingdocument
+            AND billingdocumentitem = @lt_billingdocumentitem-billingdocumentitem
+            AND partnerfunction     = 'WE'
+           INTO TABLE @DATA(lt_billingdocumentpartner).
+
+
+        IF lt_billingdocumentpartner IS NOT INITIAL.
+          SELECT customer, country
+            FROM i_customer
+         FOR ALL ENTRIES IN @lt_billingdocumentpartner
+           WHERE customer  = @lt_billingdocumentpartner-customer
+            INTO TABLE @DATA(lt_customer_country).
+        ENDIF.
+
+
+
+      ENDIF.
 
     ELSE.
       APPEND VALUE #( %msg = new_message( id       = 'ZETR_COMMON'
@@ -97,27 +126,20 @@ CLASS lhc_zetr_ddl_c_exp_invoice IMPLEMENTATION.
                                                  iv_vbeln       = ''
                                                  it_vbeln       = lt_invoices ).
 
-
-
-
     LOOP AT lt_invoices ASSIGNING FIELD-SYMBOL(<fs_invoices>).
       APPEND VALUE #( %msg = new_message( id       = 'ZETR_COMMON'
                                           number   = '000'
                                           severity = if_abap_behv_message=>severity-success
-                                          v1       = |{ <fs_invoices>-billingdocument } eklenmiştir.| ) ) TO reported-zetr_ddl_c_exp_invoice.
+                                          v1       = |{ <fs_invoices>-billingdocument } eklenmiştir.| )
+                      %key = invoice_key-%param-document ) TO reported-zetr_ddl_c_exp_invoice.
+
+      APPEND VALUE #( %tky = invoice_key-%param-document ) TO result.
     ENDLOOP.
 
-*    " --- Hesaplamalar
-    DATA(lv_weight_unit) = VALUE string( ).
-    DATA(lv_volume_unit) = VALUE string( ).
-    DATA(lv_gross_total) = 0.
-    DATA(lv_net_total)   = 0.
-    DATA(lv_vol_total)   = 0.
+
 
 
     LOOP AT lt_billingdocumentitem ASSIGNING FIELD-SYMBOL(<ls_item>).
-
-
       IF lv_weight_unit IS INITIAL.
         lv_weight_unit = <ls_item>-itemweightunit.
       ENDIF.
@@ -166,14 +188,18 @@ CLASS lhc_zetr_ddl_c_exp_invoice IMPLEMENTATION.
       READ TABLE lt_billingdocument INTO DATA(ls_bill) INDEX 1.
     ENDIF.
 
+    IF lt_customer_country IS NOT INITIAL.
+      READ TABLE lt_customer_country INTO DATA(ls_customer_country) INDEX 1.
+    ENDIF.
+
     IF sy-subrc = 0.
 
       UPDATE zetr_t_r101
-         SET pymty      = @ls_bill-customerpaymentterms,      " Örn: doğru mapping'i sen belirleyeceksin
-             inc01      = @ls_bill-incotermsclassification,
-             inc02      = @ls_bill-incotermstransferlocation,
-*             kunrg   = @ls_bill-transactioncurrency,
+         SET pymty       = @ls_bill-customerpaymentterms,
+             inc01       = @ls_bill-incotermsclassification,
+             inc02       = @ls_bill-incotermstransferlocation,
              chind       = @ls_sales-shippingtype,
+             desco       = @ls_customer_country-country,
              brgew       = @lv_gross_total,
              brgew_gewei = @lv_weight_unit,
              ntgew       = @lv_net_total,
@@ -182,7 +208,6 @@ CLASS lhc_zetr_ddl_c_exp_invoice IMPLEMENTATION.
              gewei       = @lv_volume_unit
        WHERE filen       = @lv_export_no.
     ENDIF.
-
 
   ENDMETHOD.
 

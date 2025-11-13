@@ -3,6 +3,7 @@ strict;
 
 define behavior for ZETR_DDL_I_EXP_HEAD
 lock master
+early numbering
 with unmanaged save
 authorization master ( instance )
 {
@@ -10,12 +11,7 @@ authorization master ( instance )
   update;
   delete;
   field ( readonly ) Filen, Pymty;
-  field ( mandatory : create ) Kunrg, Bldat, Bukrs;
-
-
-
-//  determination FillReadOnlyFields on modify { field Filen; create; update; }
-//  side effects { field Bukrs affects field Filen; }
+  field ( mandatory : create ) Kunrg, Bldat, Bukrs, Expty;
 
   action releaseToAccounting;
 
@@ -23,17 +19,21 @@ authorization master ( instance )
   association _InvoiceItem { create; }
   association _Texts { create; }
   association _BillingDocument { create; }
+
+
 }
 
 
 define behavior for ZETR_DDL_I_EXPORT_INVH
-persistent table zetr_t_r102
-
+//persistent table zetr_t_r102
+late numbering
+with unmanaged save
 lock dependent by _ExportFile
 authorization dependent by _ExportFile
 {
   action getpdf parameter zetr_ddl_i_button result [1] ZETR_DDL_I_CONTENT;
   action navigatedNewPage result [1] $self;
+  action deletedinvoice result [1] $self;
 
   mapping for zetr_t_r102
     {
@@ -45,10 +45,14 @@ authorization dependent by _ExportFile
 
   field ( readonly ) FileExportNumber, BillingDocument;
   association _ExportFile;
+
+
 }
 
 define behavior for ZETR_DDL_I_EXPORT_INVI
-persistent table zetr_t_r103
+//persistent table zetr_t_r103
+late numbering
+with unmanaged save
 lock dependent by _ExportFile
 authorization dependent by _ExportFile
 {
@@ -69,8 +73,8 @@ authorization dependent by _ExportFile
 }
 
 define behavior for ZETR_DDL_I_EXP_TXT
-persistent table zetr_t_exp123
-
+//persistent table zetr_t_exp123
+with unmanaged save
 lock dependent by _ExportFile
 authorization dependent by _ExportFile
 {
@@ -91,7 +95,7 @@ authorization dependent by _ExportFile
 }
 
 define behavior for ZETR_DDL_I_BIL_DOC
-
+late numbering
 with unmanaged save
 lock dependent by _ExportFile
 authorization dependent by _ExportFile

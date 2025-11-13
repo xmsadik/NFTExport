@@ -7,7 +7,6 @@ CLASS lhc_zetr_ddl_i_bil_doc DEFINITION INHERITING FROM cl_abap_behavior_handler
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
       IMPORTING keys REQUEST requested_authorizations FOR zetr_ddl_i_bil_doc RESULT result.
 
-*         METHODS adjust_numbers REDEFINITION.
 
 ENDCLASS.
 
@@ -34,6 +33,8 @@ CLASS lhc_zetr_ddl_i_export_invh DEFINITION INHERITING FROM cl_abap_behavior_han
 
     METHODS getpdf FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_export_invh~getpdf RESULT result.
+*    METHODS deletedinvoice FOR MODIFY
+*      IMPORTING keys FOR ACTION zetr_ddl_i_export_invh~deletedinvoice RESULT result.
 
 
 ENDCLASS.
@@ -72,6 +73,24 @@ CLASS lhc_zetr_ddl_i_export_invh IMPLEMENTATION.
 
   ENDMETHOD.
 
+*  METHOD deletedinvoice.
+*
+*    LOOP AT keys INTO DATA(ls_key).
+*
+*      DELETE FROM zetr_t_r102
+*            WHERE filen = @ls_key-fileexportnumber
+*              AND vbeln = @ls_key-billingdocument.
+*
+*      DELETE FROM zetr_t_r103
+*            WHERE filen = @ls_key-fileexportnumber
+*              AND vbeln = @ls_key-billingdocument.
+*
+*
+*      result = VALUE #( ( billingdocument  = ls_key-billingdocument
+*                          fileexportnumber = ls_key-fileexportnumber ) ) .
+*    ENDLOOP.
+*  ENDMETHOD.
+
 ENDCLASS.
 
 CLASS lsc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_saver.
@@ -79,53 +98,19 @@ CLASS lsc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_saver.
   PROTECTED SECTION.
     METHODS save_modified  REDEFINITION .
 
+    METHODS adjust_numbers REDEFINITION.
+
+
+
+
+
 
 ENDCLASS.
 
 CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
-*  METHOD fillreadonlyfields.
-*
-*    READ ENTITIES OF zetr_ddl_i_bil_doc IN LOCAL MODE
-*  ENTITY zetr_ddl_i_bil_doc
-*  FIELDS (  filen bukrs )
-*  WITH CORRESPONDING #( keys )
-*  RESULT DATA(lt_data).
-*
-*    SELECT
-*         i_paymenttermsconditionstext~paymentterms,
-*         i_paymenttermsconditionstext~paymenttermsvaliditymonthday,
-*         i_paymenttermsconditionstext~language,
-*         i_paymenttermsconditionstext~paymenttermsconditiondesc
-*      FROM i_paymenttermsconditionstext
-*      WHERE language = 'T'
-*        AND paymentterms LIKE 'N0%'
-*      INTO TABLE @DATA(lt_payment).
-*
-*    READ TABLE lt_payment TRANSPORTING NO FIELDS WHERE paymentterms = lt_data[ 1 ]-sapodemekosulu AND  paymenttermsconditiondesc = lt_data[ 1 ]-odemekosuluadi.
-*    IF  sy-subrc = 0.
-*      DELETE lt_data WHERE odemekosuluadi IS NOT INITIAL.
-*    ENDIF.
-*
-*    CHECK lt_data IS NOT INITIAL.
-*
-*    LOOP AT keys INTO DATA(ls_key).
-*      LOOP AT lt_data INTO DATA(ls_data) WHERE marwizvadekod = ls_key-marwizvadekod.
-*
-*        READ TABLE lt_payment INTO DATA(ls_payment) WITH KEY paymentterms = ls_data-sapodemekosulu.
-*        IF sy-subrc EQ 0.
-*
-*          MODIFY ENTITIES OF zi_marvizsatcdemekoulu_s IN LOCAL MODE
-*          ENTITY marvizsatcdemekoulu
-*          UPDATE FIELDS (  odemekosuluadi )
-*          WITH VALUE #( ( %tky = ls_key-%tky
-*                          odemekosuluadi     = ls_payment-paymenttermsconditiondesc   %control-odemekosuluadi     = if_abap_behv=>mk-on ) ).
-*        ENDIF.
-*
-*      ENDLOOP.
-*    ENDLOOP.
-*  ENDMETHOD.
-
+  METHOD adjust_numbers.
+  ENDMETHOD.
 
   METHOD save_modified.
 
@@ -143,26 +128,26 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
                    <fs_export_value> TYPE any.
 
     IF create-zetr_ddl_i_exp_head IS NOT INITIAL.
-      TRY.
-          cl_numberrange_runtime=>number_get( EXPORTING nr_range_nr       = '10'
-                                                        object            = 'ZETR_EXP'
-                                              IMPORTING number            = DATA(number_range_key)
-                                                        returncode        = DATA(number_range_return_code)
-                                                        returned_quantity = DATA(number_range_returned_quantity) ).
+*      TRY.
+**          cl_numberrange_runtime=>number_get( EXPORTING nr_range_nr       = '10'
+**                                                        object            = 'ZETR_EXP'
+**                                              IMPORTING number            = DATA(number_range_key)
+**                                                        returncode        = DATA(number_range_return_code)
+**                                                        returned_quantity = DATA(number_range_returned_quantity) ).
+*
+*
+*
+*        CATCH cx_nr_object_not_found cx_number_ranges INTO DATA(lo_number).
+*          APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-error
+*                                                        text     = lo_number->get_text( ) ) ) TO reported-zetr_ddl_i_exp_head.
+*      ENDTRY.
 
-
-
-        CATCH cx_nr_object_not_found cx_number_ranges INTO DATA(lo_number).
-          APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-error
-                                                        text     = lo_number->get_text( ) ) ) TO reported-zetr_ddl_i_exp_head.
-      ENDTRY.
-
-      lv_filen = |{ number_range_key ALPHA = OUT }|.
+*      lv_filen = |{ number_range_key ALPHA = OUT }|.
 
       LOOP AT create-zetr_ddl_i_exp_head INTO DATA(ls_create).
         APPEND INITIAL LINE TO lt_main ASSIGNING FIELD-SYMBOL(<ls_main>).
         MOVE-CORRESPONDING ls_create TO <ls_main>.
-        <ls_main>-filen = lv_filen.
+        lv_filen = ls_create-filen.
       ENDLOOP.
 
       SELECT * FROM zetr_ddl_c_txt_typ WHERE language = @sy-langu INTO TABLE @DATA(lt_texts).
@@ -181,16 +166,9 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
         INSERT zetr_t_exp123 FROM TABLE @lt_exporttext.
       ENDIF.
 
-*      APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
-*                                                    text     = |{ lv_filen } yaratılmıştır.| )
-*                                                    filen = lv_filen ) TO reported-zetr_ddl_i_exp_head.
-
       APPEND VALUE #( %key = VALUE #( filen = lv_filen )
                       %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
                                                     text     = |{ lv_filen } yaratılmıştır.| ) ) TO reported-zetr_ddl_i_exp_head.
-
-
-
     ENDIF.
 
     IF update-zetr_ddl_i_exp_head IS NOT INITIAL.
@@ -219,12 +197,27 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
       APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
                                                     text     = | { ls_r101-filen } numaralı dosya güncellenmiştir.| )
-
-                                                    filen = lv_filen
-                                                     ) TO reported-zetr_ddl_i_exp_head.
+                                                    filen    = lv_filen  ) TO reported-zetr_ddl_i_exp_head.
     ENDIF.
 
-    IF  delete-zetr_ddl_i_exp_head IS NOT INITIAL.
+
+    IF update-zetr_ddl_i_exp_txt IS NOT INITIAL.
+      CLEAR lt_exporttext.
+
+      LOOP AT update-zetr_ddl_i_exp_txt ASSIGNING FIELD-SYMBOL(<fs_txt>).
+        APPEND INITIAL LINE TO lt_exporttext ASSIGNING FIELD-SYMBOL(<fs_export_new>).
+        <fs_export_new>-text      = <fs_txt>-text.
+        <fs_export_new>-filen     = <fs_txt>-filen.
+        <fs_export_new>-objecttype = <fs_txt>-objecttype.
+      ENDLOOP.
+
+
+      MODIFY zetr_t_exp123 FROM TABLE @lt_exporttext.
+
+    ENDIF.
+
+
+    IF delete-zetr_ddl_i_exp_head IS NOT INITIAL.
       DATA(ls_exp_header_deleted) = VALUE #( delete-zetr_ddl_i_exp_head[ 1 ] OPTIONAL ).
 
 
@@ -241,6 +234,51 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
     ENDIF.
 
+    IF delete-zetr_ddl_i_export_invh IS NOT INITIAL.
+      DATA(ls_exp_invoice_deleted) = VALUE #( delete-zetr_ddl_i_export_invh[ 1 ] OPTIONAL ).
+
+      DELETE FROM zetr_t_r102
+            WHERE filen = @ls_exp_invoice_deleted-fileexportnumber
+              AND vbeln = @ls_exp_invoice_deleted-billingdocument.
+
+      DELETE FROM zetr_t_r103
+            WHERE filen = @ls_exp_invoice_deleted-fileexportnumber
+              AND vbeln = @ls_exp_invoice_deleted-billingdocument.
+
+
+
+      APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
+                                                    text     = | { ls_exp_invoice_deleted-billingdocument } numaralı belge silinmiştir.| )
+                                                    filen    = lv_filen ) TO reported-zetr_ddl_i_exp_head.
+
+    ENDIF.
+
+    IF delete-zetr_ddl_i_export_invi IS NOT INITIAL.
+      DATA(ls_exp_invoice_item_deleted) = VALUE #( delete-zetr_ddl_i_export_invi[ 1 ] OPTIONAL ).
+
+      SELECT SINGLE *
+               FROM zetr_t_r103
+              WHERE filen = @ls_exp_invoice_item_deleted-filen
+                AND vbeln = @ls_exp_invoice_item_deleted-vbeln
+                AND posnr <> @ls_exp_invoice_item_deleted-billingdocumentitem
+               INTO @DATA(ls_other_item).
+
+      IF ls_other_item IS INITIAL.
+        DELETE FROM zetr_t_r102
+              WHERE filen = @ls_exp_invoice_item_deleted-filen
+                AND vbeln = @ls_exp_invoice_item_deleted-vbeln.
+
+      ENDIF.
+      DELETE FROM zetr_t_r103
+            WHERE filen = @ls_exp_invoice_item_deleted-filen
+              AND vbeln = @ls_exp_invoice_item_deleted-vbeln
+              AND posnr = @ls_exp_invoice_item_deleted-billingdocumentitem.
+
+      APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-success
+                                                      text     = | { ls_exp_invoice_item_deleted-vbeln } / { ls_exp_invoice_item_deleted-billingdocumentitem } numaralı belge silinmiştir.| )
+                                                      filen    = lv_filen ) TO reported-zetr_ddl_i_exp_head.
+    ENDIF.
+
   ENDMETHOD.
 
 
@@ -254,11 +292,41 @@ CLASS lhc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_handle
     METHODS releasetoaccounting FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_exp_head~releasetoaccounting.
 
+    METHODS earlynumbering_create FOR NUMBERING
+      IMPORTING entities FOR CREATE zetr_ddl_i_exp_head.
+
+
 
 ENDCLASS.
 
 CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
+  METHOD earlynumbering_create.
+    DATA(ls_mapped) = mapped.
+    DATA lv_filen   TYPE zetr_e_filen.
+
+    TRY.
+        cl_numberrange_runtime=>number_get( EXPORTING nr_range_nr       = '10'
+                                                      object            = 'ZETR_EXP'
+                                            IMPORTING number            = DATA(number_range_key)
+                                                     returncode         = DATA(number_range_return_code)
+                                                      returned_quantity = DATA(number_range_returned_quantity) ).
+
+        lv_filen = |{ number_range_key ALPHA = OUT }|.
+
+      CATCH cx_nr_object_not_found cx_number_ranges INTO DATA(lo_number).
+        APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-error
+                                                      text     = lo_number->get_text( ) ) ) TO reported-zetr_ddl_i_exp_head.
+    ENDTRY.
+
+
+*    mapped-zetr_ddl_i_exp_head     = VALUE #(  ( filen = lv_filen ) ).
+
+
+    mapped-zetr_ddl_i_exp_head = VALUE #( ( %cid = entities[ 1 ]-%cid
+                                           filen = lv_filen ) ).
+
+  ENDMETHOD.
   METHOD get_instance_authorizations.
   ENDMETHOD.
 

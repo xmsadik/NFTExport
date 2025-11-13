@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_INVI",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-08-21",
-    "CHANGED_AT":"12:01:48",
-    "UUID":"FA163EBBCF7E1FE09FD0D3A7EC38259E",
+    "CHANGED_ON":"2025-09-03",
+    "CHANGED_AT":"06:42:32",
+    "UUID":"FA163EBBCF7E1FE0A292254C3742C5C9",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_INVI",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Fatura kalem',\r\n                typeName: 'Fatura kalem',\r\n                title:{ type: #STANDARD, label: 'Fatura kalem', value: 'Vbeln' }\r\n           }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_INVI with\r\n{\r\n  @UI.hidden: false\r\n  @UI: { lineItem:       [ { type: #FOR_ACTION, dataAction: 'navigatedNewPage', label: 'Invoice Added' ,invocationGrouping: #ISOLATED }  ], identification: [{ position: 10 }] }\r\n  filen;\r\n  @UI: { lineItem:       [ { position: 20 } ], identification: [{ position: 20 }] }\r\n  vbeln;\r\n  @UI: { lineItem:       [ { position: 30 } ], identification: [{ position: 30 }] }\r\n  BillingDocumentItem;\r\n  @UI: { lineItem:       [ { position: 40 } ], identification: [{ position: 40 }] }\r\n  HigherLevelItem;\r\n  @UI: { lineItem:       [ { position: 50 } ], identification: [{ position: 50 }] }\r\n  HigherLvlItmOfBatSpltItm;\r\n  @UI: { lineItem:       [ { position: 60 } ], identification: [{ position: 60 }] }\r\n  Product;\r\n  @UI: { lineItem:       [ { position: 70 } ], identification: [{ position: 70 }] }\r\n  BillingDocumentItemText;\r\n  @UI: { lineItem:       [ { position: 80 } ], identification: [{ position: 80 }] }\r\n  BillingQuantity;\r\n  @UI: { lineItem:       [ { position: 90 } ], identification: [{ position: 90 }] }\r\n  BillingQuantityUnit;\r\n  @UI: { lineItem:       [ { position: 100 } ], identification: [{ position: 100 }] }\r\n  TransactionCurrency;\r\n  @UI: { lineItem:       [ { position: 110 } ], identification: [{ position: 110 }] }\r\n  NetAmount;\r\n  @UI: { lineItem:       [ { position: 120 } ], identification: [{ position: 120 }] }\r\n  TaxAmount;\r\n  @UI: { lineItem:       [ { position: 130 } ], identification: [{ position: 130 }] }\r\n  Batch;\r\n  @UI: { lineItem:       [ { position: 140 } ], identification: [{ position: 140 }] }\r\n  Plant;\r\n  @UI: { lineItem:       [ { position: 150 } ], identification: [{ position: 150 }] }\r\n  PlantName;\r\n  @UI: { lineItem:       [ { position: 160 } ], identification: [{ position: 160 }] }\r\n  StorageLocation;\r\n  @UI: { lineItem:       [ { position: 170 } ], identification: [{ position: 170 }] }\r\n  StorageLocationName;\r\n  @UI: { lineItem:       [ { position: 180 } ], identification: [{ position: 180 }] }\r\n  ShippingPoint;\r\n  @UI: { lineItem:       [ { position: 190 } ], identification: [{ position: 190 }] }\r\n  ShippingPointName;\r\n  @UI: { lineItem:       [ { position: 200 } ], identification: [{ position: 200 }] }\r\n  SalesDocument;\r\n  @UI: { lineItem:       [ { position: 210 } ], identification: [{ position: 210 }] }\r\n  SalesDocumentItem;\r\n  @UI: { lineItem:       [ { position: 220 } ], identification: [{ position: 220 }] }\r\n  ReferenceSDDocument;\r\n  @UI: { lineItem:       [ { position: 230 } ], identification: [{ position: 230 }] }\r\n  ReferenceSDDocumentItem;\r\n  @UI: { lineItem:       [ { position: 240 } ], identification: [{ position: 240 }] }\r\n  kunwe;\r\n  @UI: { lineItem:       [ { position: 250 } ], identification: [{ position: 250 }] }\r\n  namwe;\r\n\r\n  @UI: { lineItem:       [ { position: 260 } ], identification: [{ position: 260 }] }\r\n  Subtotal1Amount;\r\n  @UI: { lineItem:       [ { position: 270 } ], identification: [{ position: 270 }] }\r\n  Subtotal2Amount;\r\n  @UI: { lineItem:       [ { position: 280 } ], identification: [{ position: 280 }] }\r\n  Subtotal3Amount;\r\n  @UI: { lineItem:       [ { position: 290 } ], identification: [{ position: 290 }] }\r\n  Subtotal4Amount;\r\n  @UI: { lineItem:       [ { position: 300 } ], identification: [{ position: 300 }] }\r\n  Subtotal5Amount;\r\n  @UI: { lineItem:       [ { position: 310 } ], identification: [{ position: 310 }] }\r\n  Subtotal6Amount;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Fatura kalem',\r\n                typeName: 'Fatura kalem',\r\n                title:{ type: #STANDARD, label: 'Fatura kalem', value: 'Vbeln' }\r\n           }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_INVI with\r\n{\r\n  @UI.hidden: false\r\n  @UI: { lineItem:       [ { type: #FOR_ACTION, dataAction: 'navigatedNewPage', label: 'Invoice Added' ,invocationGrouping: #ISOLATED }  ], identification: [{ position: 10 }] }\r\n  filen;\r\n  @UI: { lineItem:       [ { position: 20 } ], identification: [{ position: 20 }] }\r\n  vbeln;\r\n  @UI: { lineItem:       [ { position: 30 } ], identification: [{ position: 30 }] }\r\n  BillingDocumentItem;\r\n  @UI: { lineItem:       [ { position: 40 } ], identification: [{ position: 40 }] }\r\n  HigherLevelItem;\r\n  @UI: { lineItem:       [ { position: 50 } ], identification: [{ position: 50 }] }\r\n  HigherLvlItmOfBatSpltItm;\r\n  @UI: { lineItem:       [ { position: 60 } ], identification: [{ position: 60 }] }\r\n  Product;\r\n  @UI: { lineItem:       [ { position: 70 } ], identification: [{ position: 70 }] }\r\n  BillingDocumentItemText;\r\n  @UI: { lineItem:       [ { position: 80 } ], identification: [{ position: 80 }] }\r\n  BillingQuantity;\r\n  @UI: { lineItem:       [ { position: 90 } ], identification: [{ position: 90 }] }\r\n  BillingQuantityUnit;\r\n  @UI: { lineItem:       [ { position: 100 } ], identification: [{ position: 100 }] }\r\n  TransactionCurrency;\r\n  @UI: { lineItem:       [ { position: 110 } ], identification: [{ position: 110 }] }\r\n  NetAmount;\r\n  @UI: { lineItem:       [ { position: 120 } ], identification: [{ position: 120 }] }\r\n  TaxAmount;\r\n  @UI: { lineItem:       [ { position: 130 } ], identification: [{ position: 130 }] }\r\n  Batch;\r\n  @UI: { lineItem:       [ { position: 140 } ], identification: [{ position: 140 }] }\r\n  Plant;\r\n  @UI: { lineItem:       [ { position: 150 } ], identification: [{ position: 150 }] }\r\n  PlantName;\r\n  @UI: { lineItem:       [ { position: 160 } ], identification: [{ position: 160 }] }\r\n  StorageLocation;\r\n  @UI: { lineItem:       [ { position: 170 } ], identification: [{ position: 170 }] }\r\n  StorageLocationName;\r\n  @UI: { lineItem:       [ { position: 180 } ], identification: [{ position: 180 }] }\r\n  ShippingPoint;\r\n  @UI: { lineItem:       [ { position: 190 } ], identification: [{ position: 190 }] }\r\n  ShippingPointName;\r\n  @UI: { lineItem:       [ { position: 200 } ], identification: [{ position: 200 }] }\r\n  SalesDocument;\r\n  @UI: { lineItem:       [ { position: 210 } ], identification: [{ position: 210 }] }\r\n  SalesDocumentItem;\r\n  @UI: { lineItem:       [ { position: 220 } ], identification: [{ position: 220 }] }\r\n  ReferenceSDDocument;\r\n  @UI: { lineItem:       [ { position: 230 } ], identification: [{ position: 230 }] }\r\n  ReferenceSDDocumentItem;\r\n  @UI: { lineItem:       [ { position: 240 } ], identification: [{ position: 240 }] }\r\n  @EndUserText.label: 'Malı teslim alan'\r\n  kunwe;\r\n  @UI: { lineItem:       [ { position: 250 } ], identification: [{ position: 250 }] }\r\n  @EndUserText.label: 'Malı teslim alan adı'\r\n  namwe;\r\n\r\n  @UI: { lineItem:       [ { position: 260 } ], identification: [{ position: 260 }] }\r\n  Subtotal1Amount;\r\n  @UI: { lineItem:       [ { position: 270 } ], identification: [{ position: 270 }] }\r\n  Subtotal2Amount;\r\n  @UI: { lineItem:       [ { position: 280 } ], identification: [{ position: 280 }] }\r\n  Subtotal3Amount;\r\n  @UI: { lineItem:       [ { position: 290 } ], identification: [{ position: 290 }] }\r\n  Subtotal4Amount;\r\n  @UI: { lineItem:       [ { position: 300 } ], identification: [{ position: 300 }] }\r\n  Subtotal5Amount;\r\n  @UI: { lineItem:       [ { position: 310 } ], identification: [{ position: 310 }] }\r\n  Subtotal6Amount;\r\n\r\n}"
    }
   ]
  },
@@ -220,6 +220,13 @@
    {
     "DDLXNAME":"ZETR_E_EXP_INVI",
     "ELEMENT":"KUNWE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Malı teslim alan'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVI",
+    "ELEMENT":"KUNWE",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"240"
@@ -230,6 +237,13 @@
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"240"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVI",
+    "ELEMENT":"NAMWE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Malı teslim alan adı'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_INVI",
@@ -572,6 +586,20 @@
     "ELEMENT":"FILEN",
     "NAME":"UI.LINEITEM$1$.LABEL",
     "TEXT":"Invoice Added"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVI",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"KUNWE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Malı teslim alan"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVI",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"NAMWE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Malı teslim alan adı"
    }
   ]
  },
@@ -584,8 +612,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_EXP_INVI",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"FA163EBBCF7E1FE09FD0D3A7EC38259E",
-    "RT_HASH":"A2C51014DCED43A744C07EF5ED57A59B97D809E7",
+    "DT_UUID":"FA163EBBCF7E1FE0A292254C3742C5C9",
+    "RT_HASH":"53820FFA4C915FD83B8A42D83289360FF2B8A8C6",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
