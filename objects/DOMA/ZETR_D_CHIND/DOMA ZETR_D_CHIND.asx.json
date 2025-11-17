@@ -8,13 +8,13 @@
     "AS4LOCAL":"L",
     "AS4VERS":0,
     "DATATYPE":"CHAR",
-    "LENG":1,
+    "LENG":2,
     "OUTPUTLEN":1,
     "DECIMALS":0,
     "LOWERCASE":"",
     "SIGNFLAG":"",
     "LANGFLAG":"",
-    "VALEXI":"X",
+    "VALEXI":"",
     "ENTITYTAB":"",
     "CONVEXIT":"",
     "MASK":"",
@@ -47,58 +47,6 @@
     "AS4LOCAL":"N",
     "AS4VERS":0,
     "DDTEXT":"Change weight/volume"
-   }
-  ]
- },
- {
-  "table":"DD07L",
-  "data":
-  [
-   {
-    "DOMNAME":"ZETR_D_CHIND",
-    "AS4LOCAL":"N",
-    "VALPOS":1,
-    "AS4VERS":0,
-    "DOMVALUE_L":"X",
-    "DOMVALUE_H":"",
-    "APPVAL":""
-   },
-   {
-    "DOMNAME":"ZETR_D_CHIND",
-    "AS4LOCAL":"N",
-    "VALPOS":2,
-    "AS4VERS":0,
-    "DOMVALUE_L":"",
-    "DOMVALUE_H":"",
-    "APPVAL":""
-   }
-  ]
- },
- {
-  "table":"DD07T",
-  "data":
-  [
-   {
-    "DOMNAME":"ZETR_D_CHIND",
-    "DDLANGUAGE":"E",
-    "AS4LOCAL":"N",
-    "VALPOS":1,
-    "AS4VERS":0,
-    "DDTEXT":"Yes",
-    "DOMVAL_LD":"",
-    "DOMVAL_HD":"",
-    "DOMVALUE_L":"X"
-   },
-   {
-    "DOMNAME":"ZETR_D_CHIND",
-    "DDLANGUAGE":"E",
-    "AS4LOCAL":"N",
-    "VALPOS":2,
-    "AS4VERS":0,
-    "DDTEXT":"No",
-    "DOMVAL_LD":"",
-    "DOMVAL_HD":"",
-    "DOMVALUE_L":""
    }
   ]
  },
