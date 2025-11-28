@@ -128,29 +128,25 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
                    <fs_export_value> TYPE any.
 
     IF create-zetr_ddl_i_exp_head IS NOT INITIAL.
-*      TRY.
-**          cl_numberrange_runtime=>number_get( EXPORTING nr_range_nr       = '10'
-**                                                        object            = 'ZETR_EXP'
-**                                              IMPORTING number            = DATA(number_range_key)
-**                                                        returncode        = DATA(number_range_return_code)
-**                                                        returned_quantity = DATA(number_range_returned_quantity) ).
-*
-*
-*
-*        CATCH cx_nr_object_not_found cx_number_ranges INTO DATA(lo_number).
-*          APPEND VALUE #( %msg = new_message_with_text( severity = if_abap_behv_message=>severity-error
-*                                                        text     = lo_number->get_text( ) ) ) TO reported-zetr_ddl_i_exp_head.
-*      ENDTRY.
 
-*      lv_filen = |{ number_range_key ALPHA = OUT }|.
+      SELECT * FROM zetr_ddl_c_txt_typ WHERE language = @sy-langu INTO TABLE @DATA(lt_texts).
+      SELECT * FROM zetr_t_exp122                                 INTO TABLE @DATA(lt_bank_detail).
 
       LOOP AT create-zetr_ddl_i_exp_head INTO DATA(ls_create).
         APPEND INITIAL LINE TO lt_main ASSIGNING FIELD-SYMBOL(<ls_main>).
         MOVE-CORRESPONDING ls_create TO <ls_main>.
         lv_filen = ls_create-filen.
+
+        <ls_main>-erdat = cl_abap_context_info=>get_system_date( ).
+        <ls_main>-erzet = cl_abap_context_info=>get_system_time( ).
+        TRY.
+            <ls_main>-ernam = cl_abap_context_info=>get_user_business_partner_id( ).
+          CATCH cx_abap_context_info_error.
+            "handle exception
+        ENDTRY.
       ENDLOOP.
 
-      SELECT * FROM zetr_ddl_c_txt_typ WHERE language = @sy-langu INTO TABLE @DATA(lt_texts).
+
 
       LOOP AT lt_texts ASSIGNING FIELD-SYMBOL(<fs_text>).
         APPEND INITIAL LINE TO lt_exporttext ASSIGNING FIELD-SYMBOL(<fs_exporttext>).
@@ -187,11 +183,21 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
             ASSIGN COMPONENT <fs_components>-name OF STRUCTURE ls_r101   TO <fs_export_value>.
             <fs_export_value> = <fs_update_data>.
           ENDIF.
+
         ENDLOOP.
 
       ENDLOOP.
 
       IF ls_r101 IS NOT INITIAL.
+
+        ls_r101-aedat = cl_abap_context_info=>get_system_date( ).
+        ls_r101-aezet = cl_abap_context_info=>get_system_time( ).
+        TRY.
+            ls_r101-aenam = cl_abap_context_info=>get_user_business_partner_id( ).
+          CATCH cx_abap_context_info_error.
+            "handle exception
+        ENDTRY.
+
         MODIFY zetr_t_r101 FROM @ls_r101.
       ENDIF.
 

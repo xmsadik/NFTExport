@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_INVH",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-09-02",
-    "CHANGED_AT":"10:17:16",
-    "UUID":"FA163EBBCF7E1FE0A1FCC0017ADEA5C8",
+    "CHANGED_ON":"2025-11-28",
+    "CHANGED_AT":"14:49:55",
+    "UUID":"FA163EBBCF7E1FE0B38D300B95E1E6EF",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_INVH",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Fatura başlık',\r\n                typeName: 'Fatura başlık',\r\n                title:{ type: #STANDARD, label: 'Fatura başlık', value: 'BillingDocument' }\r\n           }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_INVH with\r\n{\r\n  @UI.facet: [ { id:              'Invoice',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Fatura başlık',\r\n                 position:        10 }]\r\n\r\n  @UI.hidden: false\r\n  //  @UI: {lineItem:       [ { type: #FOR_ACTION, dataAction: 'deletedinvoice', label: 'Delete Invoice' ,invocationGrouping: #ISOLATED } ,\r\n  //                            { position: 10 } ],selectionField: [ { position: 30 } ] }\r\n  FileExportNumber;\r\n  @UI: { lineItem:       [ { position: 10 } ], identification: [{ position: 10 }] }\r\n  BillingDocument;\r\n  @UI: { lineItem:       [ { position: 20 } ], identification: [{ position: 20 }] }\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 30 } ], identification: [{ position: 30 }] }\r\n  BillingDocumentType;\r\n  @UI: { lineItem:       [ { position: 40 } ] , identification: [{ position: 40 }] }\r\n  SalesOrganization;\r\n  @UI: { lineItem:       [ { position: 50 } ] , identification: [{ position: 50 }] }\r\n  DistributionChannel;\r\n  @UI: { lineItem:       [ { position: 60 } ] , identification: [{ position: 60 }] }\r\n  Division;\r\n  @UI: { lineItem:       [ { position: 70 } ] , identification: [{ position: 70 }] }\r\n  PayerParty;\r\n  @UI: { lineItem:       [ { position: 80 } ] ,  identification: [{ position: 80 }] }\r\n  SoldToParty;\r\n  @UI: { lineItem:       [ { position: 90 } ] , identification: [{ position: 90 }] }\r\n  TotalNetAmount;\r\n  @UI: { lineItem:       [ { position: 100 } ] , identification: [{ position: 100 }] }\r\n  TotalTaxAmount;\r\n  @UI: { lineItem:       [ { position: 110 } ] , identification: [{ position: 110 }] }\r\n  TransactionCurrency;\r\n  @UI: { lineItem:       [ { position: 120 } ] , identification: [{ position: 120 }] }\r\n  BillingDocumentDate;\r\n  @UI: { lineItem:       [ { position: 130 } ] , identification: [{ position: 130 }] }\r\n  DocumentReferenceID;\r\n  @UI: { lineItem:       [ { position: 140 } ] , identification: [{ position: 140 }] }\r\n  CustomerPaymentTerms;\r\n  @UI: { lineItem:       [ { position: 150 } ] , identification: [{ position: 150 }] }\r\n  IncotermsClassification;\r\n  @UI: { lineItem:       [ { position: 160 } ] , identification: [{ position: 160 }] }\r\n  IncotermsTransferLocation;\r\n  @UI: { lineItem:       [ { position: 170 } ] , identification: [{ position: 170 }] }\r\n  IncotermsVersion;\r\n  @UI: { lineItem:       [ { position: 180 } ] , identification: [{ position: 180 }] }\r\n  CreationDate;\r\n  @UI: { lineItem:       [ { position: 190 } ] , identification: [{ position: 190 }] }\r\n  CreationTime;\r\n  @UI: { lineItem:       [ { position: 200 } ] , identification: [{ position: 200 }] }\r\n  CreatedByUser;\r\n  @UI: { lineItem:       [ { position: 210 } ] , identification: [{ position: 210 }] }\r\n  AccountingTransferStatus;\r\n  @UI: { lineItem:       [ { position: 220 } ] , identification: [{ position: 220 }] }\r\n  TotalSubtotalAmount;\r\n\r\n  @UI: { lineItem:       [ { position: 230 } ] , identification: [{ position: 230 }] }\r\n  Subtotal1Amount;\r\n  @UI: { lineItem:       [ { position: 240 } ] , identification: [{ position: 240 }] }\r\n  Subtotal2Amount;\r\n  @UI: { lineItem:       [ { position: 250 } ] , identification: [{ position: 250 }] }\r\n  Subtotal3Amount;\r\n  @UI: { lineItem:       [ { position: 260 } ] , identification: [{ position: 260 }] }\r\n  Subtotal4Amount;\r\n  @UI: { lineItem:       [ { position: 270 } ] , identification: [{ position: 270 }] }\r\n  Subtotal5Amount;\r\n  @UI: { lineItem:       [ { position: 280 } ] , identification: [{ position: 280 }] }\r\n  Subtotal6Amount;\r\n\r\n\r\n\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Fatura başlık',\r\n                typeName: 'Fatura başlık',\r\n                title:{ type: #STANDARD, label: 'Fatura başlık', value: 'BillingDocument' }\r\n           }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_INVH with\r\n{\r\n  @UI.facet: [ { id:              'Invoice',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Fatura başlık',\r\n                 position:        10 }]\r\n\r\n  @UI: { lineItem:       [ { position: 01 } ], identification: [{ position: 01 }] }\r\n  @EndUserText.label: 'Dosya numarası'\r\n  FileExportNumber;\r\n  @UI: { lineItem:       [ { position: 10 } ], identification: [{ position: 10 }] }\r\n  @EndUserText.label: 'Fatura Belgesi'\r\n  BillingDocument;\r\n  @UI: { lineItem:       [ { position: 20 } ], identification: [{ position: 20 }] }\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 30 } ], identification: [{ position: 30 }] }\r\n  BillingDocumentType;\r\n  @UI: { lineItem:       [ { position: 40 } ] , identification: [{ position: 40 }] }\r\n  SalesOrganization;\r\n  @UI: { lineItem:       [ { position: 50 } ] , identification: [{ position: 50 }] }\r\n  DistributionChannel;\r\n  @UI: { lineItem:       [ { position: 60 } ] , identification: [{ position: 60 }] }\r\n  Division;\r\n  @UI: { lineItem:       [ { position: 70 } ] , identification: [{ position: 70 }] }\r\n  PayerParty;\r\n  @UI: { lineItem:       [ { position: 80 } ] ,  identification: [{ position: 80 }] }\r\n  SoldToParty;\r\n  @UI: { lineItem:       [ { position: 90 } ] , identification: [{ position: 90 }] }\r\n  TotalNetAmount;\r\n  @UI: { lineItem:       [ { position: 100 } ] , identification: [{ position: 100 }] }\r\n  TotalTaxAmount;\r\n  @UI: { lineItem:       [ { position: 110 } ] , identification: [{ position: 110 }] }\r\n  TransactionCurrency;\r\n  @UI: { lineItem:       [ { position: 120 } ] , identification: [{ position: 120 }] }\r\n  BillingDocumentDate;\r\n  @UI: { lineItem:       [ { position: 130 } ] , identification: [{ position: 130 }] }\r\n  DocumentReferenceID;\r\n  @UI: { lineItem:       [ { position: 140 } ] , identification: [{ position: 140 }] }\r\n  CustomerPaymentTerms;\r\n  @UI: { lineItem:       [ { position: 150 } ] , identification: [{ position: 150 }] }\r\n  IncotermsClassification;\r\n  @UI: { lineItem:       [ { position: 160 } ] , identification: [{ position: 160 }] }\r\n  IncotermsTransferLocation;\r\n  @UI: { lineItem:       [ { position: 170 } ] , identification: [{ position: 170 }] }\r\n  IncotermsVersion;\r\n  @UI: { lineItem:       [ { position: 180 } ] , identification: [{ position: 180 }] }\r\n  CreationDate;\r\n  @UI: { lineItem:       [ { position: 190 } ] , identification: [{ position: 190 }] }\r\n  CreationTime;\r\n  @UI: { lineItem:       [ { position: 200 } ] , identification: [{ position: 200 }] }\r\n  CreatedByUser;\r\n  @UI: { lineItem:       [ { position: 210 } ] , identification: [{ position: 210 }] }\r\n  AccountingTransferStatus;\r\n  @UI: { lineItem:       [ { position: 220 } ] , identification: [{ position: 220 }] }\r\n  TotalSubtotalAmount;\r\n\r\n  @UI: { lineItem:       [ { position: 230 } ] , identification: [{ position: 230 }] }\r\n  Subtotal1Amount;\r\n  @UI: { lineItem:       [ { position: 240 } ] , identification: [{ position: 240 }] }\r\n  Subtotal2Amount;\r\n  @UI: { lineItem:       [ { position: 250 } ] , identification: [{ position: 250 }] }\r\n  Subtotal3Amount;\r\n  @UI: { lineItem:       [ { position: 260 } ] , identification: [{ position: 260 }] }\r\n  Subtotal4Amount;\r\n  @UI: { lineItem:       [ { position: 270 } ] , identification: [{ position: 270 }] }\r\n  Subtotal5Amount;\r\n  @UI: { lineItem:       [ { position: 280 } ] , identification: [{ position: 280 }] }\r\n  Subtotal6Amount;\r\n\r\n\r\n\r\n\r\n}"
    }
   ]
  },
@@ -94,6 +94,13 @@
    {
     "DDLXNAME":"ZETR_E_EXP_INVH",
     "ELEMENT":"BILLINGDOCUMENT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Fatura Belgesi'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVH",
+    "ELEMENT":"BILLINGDOCUMENT",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"10"
@@ -248,6 +255,13 @@
    {
     "DDLXNAME":"ZETR_E_EXP_INVH",
     "ELEMENT":"FILEEXPORTNUMBER",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Dosya numarası'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVH",
+    "ELEMENT":"FILEEXPORTNUMBER",
     "NAME":"UI.FACET$1$.ID",
     "ELEMENT_TYPE":"S",
     "VALUE":"'Invoice'"
@@ -283,9 +297,16 @@
    {
     "DDLXNAME":"ZETR_E_EXP_INVH",
     "ELEMENT":"FILEEXPORTNUMBER",
-    "NAME":"UI.HIDDEN",
+    "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"false"
+    "VALUE":"01"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVH",
+    "ELEMENT":"FILEEXPORTNUMBER",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"01"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_INVH",
@@ -541,6 +562,20 @@
    {
     "DDLXNAME":"ZETR_E_EXP_INVH",
     "DDLANGUAGE":"E",
+    "ELEMENT":"BILLINGDOCUMENT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Fatura Belgesi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVH",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"FILEEXPORTNUMBER",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Dosya numarası"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVH",
+    "DDLANGUAGE":"E",
     "ELEMENT":"FILEEXPORTNUMBER",
     "NAME":"UI.FACET$1$.LABEL",
     "TEXT":"Fatura başlık"
@@ -556,8 +591,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_EXP_INVH",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"FA163EBBCF7E1FE0A1FCC0017ADEA5C8",
-    "RT_HASH":"B06188CDF507913744AD42963C554A8ACDE5CEF6",
+    "DT_UUID":"FA163EBBCF7E1FE0B38D300B95E1E6EF",
+    "RT_HASH":"A2CBA900E94EA1CD2CA9F495A882CBA25337163E",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }

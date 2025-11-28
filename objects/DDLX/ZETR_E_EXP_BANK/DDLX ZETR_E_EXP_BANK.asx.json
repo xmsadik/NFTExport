@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_BANK",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2024-06-03",
-    "CHANGED_AT":"08:09:19",
-    "UUID":"4D5EAEBF6DC31EEF88B0127DD7EC8086",
+    "CHANGED_ON":"2025-11-27",
+    "CHANGED_AT":"07:23:31",
+    "UUID":"FA163EBBCF7E1FE0B2EC3F2C2FA6A6EC",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_BANK",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Bank Info',\r\n                typeName: 'Bank Info',\r\n                title:{ type: #STANDARD, label: 'Bank Info', value: 'Bankname' }\r\n           }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_BANK with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Bank Info',\r\n                 position:        10 }\r\n               ]\r\n  @Consumption.valueHelpDefinition: [ { entity:  { name:    'I_Country', element: 'Country' } }]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ], selectionField: [ { position: 10 } ], identification: [{ position: 10 }] }\r\n  Bankcountry;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ], selectionField: [ { position: 20 } ], identification: [{ position: 20 }] }\r\n  Bankname;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ], selectionField: [ { position: 30 } ], identification: [{ position: 30 }] }\r\n  IBAN;\r\n  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ], selectionField: [ { position: 40 } ], identification: [{ position: 40 }] }\r\n  Swift;\r\n  @UI: { lineItem:       [ { position: 50, importance: #HIGH } ], selectionField: [ { position: 50 } ], identification: [{ position: 50 }] }\r\n  @Consumption :{ valueHelpDefinition:[{ entity :{ name :'I_CurrencyStdVH', element: 'Currency' } } ]}\r\n  Waers;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Bank Info',\r\n                typeName: 'Bank Info',\r\n                title:{ type: #STANDARD, label: 'Bank Info', value: 'Bankname' }\r\n           }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_BANK with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Bank Info',\r\n                 position:        10 }\r\n               ]\r\n  @Consumption.valueHelpDefinition: [ { entity:  { name:    'I_Country', element: 'Country' } }]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ], selectionField: [ { position: 10 } ], identification: [{ position: 10 }] }\r\n  Bankcountry;\r\n\r\n  @Consumption.valueHelpDefinition: [ { entity:  { name:    'I_Bank_2', element: 'BankInternalID' } }]\r\n  @UI: { lineItem:       [ { position: 11, importance: #HIGH } ], selectionField: [ { position: 11 } ], identification: [{ position: 11 }] }\r\n  bankid;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ], selectionField: [ { position: 20 } ], identification: [{ position: 20 }] }\r\n  Bankname;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ], selectionField: [ { position: 30 } ], identification: [{ position: 30 }] }\r\n  iban;\r\n  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ], selectionField: [ { position: 40 } ], identification: [{ position: 40 }] }\r\n  Swift;\r\n  @UI: { lineItem:       [ { position: 50, importance: #HIGH } ], selectionField: [ { position: 50 } ], identification: [{ position: 50 }] }\r\n  @Consumption :{ valueHelpDefinition:[{ entity :{ name :'I_CurrencyStdVH', element: 'Currency' } } ]}\r\n  Waers;\r\n\r\n}"
    }
   ]
  },
@@ -153,6 +153,48 @@
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"10"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_BANK",
+    "ELEMENT":"BANKID",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.ELEMENT",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'BankInternalID'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_BANK",
+    "ELEMENT":"BANKID",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'I_Bank_2'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_BANK",
+    "ELEMENT":"BANKID",
+    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"11"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_BANK",
+    "ELEMENT":"BANKID",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_BANK",
+    "ELEMENT":"BANKID",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"11"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_BANK",
+    "ELEMENT":"BANKID",
+    "NAME":"UI.SELECTIONFIELD$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"11"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_BANK",
@@ -325,8 +367,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_EXP_BANK",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"4D5EAEBF6DC31EEF88B0127DD7EC8086",
-    "RT_HASH":"3D79C2ADACBF27F9BF35DDD59715FBF5BD1B082A",
+    "DT_UUID":"FA163EBBCF7E1FE0B2EC3F2C2FA6A6EC",
+    "RT_HASH":"85C25E24C881E3C0E45EF281A8595EFB6153D6AD",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
@@ -354,6 +396,16 @@
     "REF_OBJECT_TYPE":"STOB",
     "REF_OBJECT_SUBTYPE":"DO",
     "REF_OBJECT_NAME":"I_COUNTRY",
+    "REF_OBJECT_ELEMENT":""
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_BANK",
+    "ELEMENT":"BANKID",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
+    "PATH":"I_BANK_2",
+    "REF_OBJECT_TYPE":"STOB",
+    "REF_OBJECT_SUBTYPE":"DO",
+    "REF_OBJECT_NAME":"I_BANK_2",
     "REF_OBJECT_ELEMENT":""
    },
    {

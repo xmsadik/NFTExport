@@ -15,6 +15,7 @@ authorization master ( instance )
       iban        = iban;
       Swift       = swift;
       Waers       = Waers;
+      bankid      = bankid;
     }
 
   field ( readonly : update ) Bankcountry, Bankname, Waers;

@@ -10,7 +10,7 @@ authorization master ( instance )
   create;
   update;
   delete;
-  field ( readonly ) Filen, Pymty;
+  field ( readonly ) Filen, Pymty, Iban;
   field ( mandatory : create ) Kunrg, Bldat, Bukrs, Expty;
 
   action releaseToAccounting;
