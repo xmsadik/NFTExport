@@ -45,6 +45,20 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
     SELECT * FROM zetr_t_exp129 INTO TABLE @DATA(lt_tax_account).
 
 
+
+    IF ls_key-%param-_table IS NOT INITIAL.
+
+      LOOP AT ls_key-%param-_table ASSIGNING FIELD-SYMBOL(<row>).
+        <row>-document_no = |{ <row>-document_no ALPHA = IN }|.
+      ENDLOOP.
+
+      SELECT *
+        FROM zetr_ddl_c_exp_invi
+     FOR ALL ENTRIES IN @ls_key-%param-_table
+       WHERE vbeln = @ls_key-%param-_table-document_no
+        INTO TABLE @DATA(lt_invoice_item).
+    ENDIF.
+
     ls_header = VALUE #( original_reference_document_ty = cv_original_refdoc_type
                          business_transaction_type      = cv_business_trans_type
                          accounting_document_type       = cv_accounting_doc_type
@@ -55,7 +69,6 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                          document_date                  = ls_headers-document_date
                          posting_date                   = ls_headers-created_date ).
 
-
     APPEND VALUE #( reference_document_item              = 1
                     creditor                             = ls_headers-supplier
                     amount_in_transaction_currency       = VALUE #( currency_code = ls_headers-waers
@@ -65,6 +78,10 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
     LOOP AT ls_key-%param-_table INTO DATA(ls_data).
       DATA(lv_tabix) = sy-tabix.
 
+      IF lt_invoice_item IS NOT INITIAL.
+        DATA(ls_invoice_item) = VALUE #( lt_invoice_item[ vbeln  = ls_data-document_no  ] OPTIONAL ).
+      ENDIF.
+
       APPEND VALUE #( reference_document_item              = lv_tabix
                       company_code                         = ls_headers-company_code
                       glaccount                            = VALUE #( content = VALUE #( lt_costing_account[  ctype  = ls_data-costing_type  ]-saknr OPTIONAL )  )
@@ -73,19 +90,16 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                       amount_in_transaction_currency       = VALUE #( currency_code = ls_headers-waers
                                                                       content       =   ls_data-cost_amount  )
                       document_item_text                   = ls_data-text
+                      assignment_reference                 = ls_invoice_item-filen
                       tax                                  = VALUE #( tax_code = VALUE #( content = ls_data-tax_type ) ) ) TO lt_items.
-
-
-
-
 
 
       IF ls_data-tax_type IS NOT INITIAL AND ls_headers-tax_amount IS NOT INITIAL.
         APPEND INITIAL LINE TO lt_tax ASSIGNING FIELD-SYMBOL(<fs_tax>).
 
         <fs_tax>-tax_code-content                             = ls_data-tax_type.
-        <fs_tax>-tax_item_classification                      = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kalem OPTIONAL ) .
-        <fs_tax>-condition_type                               = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kosul OPTIONAL ) .
+        <fs_tax>-tax_item_classification                      = VALUE #( lt_tax_account[ vergikodu = ls_data-tax_type  ]-kalem OPTIONAL ) .
+        <fs_tax>-condition_type                               = VALUE #( lt_tax_account[ vergikodu = ls_data-tax_type  ]-kosul OPTIONAL ) .
         <fs_tax>-debit_credit_code                            = cv_debit_credit_code_s.
 
         <fs_tax>-tax_base_amount_in_trans_crcy-currency_code  = cv_currency_try.
@@ -124,11 +138,10 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
           IF lr_response->journal_entry_create_confirmat-accounting_document IS INITIAL
           OR lr_response->journal_entry_create_confirmat-accounting_document = '0000000000'.
 
-
             APPEND VALUE #( %msg = new_message( id       = 'ZFI000'
                                                 number   = '000'
                                                 v1       = lv_message_text
-                                                severity = if_abap_behv_message=>severity-information ) ) TO reported-zetr_ddl_c_costing.
+                                                severity = if_abap_behv_message=>severity-error ) ) TO reported-zetr_ddl_c_costing.
 
           ELSE.
             DATA(lv_accountingdoc) = lr_response->journal_entry_create_confirmat-accounting_document.
