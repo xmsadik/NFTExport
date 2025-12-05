@@ -56,6 +56,12 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                          posting_date                   = ls_headers-created_date ).
 
 
+    APPEND VALUE #( reference_document_item              = 1
+                    creditor                             = ls_headers-supplier
+                    amount_in_transaction_currency       = VALUE #( currency_code = ls_headers-waers
+                                                                    content       =  ( ls_headers-amount + ls_headers-tax_amount ) * -1  )"
+                    debit_credit_code                    = cv_debit_credit_code_h ) TO lt_creditor.
+
     LOOP AT ls_key-%param-_table INTO DATA(ls_data).
       DATA(lv_tabix) = sy-tabix.
 
@@ -70,26 +76,24 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                       tax                                  = VALUE #( tax_code = VALUE #( content = ls_data-tax_type ) ) ) TO lt_items.
 
 
-      APPEND VALUE #( reference_document_item              = lv_tabix
-                      creditor                             = ls_headers-supplier
-                      amount_in_transaction_currency       = VALUE #( currency_code = ls_headers-waers
-                                                                      content       =  ( ls_headers-amount + ls_headers-tax_amount ) * -1  )
-                      debit_credit_code                    = cv_debit_credit_code_h ) TO lt_creditor.
 
 
-      APPEND INITIAL LINE TO lt_tax ASSIGNING FIELD-SYMBOL(<fs_tax>).
 
-      <fs_tax>-tax_code-content                             = ls_data-tax_type.
-      <fs_tax>-tax_item_classification                      = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kalem OPTIONAL ) .
-      <fs_tax>-condition_type                               = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kosul OPTIONAL ) .
-      <fs_tax>-debit_credit_code                            = cv_debit_credit_code_s.
 
-      <fs_tax>-tax_base_amount_in_trans_crcy-currency_code  = cv_currency_try.
-      <fs_tax>-tax_base_amount_in_trans_crcy-content        = ls_headers-amount.
+      IF ls_data-tax_type IS NOT INITIAL AND ls_headers-tax_amount IS NOT INITIAL.
+        APPEND INITIAL LINE TO lt_tax ASSIGNING FIELD-SYMBOL(<fs_tax>).
 
-      <fs_tax>-amount_in_transaction_currency-content       = ls_headers-tax_amount .
-      <fs_tax>-amount_in_transaction_currency-currency_code = cv_currency_try.
+        <fs_tax>-tax_code-content                             = ls_data-tax_type.
+        <fs_tax>-tax_item_classification                      = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kalem OPTIONAL ) .
+        <fs_tax>-condition_type                               = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kosul OPTIONAL ) .
+        <fs_tax>-debit_credit_code                            = cv_debit_credit_code_s.
 
+        <fs_tax>-tax_base_amount_in_trans_crcy-currency_code  = cv_currency_try.
+        <fs_tax>-tax_base_amount_in_trans_crcy-content        = ls_headers-amount.
+
+        <fs_tax>-amount_in_transaction_currency-content       = ls_headers-tax_amount .
+        <fs_tax>-amount_in_transaction_currency-currency_code = cv_currency_try.
+      ENDIF.
     ENDLOOP.
 
     GET TIME STAMP FIELD DATA(lv_date_time).
