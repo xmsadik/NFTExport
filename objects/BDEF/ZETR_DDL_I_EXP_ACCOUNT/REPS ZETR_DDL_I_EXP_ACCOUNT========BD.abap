@@ -7,7 +7,10 @@ lock master
 authorization master ( instance )
 //etag master <field_name>
 {
- mapping for zetr_t_exp120
+
+  field ( readonly : update ) Bukrs, ctype;
+
+  mapping for zetr_t_exp120
     {
       Bukrs   = bukrs;
       Ctype   = ctype;

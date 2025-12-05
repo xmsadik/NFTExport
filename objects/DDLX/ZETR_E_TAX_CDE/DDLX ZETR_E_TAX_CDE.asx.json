@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_TAX_CDE",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2023-11-27",
-    "CHANGED_AT":"11:52:32",
-    "UUID":"77E41BC4D9AD1EDEA3A36E3E19A5DEB0",
+    "CHANGED_ON":"2025-12-03",
+    "CHANGED_AT":"14:35:56",
+    "UUID":"FA163EBBCF7E1FE0B48AAC19464766F8",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_TAX_CDE",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'İşlem vergi kodları',\r\n                typeName: 'İşlem vergi kodları',\r\n                title:{ type: #STANDARD, label: 'İşlem vergi kodları', value: 'Vorgang' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_I_TAX_CDE with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Sınır Kapısı',\r\n                 position:        10 }\r\n               ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n         selectionField: [ { position: 10 } ],\r\n         identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'ZEXP_VH_VORGANG', element: 'Value' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Vorgang;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n       selectionField: [ { position: 20 } ],\r\n       identification: [{ position: 20 }] }\r\n  Kalsm;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n       selectionField: [ { position: 30 } ],\r\n       identification: [{ position: 30 }] }\r\n  Mwskz;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{ typeNamePlural: 'Tax',\r\n             typeName: 'Tax',\r\n             title:{ type: #STANDARD, label: 'Tax', value: 'Kosul' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_I_TAX_CDE with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'Tax',\r\n                 position:        10 } ]\r\n\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n         selectionField: [ { position: 10 } ],\r\n         identification: [ { position: 10 }] }\r\n  @EndUserText.label: 'Şirket kodu'\r\n  Sirketkodu;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n         selectionField: [ { position: 20 } ],\r\n         identification: [ { position: 20 }] }\r\n  @EndUserText.label: 'Vergi kodu'\r\n  Vergikodu;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n         selectionField: [ { position: 30 } ],\r\n         identification: [ { position: 30 }] }\r\n  @EndUserText.label: 'Koşul'\r\n  Kosul;\r\n  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ],\r\n         selectionField: [ { position: 40 } ],\r\n         identification: [ { position: 40 }] }\r\n  @EndUserText.label: 'Kalem'\r\n  Kalem;\r\n  @UI: { lineItem:       [ { position: 50, importance: #HIGH } ],\r\n         selectionField: [ { position: 50 } ],\r\n         identification: [ { position: 50 }] }\r\n  @EndUserText.label: 'Yüzde'\r\n  Yuzde;\r\n  //  @UI.facet: [ { id:              'Layout',\r\n  //                 purpose:         #STANDARD,\r\n  //                 type:            #IDENTIFICATION_REFERENCE,\r\n  //                 label:           'Sınır Kapısı',\r\n  //                 position:        10 }\r\n  //               ]\r\n  //  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n  //         selectionField: [ { position: 10 } ],\r\n  //         identification: [{ position: 10 }] }\r\n  //  @Consumption :{\r\n  //   valueHelpDefinition:[{ entity :{ name :'ZEXP_VH_VORGANG', element: 'Value' } } ],\r\n  //   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  //  }\r\n  //  Vorgang;\r\n  //  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n  //       selectionField: [ { position: 20 } ],\r\n  //       identification: [{ position: 20 }] }\r\n  //  Kalsm;\r\n  //  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n  //       selectionField: [ { position: 30 } ],\r\n  //       identification: [{ position: 30 }] }\r\n  //  Mwskz;\r\n\r\n}"
    }
   ]
  },
@@ -47,7 +47,7 @@
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TITLE.LABEL",
     "ELEMENT_TYPE":"N",
-    "VALUE":"'İşlem vergi kodları'"
+    "VALUE":"'Tax'"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
@@ -61,168 +61,231 @@
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TITLE.VALUE",
     "ELEMENT_TYPE":"N",
-    "VALUE":"'Vorgang'"
+    "VALUE":"'Kosul'"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TYPENAME",
     "ELEMENT_TYPE":"N",
-    "VALUE":"'İşlem vergi kodları'"
+    "VALUE":"'Tax'"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TYPENAMEPLURAL",
     "ELEMENT_TYPE":"N",
-    "VALUE":"'İşlem vergi kodları'"
+    "VALUE":"'Tax'"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"KALSM",
+    "ELEMENT":"KALEM",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Kalem'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"KALEM",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"20"
+    "VALUE":"40"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"KALSM",
+    "ELEMENT":"KALEM",
     "NAME":"UI.LINEITEM$1$.IMPORTANCE",
     "ELEMENT_TYPE":"S",
     "VALUE":"#HIGH"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"KALSM",
+    "ELEMENT":"KALEM",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"20"
+    "VALUE":"40"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"KALSM",
+    "ELEMENT":"KALEM",
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
     "ELEMENT_TYPE":"S",
-    "VALUE":"20"
+    "VALUE":"40"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"MWSKZ",
+    "ELEMENT":"KOSUL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Koşul'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"KOSUL",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"30"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"MWSKZ",
+    "ELEMENT":"KOSUL",
     "NAME":"UI.LINEITEM$1$.IMPORTANCE",
     "ELEMENT_TYPE":"S",
     "VALUE":"#HIGH"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"MWSKZ",
+    "ELEMENT":"KOSUL",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"30"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"MWSKZ",
+    "ELEMENT":"KOSUL",
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"30"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
-    "NAME":"CONSUMPTION.FILTER.MULTIPLESELECTIONS",
+    "ELEMENT":"SIRKETKODU",
+    "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"false"
+    "VALUE":"'Şirket kodu'"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
-    "NAME":"CONSUMPTION.FILTER.SELECTIONTYPE",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"#SINGLE"
-   },
-   {
-    "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
-    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.ELEMENT",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"'Value'"
-   },
-   {
-    "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
-    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
-    "ELEMENT_TYPE":"S",
-    "VALUE":"'ZEXP_VH_VORGANG'"
-   },
-   {
-    "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.FACET$1$.ID",
     "ELEMENT_TYPE":"S",
     "VALUE":"'Layout'"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.FACET$1$.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"'Sınır Kapısı'"
+    "VALUE":"'Tax'"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.FACET$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"10"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.FACET$1$.PURPOSE",
     "ELEMENT_TYPE":"S",
     "VALUE":"#STANDARD"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.FACET$1$.TYPE",
     "ELEMENT_TYPE":"S",
     "VALUE":"#IDENTIFICATION_REFERENCE"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"10"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.LINEITEM$1$.IMPORTANCE",
     "ELEMENT_TYPE":"S",
     "VALUE":"#HIGH"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"10"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"10"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"VERGIKODU",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Vergi kodu'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"VERGIKODU",
+    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"20"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"VERGIKODU",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"VERGIKODU",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"20"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"VERGIKODU",
+    "NAME":"UI.SELECTIONFIELD$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"20"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"YUZDE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Yüzde'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"YUZDE",
+    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"50"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"YUZDE",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"YUZDE",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"50"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "ELEMENT":"YUZDE",
+    "NAME":"UI.SELECTIONFIELD$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"50"
    }
   ]
  },
@@ -235,28 +298,63 @@
     "DDLANGUAGE":"E",
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TITLE.LABEL",
-    "TEXT":"İşlem vergi kodları"
+    "TEXT":"Tax"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
     "DDLANGUAGE":"E",
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TYPENAME",
-    "TEXT":"İşlem vergi kodları"
+    "TEXT":"Tax"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
     "DDLANGUAGE":"E",
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TYPENAMEPLURAL",
-    "TEXT":"İşlem vergi kodları"
+    "TEXT":"Tax"
    },
    {
     "DDLXNAME":"ZETR_E_TAX_CDE",
     "DDLANGUAGE":"E",
-    "ELEMENT":"VORGANG",
+    "ELEMENT":"KALEM",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Kalem"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"KOSUL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Koşul"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"SIRKETKODU",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Şirket kodu"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"SIRKETKODU",
     "NAME":"UI.FACET$1$.LABEL",
-    "TEXT":"Sınır Kapısı"
+    "TEXT":"Tax"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"VERGIKODU",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Vergi kodu"
+   },
+   {
+    "DDLXNAME":"ZETR_E_TAX_CDE",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"YUZDE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Yüzde"
    }
   ]
  },
@@ -269,8 +367,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_I_TAX_CDE",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"77E41BC4D9AD1EDEA3A36E3E19A5DEB0",
-    "RT_HASH":"0D1B7938A29386002F08BF4BC5C0AEB5A837D46C",
+    "DT_UUID":"FA163EBBCF7E1FE0B48AAC19464766F8",
+    "RT_HASH":"C956E56BE823620D23EA94B7E3502726C7F8AA94",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
@@ -284,21 +382,11 @@
     "DDLXNAME":"ZETR_E_TAX_CDE",
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TITLE.VALUE",
-    "PATH":"VORGANG",
+    "PATH":"KOSUL",
     "REF_OBJECT_TYPE":"STOB",
     "REF_OBJECT_SUBTYPE":"DOF",
     "REF_OBJECT_NAME":"ZETR_DDL_I_TAX_CDE",
-    "REF_OBJECT_ELEMENT":"VORGANG"
-   },
-   {
-    "DDLXNAME":"ZETR_E_TAX_CDE",
-    "ELEMENT":"VORGANG",
-    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
-    "PATH":"ZEXP_VH_VORGANG",
-    "REF_OBJECT_TYPE":"STOB",
-    "REF_OBJECT_SUBTYPE":"DO",
-    "REF_OBJECT_NAME":"ZEXP_VH_VORGANG",
-    "REF_OBJECT_ELEMENT":""
+    "REF_OBJECT_ELEMENT":"KOSUL"
    }
   ]
  },

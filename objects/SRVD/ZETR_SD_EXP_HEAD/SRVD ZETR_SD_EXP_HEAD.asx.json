@@ -7,9 +7,9 @@
     "SRVDNAME":"ZETR_SD_EXP_HEAD",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-08-25",
-    "CHANGED_AT":"07:04:33",
-    "DT_UUID":"FA163EBBCF7E1FE0A0B038199124E5A7",
+    "CHANGED_ON":"2025-12-04",
+    "CHANGED_AT":"07:45:08",
+    "DT_UUID":"FA163EBBCF7E1FE0B49CA4E7A79C46FD",
     "SOURCE_ORIGIN":"0",
     "SRVD_SOURCE_TYPE":"S",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -35,7 +35,7 @@
    {
     "SRVDNAME":"ZETR_SD_EXP_HEAD",
     "VERSION":"A",
-    "SOURCE":"@EndUserText.label: 'Export Header Service Desf.'\r\ndefine service ZETR_SD_EXP_HEAD {\r\n  expose ZETR_DDL_C_EXP_HEADER  as ExportHeader;\r\n  expose ZETR_DDL_C_EXP_INVH    as InvoiceHeader;\r\n  expose ZETR_DDL_C_EXP_INVI    as InvoiceItem;\r\n  expose ZETR_DDL_C_EXP_TXT     as ExportText;\r\n  expose ZETR_DDL_C_PRN_OPR     as PrintOperation;\r\n  expose ZETR_DDL_C_BIL_DOC     as BillingDocument;\r\n  expose ZETR_DDL_C_EXP_INVOICE as InvoiceChoose;\r\n}"
+    "SOURCE":"@EndUserText.label: 'Export Header Service Desf.'\r\ndefine service ZETR_SD_EXP_HEAD {\r\n  expose ZETR_DDL_C_EXP_HEADER  as ExportHeader;\r\n  expose ZETR_DDL_C_EXP_INVH    as InvoiceHeader;\r\n  expose ZETR_DDL_C_EXP_INVI    as InvoiceItem;\r\n  expose ZETR_DDL_C_EXP_TXT     as ExportText;\r\n  expose ZETR_DDL_C_PRN_OPR     as PrintOperation;\r\n  expose ZETR_DDL_C_BIL_DOC     as BillingDocument;\r\n  expose ZETR_DDL_C_EXP_INVOICE as InvoiceChoose;\r\n  expose zetr_DDL_C_CST_TYP     as CostType;\r\n  expose ZETR_DDL_C_TAX_CDE     as TaxCode;\r\n  expose I_Supplier             as Supplier;\r\n  expose ZETR_DDL_C_EXP_ACCOUNT as ExpenseAccount;\r\n}"
    }
   ]
  },
@@ -69,10 +69,37 @@
    {
     "SRVDNAME":"ZETR_SD_EXP_HEAD",
     "SERVICE":"ZETR_SD_EXP_HEAD",
+    "EXPOSED_ARTIFACT":"I_SUPPLIER",
+    "EXPOSED_ARTIFACT_TYPE":"E",
+    "EXPOSED_ALIAS":"SUPPLIER",
+    "EXPOSED_ALIAS_RAW":"Supplier",
+    "INCL_SERVICE":""
+   },
+   {
+    "SRVDNAME":"ZETR_SD_EXP_HEAD",
+    "SERVICE":"ZETR_SD_EXP_HEAD",
     "EXPOSED_ARTIFACT":"ZETR_DDL_C_BIL_DOC",
     "EXPOSED_ARTIFACT_TYPE":"E",
     "EXPOSED_ALIAS":"BILLINGDOCUMENT",
     "EXPOSED_ALIAS_RAW":"BillingDocument",
+    "INCL_SERVICE":""
+   },
+   {
+    "SRVDNAME":"ZETR_SD_EXP_HEAD",
+    "SERVICE":"ZETR_SD_EXP_HEAD",
+    "EXPOSED_ARTIFACT":"ZETR_DDL_C_CST_TYP",
+    "EXPOSED_ARTIFACT_TYPE":"E",
+    "EXPOSED_ALIAS":"COSTTYPE",
+    "EXPOSED_ALIAS_RAW":"CostType",
+    "INCL_SERVICE":""
+   },
+   {
+    "SRVDNAME":"ZETR_SD_EXP_HEAD",
+    "SERVICE":"ZETR_SD_EXP_HEAD",
+    "EXPOSED_ARTIFACT":"ZETR_DDL_C_EXP_ACCOUNT",
+    "EXPOSED_ARTIFACT_TYPE":"E",
+    "EXPOSED_ALIAS":"EXPENSEACCOUNT",
+    "EXPOSED_ALIAS_RAW":"ExpenseAccount",
     "INCL_SERVICE":""
    },
    {
@@ -128,6 +155,15 @@
     "EXPOSED_ALIAS":"PRINTOPERATION",
     "EXPOSED_ALIAS_RAW":"PrintOperation",
     "INCL_SERVICE":""
+   },
+   {
+    "SRVDNAME":"ZETR_SD_EXP_HEAD",
+    "SERVICE":"ZETR_SD_EXP_HEAD",
+    "EXPOSED_ARTIFACT":"ZETR_DDL_C_TAX_CDE",
+    "EXPOSED_ARTIFACT_TYPE":"E",
+    "EXPOSED_ALIAS":"TAXCODE",
+    "EXPOSED_ALIAS_RAW":"TaxCode",
+    "INCL_SERVICE":""
    }
   ]
  },
@@ -140,8 +176,8 @@
     "SERVICE":"ZETR_SD_EXP_HEAD",
     "SERVICE_RAW":"ZETR_SD_EXP_HEAD",
     "SOURCE_TYPE":"S",
-    "DT_UUID":"FA163EBBCF7E1FE0A0B038199124E5A7",
-    "RT_HASH":"691E4256CEE9E6B00C07BA14C620AEF0451CE205",
+    "DT_UUID":"FA163EBBCF7E1FE0B49CA4E7A79C46FD",
+    "RT_HASH":"6C19C752095C0A8C63752BC54C35D638FE7328FD",
     "GEN_VERSION":"0"
    }
   ]

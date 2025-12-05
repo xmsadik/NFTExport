@@ -9,10 +9,10 @@
     "AS4USER":"SAP_CUSTOMER",
     "AS4DATE":"0000-00-00",
     "AS4TIME":"00:00:00",
-    "SOURCE":"@AccessControl.authorizationCheck: #NOT_REQUIRED\r\n@EndUserText.label: 'Process Tax Code'\r\n@Metadata.allowExtensions: true\r\ndefine root view entity ZETR_DDL_I_TAX_CDE\r\n  as select from    zetr_t_exp109                                                    as Main\r\n    left outer join DDCDS_CUSTOMER_DOMAIN_VALUE_T( p_domain_name: 'ZETR_D_VORGANG' ) as Process on  Process.language  = $session.system_language\r\n                                                                                                and Process.value_low = Main.vorgang\r\n  //left outer join I_CostingSheetProcedure                                          as CostingSheet on CostingSheet.CostingSheetProcedure = Main.kalsm\r\n  // left outer join I_CostingSheetProcedureText as ConstingSheetText on ConstingSheetText.Language = $session.system_language\r\n{\r\n      @ObjectModel.text.element: ['VorgangText']\r\n  key Main.vorgang as Vorgang,\r\n  key Main.kalsm   as Kalsm,\r\n  key Main.mwskz   as Mwskz,\r\n      Process.text as VorgangText\r\n\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"DDCDS_CUSTOMER_DOMAIN_VALUE_T\",\n\"ZETR_T_EXP109\"\n],\n\"ASSOCIATED\":\n[],\n\"BASE\":\n[],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
+    "SOURCE":"@AccessControl.authorizationCheck: #NOT_REQUIRED\r\n@EndUserText.label: 'Process Tax Code'\r\n@Metadata.allowExtensions: true\r\ndefine root view entity ZETR_DDL_I_TAX_CDE\r\n  as select from zetr_t_exp129 as Main\r\n  //    left outer join DDCDS_CUSTOMER_DOMAIN_VALUE_T( p_domain_name: 'ZETR_D_VORGANG' ) as Process on  Process.language  = $session.system_language\r\n  //                                                                                                and Process.value_low = Main.vorgang\r\n  //left outer join I_CostingSheetProcedure                                          as CostingSheet on CostingSheet.CostingSheetProcedure = Main.kalsm\r\n  // left outer join I_CostingSheetProcedureText as ConstingSheetText on ConstingSheetText.Language = $session.system_language\r\n{\r\n      //      @objectmodel.text.element: ['vorgangtext']\r\n      //  key main.vorgang as vorgang,\r\n      //  key main.kalsm   as kalsm,\r\n      //  key main.mwskz   as mwskz,\r\n      //      process.text as vorgangtext\r\n  key sirketkodu as Sirketkodu,\r\n  key vergikodu  as Vergikodu,\r\n  key kosul      as Kosul,\r\n      kalem      as Kalem,\r\n      yuzde      as Yuzde\r\n\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"ZETR_T_EXP129\"\n],\n\"ASSOCIATED\":\n[],\n\"BASE\":\n[],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
     "PARENTNAME":"",
     "ACTFLAG":"",
-    "CHGFLAG":"J,WT42",
+    "CHGFLAG":"4T312",
     "SOURCE_TYPE":"W",
     "SOURCE_ORIGIN":"0",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -61,20 +61,6 @@
     "NAME":"ABAPCATALOG.INTERNAL.ISMANDT",
     "POSITION":2,
     "VALUE":""
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_I_TAX_CDE",
-    "LFIELDNAME":"VORGANG",
-    "NAME":"OBJECTMODEL",
-    "POSITION":3,
-    "VALUE":""
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_I_TAX_CDE",
-    "LFIELDNAME":"VORGANG",
-    "NAME":"OBJECTMODEL.TEXT.ELEMENT$1$",
-    "POSITION":4,
-    "VALUE":"'VorgangText'"
    }
   ]
  },

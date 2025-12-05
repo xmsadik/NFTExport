@@ -10,6 +10,11 @@
    },
    {
     "OBJ_NAME":"ZETR_DDL_I_EXP_BANK",
+    "FIELD_NAME":"BANKID",
+    "NATURE":"GE"
+   },
+   {
+    "OBJ_NAME":"ZETR_DDL_I_EXP_BANK",
     "FIELD_NAME":"BANKNAME",
     "NATURE":"GE"
    },
@@ -21,6 +26,11 @@
    {
     "OBJ_NAME":"ZETR_DDL_I_EXP_BANK",
     "FIELD_NAME":"SWIFT",
+    "NATURE":"GE"
+   },
+   {
+    "OBJ_NAME":"ZETR_DDL_I_EXP_BANK",
+    "FIELD_NAME":"WAERS",
     "NATURE":"GE"
    }
   ]
@@ -36,11 +46,11 @@
     "EXP_OBJ_NAME":"ZETR_DDL_I_EXP_BANK",
     "CREATED_BY":"SAP_CUSTOMER",
     "CREATED_ON":"0000-00-00",
-    "CHANGED_ON":"2024-03-13",
+    "CHANGED_ON":"2025-12-01",
     "CHANGED_BY":"SAP_CUSTOMER",
     "ABAP_LANGUAGE_VERSION":"5",
     "CREATED_AT":"+020240313080041",
-    "CHANGED_AT":"+020240313080045"
+    "CHANGED_AT":"+020251201140145"
    }
   ]
  },
