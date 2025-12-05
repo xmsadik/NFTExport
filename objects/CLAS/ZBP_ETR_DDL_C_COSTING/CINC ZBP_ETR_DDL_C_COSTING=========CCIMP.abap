@@ -64,6 +64,8 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                       glaccount                            = VALUE #( content = VALUE #( lt_costing_account[  ctype  = ls_data-costing_type  ]-saknr OPTIONAL )  )
                       account_assignment                   = VALUE #( cost_center = ls_data-cost_center )
                       debit_credit_code                    = cv_debit_credit_code_s
+                      amount_in_transaction_currency       = VALUE #( currency_code = ls_headers-waers
+                                                                      content       =   ls_data-cost_amount  )
                       document_item_text                   = ls_data-text
                       tax                                  = VALUE #( tax_code = VALUE #( content = ls_data-tax_type ) ) ) TO lt_items.
 
@@ -78,8 +80,8 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
       APPEND INITIAL LINE TO lt_tax ASSIGNING FIELD-SYMBOL(<fs_tax>).
 
       <fs_tax>-tax_code-content                             = ls_data-tax_type.
-      <fs_tax>-tax_item_classification                      = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kosul OPTIONAL ) .
-      <fs_tax>-condition_type                               = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kalem OPTIONAL ) .
+      <fs_tax>-tax_item_classification                      = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kalem OPTIONAL ) .
+      <fs_tax>-condition_type                               = VALUE #(  lt_tax_account[ vergikodu =  ls_data-tax_type  ]-kosul OPTIONAL ) .
       <fs_tax>-debit_credit_code                            = cv_debit_credit_code_s.
 
       <fs_tax>-tax_base_amount_in_trans_crcy-currency_code  = cv_currency_try.
