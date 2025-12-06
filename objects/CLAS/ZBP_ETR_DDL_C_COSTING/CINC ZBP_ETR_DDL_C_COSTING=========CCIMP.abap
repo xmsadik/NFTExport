@@ -14,7 +14,7 @@ CLASS lhc_zetr_ddl_c_costing DEFINITION INHERITING FROM cl_abap_behavior_handler
                cv_currency_try         TYPE zcurrency_code     VALUE 'TRY',
                cv_debit_credit_code_s  TYPE zdebit_credit_code VALUE 'S',
                cv_debit_credit_code_h  TYPE zdebit_credit_code VALUE 'H',
-               cv_created_by_user      TYPE zjournal_entry_create_request-journal_entry-created_by_user VALUE 'EXPORT_COST'.
+               cv_created_by_user      TYPE zjournal_entry_create_request-journal_entry-created_by_user VALUE 'EXPORT_USER'.
 
 ENDCLASS.
 
@@ -34,16 +34,12 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
     DATA lt_account_assignment TYPE zjournal_entry_create_request8.
     DATA(lv_sign)            = 1.
     DATA(lv_conv_debit_code) = VALUE zdebit_credit_code(  ).
-
-
     DATA lt_data TYPE  zjournal_entry_create_requ_tab.
     DATA(ls_key) = VALUE #( keys[ 1 ] OPTIONAL ).
     DATA(ls_headers) = ls_key-%param-_table2.
 
-
     SELECT * FROM zetr_t_exp120 INTO TABLE @DATA(lt_costing_account).
     SELECT * FROM zetr_t_exp129 INTO TABLE @DATA(lt_tax_account).
-
 
 
     IF ls_key-%param-_table IS NOT INITIAL.
@@ -158,8 +154,6 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
       CATCH cx_soap_destination_error cx_ai_system_fault.
         "handle exception
     ENDTRY.
-
-
 
   ENDMETHOD.
 
