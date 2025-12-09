@@ -62,6 +62,7 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                          document_header_text           = ls_headers-text
                          created_by_user                = cv_created_by_user
                          company_code                   = ls_headers-company_code
+                         tax_determination_date         = ls_headers-document_date
                          document_date                  = ls_headers-document_date
                          posting_date                   = ls_headers-created_date ).
 
@@ -122,19 +123,31 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
           DATA(lv_message_text) = ``.
           LOOP AT lr_response->log-item ASSIGNING FIELD-SYMBOL(<fs_logitem>).
             IF sy-tabix > 1.
-              lv_message_text = |{ lv_message_text } * { <fs_logitem>-note }|.
+
+              DATA(lv_msg) = <fs_logitem>-note. " Önceden birleştirdiğin uzun metin
+
+              " Parçala – her biri en fazla 50 char
+              DATA(lv_v1) = lv_msg(50).
+              DATA(lv_v2) = lv_msg+50(50).
+              DATA(lv_v3) = lv_msg+100(50).
+              DATA(lv_v4) = lv_msg+150(50).
+
+              CONDENSE: lv_v1, lv_v2, lv_v3, lv_v4.
+
+              APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
+                                                  number   = '000'
+                                                  severity = if_abap_behv_message=>severity-error
+                                                  v1       = lv_v1
+                                                  v2       = lv_v2
+                                                  v3       = lv_v3
+                                                  v4       = lv_v4 )  ) TO reported-zetr_ddl_c_costing.
             ENDIF.
           ENDLOOP.
-          CONDENSE lv_message_text.
-          IF strlen( lv_message_text ) > 500.
-
-            lv_message_text = lv_message_text(500).
-          ENDIF.
 
           IF lr_response->journal_entry_create_confirmat-accounting_document IS INITIAL
           OR lr_response->journal_entry_create_confirmat-accounting_document = '0000000000'.
 
-            APPEND VALUE #( %msg = new_message( id       = 'ZFI000'
+            APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
                                                 number   = '000'
                                                 v1       = lv_message_text
                                                 severity = if_abap_behv_message=>severity-error ) ) TO reported-zetr_ddl_c_costing.
@@ -143,8 +156,8 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
             DATA(lv_accountingdoc) = lr_response->journal_entry_create_confirmat-accounting_document.
             DATA(lv_fiscalyear)    = lr_response->journal_entry_create_confirmat-fiscal_year.
 
-            APPEND VALUE #( %msg = new_message( id       = 'ZFI000'
-                                                number   = '005'
+            APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
+                                                number   = '000'
                                                 v1       = lv_accountingdoc
                                                 severity = if_abap_behv_message=>severity-success ) ) TO reported-zetr_ddl_c_costing.
           ENDIF.
