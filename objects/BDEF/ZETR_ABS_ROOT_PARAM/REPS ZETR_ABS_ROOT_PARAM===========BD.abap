@@ -37,6 +37,7 @@ define behavior for ZETR_ABS_ITEM_FIELDS //alias <alias_name>
       cost_amount         = cost_amount;
       tax_type            = tax_type;
       text                = text;
+      tax_amount          = tax_amount;
     }
 
 
@@ -58,6 +59,7 @@ define behavior for ZETR_ABS_costing_header_fields
       text          = text;
       company_code  = company_Code;
       supplier      = supplier;
+      process       = process;
     }
 
   association _Header;

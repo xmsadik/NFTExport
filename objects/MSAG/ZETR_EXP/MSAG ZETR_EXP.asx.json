@@ -1,5 +1,75 @@
 [
  {
+  "table":"DOKHL",
+  "data":
+  [
+   {
+    "ID":"NA",
+    "OBJECT":"ZETR_EXP000",
+    "LANGU":"D",
+    "TYP":"E",
+    "DOKVERSION":1,
+    "DOKSTATE":"N",
+    "DOKFORM":"S_DOCU_SHOW",
+    "DOKSTYLE":"S_DOCUS1",
+    "DOKFUSER":"SAP_CUSTOMER",
+    "DOKFRELES":"",
+    "DOKFDATE":"0000-00-00",
+    "DOKFTIME":"00:00:00",
+    "DOKLUSER":"SAP_CUSTOMER",
+    "DOKLRELES":"",
+    "DOKLDATE":"0000-00-00",
+    "DOKLTIME":"00:00:00"
+   },
+   {
+    "ID":"NA",
+    "OBJECT":"ZETR_EXP005",
+    "LANGU":"D",
+    "TYP":"E",
+    "DOKVERSION":1,
+    "DOKSTATE":"N",
+    "DOKFORM":"S_DOCU_SHOW",
+    "DOKSTYLE":"S_DOCUS1",
+    "DOKFUSER":"SAP_CUSTOMER",
+    "DOKFRELES":"",
+    "DOKFDATE":"0000-00-00",
+    "DOKFTIME":"00:00:00",
+    "DOKLUSER":"SAP_CUSTOMER",
+    "DOKLRELES":"",
+    "DOKLDATE":"0000-00-00",
+    "DOKLTIME":"00:00:00"
+   }
+  ]
+ },
+ {
+  "table":"DOKIL",
+  "data":
+  [
+   {
+    "ID":"NA",
+    "OBJECT":"ZETR_EXP000",
+    "LANGU":"D",
+    "TYP":"E",
+    "VERSION":1,
+    "MASTERLANG":"X",
+    "TXTLINES":0,
+    "DOKSTATE":"N",
+    "SELFDEF":"3"
+   },
+   {
+    "ID":"NA",
+    "OBJECT":"ZETR_EXP005",
+    "LANGU":"D",
+    "TYP":"E",
+    "VERSION":1,
+    "MASTERLANG":"X",
+    "TXTLINES":0,
+    "DOKSTATE":"N",
+    "SELFDEF":"3"
+   }
+  ]
+ },
+ {
   "table":"T100",
   "data":
   [
@@ -7,7 +77,7 @@
     "SPRSL":"E",
     "ARBGB":"ZETR_EXP",
     "MSGNR":"000",
-    "TEXT":"&1 &2 &3 &4"
+    "TEXT":"&1&2&3&4"
    },
    {
     "SPRSL":"E",
@@ -32,6 +102,12 @@
     "ARBGB":"ZETR_EXP",
     "MSGNR":"004",
     "TEXT":"Muhasebeleştirme işlemi tamamlandı"
+   },
+   {
+    "SPRSL":"E",
+    "ARBGB":"ZETR_EXP",
+    "MSGNR":"005",
+    "TEXT":"1& document created."
    }
   ]
  },
@@ -70,35 +146,42 @@
     "ARBGB":"ZETR_EXP",
     "MSGNR":"000",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-09",
+    "DATUM":"2025-12-11",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"001",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-09",
+    "DATUM":"2025-12-11",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"002",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-09",
+    "DATUM":"2025-12-11",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"003",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-09",
+    "DATUM":"2025-12-11",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"004",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-09",
+    "DATUM":"2025-12-11",
+    "SELFDEF":"3"
+   },
+   {
+    "ARBGB":"ZETR_EXP",
+    "MSGNR":"005",
+    "NAME":"SAP_CUSTOMER",
+    "DATUM":"2025-12-11",
     "SELFDEF":"3"
    }
   ]

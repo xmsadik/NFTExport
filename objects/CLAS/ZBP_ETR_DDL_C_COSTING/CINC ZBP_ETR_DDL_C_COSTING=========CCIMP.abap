@@ -41,7 +41,6 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
     SELECT * FROM zetr_t_exp120 INTO TABLE @DATA(lt_costing_account).
     SELECT * FROM zetr_t_exp129 INTO TABLE @DATA(lt_tax_account).
 
-
     IF ls_key-%param-_table IS NOT INITIAL.
 
       LOOP AT ls_key-%param-_table ASSIGNING FIELD-SYMBOL(<row>).
@@ -55,9 +54,14 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
         INTO TABLE @DATA(lt_invoice_item).
     ENDIF.
 
+    SELECT SINGLE *
+             FROM zetr_ddl_i_vorgang
+            WHERE vorgang = @ls_headers-process
+             INTO @DATA(ls_vorgang).
+
     ls_header = VALUE #( original_reference_document_ty = cv_original_refdoc_type
                          business_transaction_type      = cv_business_trans_type
-                         accounting_document_type       = cv_accounting_doc_type
+                         accounting_document_type       = ls_vorgang-blart
                          document_reference_id          = ls_headers-reference
                          document_header_text           = ls_headers-text
                          created_by_user                = cv_created_by_user
@@ -85,7 +89,7 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                       account_assignment                   = VALUE #( cost_center = ls_data-cost_center )
                       debit_credit_code                    = cv_debit_credit_code_s
                       amount_in_transaction_currency       = VALUE #( currency_code = ls_headers-waers
-                                                                      content       =   ls_data-cost_amount  )
+                                                                      content       = ls_data-cost_amount  )
                       document_item_text                   = ls_data-text
                       assignment_reference                 = ls_invoice_item-filen
                       tax                                  = VALUE #( tax_code = VALUE #( content = ls_data-tax_type ) ) ) TO lt_items.
@@ -100,9 +104,11 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
         <fs_tax>-debit_credit_code                            = cv_debit_credit_code_s.
 
         <fs_tax>-tax_base_amount_in_trans_crcy-currency_code  = cv_currency_try.
-        <fs_tax>-tax_base_amount_in_trans_crcy-content        = ls_headers-amount.
+        " <fs_tax>-tax_base_amount_in_trans_crcy-content        = ls_headers-amount.
+        <fs_tax>-tax_base_amount_in_trans_crcy-content        = ls_data-cost_amount.
 
-        <fs_tax>-amount_in_transaction_currency-content       = ls_headers-tax_amount .
+        <fs_tax>-amount_in_transaction_currency-content       = ls_data-tax_amount .
+        "<fs_tax>-amount_in_transaction_currency-content       = ls_headers-tax_amount .
         <fs_tax>-amount_in_transaction_currency-currency_code = cv_currency_try.
       ENDIF.
     ENDLOOP.
@@ -119,18 +125,15 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                                                       IMPORTING et_response = DATA(lt_response) ).
 
         LOOP AT lt_response REFERENCE INTO DATA(lr_response).
-          " Log mesajlarını birleştir
           DATA(lv_message_text) = ``.
           LOOP AT lr_response->log-item ASSIGNING FIELD-SYMBOL(<fs_logitem>).
             IF sy-tabix > 1.
 
-              DATA(lv_msg) = <fs_logitem>-note. " Önceden birleştirdiğin uzun metin
-
-              " Parçala – her biri en fazla 50 char
-              DATA(lv_v1) = lv_msg(50).
-              DATA(lv_v2) = lv_msg+50(50).
-              DATA(lv_v3) = lv_msg+100(50).
-              DATA(lv_v4) = lv_msg+150(50).
+              DATA(lv_msg) = <fs_logitem>-note.
+              DATA(lv_v1)  = lv_msg(50).
+              DATA(lv_v2)  = lv_msg+50(50).
+              DATA(lv_v3)  = lv_msg+100(50).
+              DATA(lv_v4)  = lv_msg+150(50).
 
               CONDENSE: lv_v1, lv_v2, lv_v3, lv_v4.
 
@@ -149,7 +152,10 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
 
             APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
                                                 number   = '000'
-                                                v1       = lv_message_text
+                                                v1       = lv_v1
+                                                v2       = lv_v2
+                                                v3       = lv_v3
+                                                v4       = lv_v4
                                                 severity = if_abap_behv_message=>severity-error ) ) TO reported-zetr_ddl_c_costing.
 
           ELSE.
@@ -157,15 +163,27 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
             DATA(lv_fiscalyear)    = lr_response->journal_entry_create_confirmat-fiscal_year.
 
             APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
-                                                number   = '000'
+                                                number   = '005'
                                                 v1       = lv_accountingdoc
                                                 severity = if_abap_behv_message=>severity-success ) ) TO reported-zetr_ddl_c_costing.
-          ENDIF.
+            TRY.
 
+                DATA(ls_log_journal_entry) = VALUE zetr_t_exp130( filen         = ls_invoice_item-filen
+                                                                  company_code  = ls_headers-company_code
+                                                                  journal_entry = lv_accountingdoc
+                                                                  fiscal_year   = lv_fiscalyear
+                                                                  erdat         = cl_abap_context_info=>get_system_date( )
+                                                                  erzet         = cl_abap_context_info=>get_system_time( )
+                                                                  ernam         = cl_abap_context_info=>get_user_business_partner_id( ) ).
+
+                MODIFY zetr_t_exp130 FROM @ls_log_journal_entry.
+
+              CATCH cx_abap_context_info_error.
+            ENDTRY.
+          ENDIF.
         ENDLOOP.
 
       CATCH cx_soap_destination_error cx_ai_system_fault.
-        "handle exception
     ENDTRY.
 
   ENDMETHOD.

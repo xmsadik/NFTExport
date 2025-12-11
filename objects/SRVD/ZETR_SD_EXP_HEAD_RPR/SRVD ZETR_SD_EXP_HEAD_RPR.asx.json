@@ -7,9 +7,9 @@
     "SRVDNAME":"ZETR_SD_EXP_HEAD_RPR",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-11-28",
-    "CHANGED_AT":"14:40:25",
-    "DT_UUID":"FA163EBBCF7E1FE0B38D05941279A6EF",
+    "CHANGED_ON":"2025-12-10",
+    "CHANGED_AT":"14:54:57",
+    "DT_UUID":"FA163EBBCF7E1FE0B5BB062939DDA715",
     "SOURCE_ORIGIN":"0",
     "SRVD_SOURCE_TYPE":"S",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -35,7 +35,7 @@
    {
     "SRVDNAME":"ZETR_SD_EXP_HEAD_RPR",
     "VERSION":"A",
-    "SOURCE":"@EndUserText.label: 'Export Header Report Service Desf.'\r\ndefine service ZETR_SD_EXP_HEAD_RPR {\r\n  expose ZETR_DDL_C_EXP_HEAD_RPR as ExportHeader;\r\n  expose ZETR_DDL_C_EXP_INVH     as ExportHeaderInvoice;\r\n  expose ZETR_DDL_C_EXP_INVI     as ExportHeaderInvoiceItem;\r\n}"
+    "SOURCE":"@EndUserText.label: 'Export Header Report Service Desf.'\r\ndefine service ZETR_SD_EXP_HEAD_RPR {\r\n  expose ZETR_DDL_C_EXP_HEAD_RPR as ExportHeader;\r\n  expose ZETR_DDL_C_EXP_INVH     as ExportHeaderInvoice;\r\n  expose ZETR_DDL_C_EXP_INVI     as ExportHeaderInvoiceItem;\r\n  expose ZETR_DDL_I_EXP_TXT      as ExportTexts;\r\n}"
    }
   ]
  },
@@ -92,6 +92,15 @@
     "EXPOSED_ALIAS":"EXPORTHEADERINVOICEITEM",
     "EXPOSED_ALIAS_RAW":"ExportHeaderInvoiceItem",
     "INCL_SERVICE":""
+   },
+   {
+    "SRVDNAME":"ZETR_SD_EXP_HEAD_RPR",
+    "SERVICE":"ZETR_SD_EXP_HEAD_RPR",
+    "EXPOSED_ARTIFACT":"ZETR_DDL_I_EXP_TXT",
+    "EXPOSED_ARTIFACT_TYPE":"E",
+    "EXPOSED_ALIAS":"EXPORTTEXTS",
+    "EXPOSED_ALIAS_RAW":"ExportTexts",
+    "INCL_SERVICE":""
    }
   ]
  },
@@ -104,8 +113,8 @@
     "SERVICE":"ZETR_SD_EXP_HEAD_RPR",
     "SERVICE_RAW":"ZETR_SD_EXP_HEAD_RPR",
     "SOURCE_TYPE":"S",
-    "DT_UUID":"FA163EBBCF7E1FE0B38D05941279A6EF",
-    "RT_HASH":"0C2DBF478CB676EB4BF824CE17B0A8664FA8EFB4",
+    "DT_UUID":"FA163EBBCF7E1FE0B5BB062939DDA715",
+    "RT_HASH":"A615BB686164BFA7342AD1EE058EA12CB03E7F57",
     "GEN_VERSION":"0"
    }
   ]
