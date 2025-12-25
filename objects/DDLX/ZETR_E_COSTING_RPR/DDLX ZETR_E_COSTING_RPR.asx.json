@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-12-23",
-    "CHANGED_AT":"08:56:50",
-    "UUID":"FA163EBBCF7E1FE0B7FBAA31F9924740",
+    "CHANGED_ON":"2025-12-25",
+    "CHANGED_AT":"13:03:22",
+    "UUID":"FA163EBBCF7E1FE0B8B242DEED57E744",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'JournalEntry',\r\n                typeName: 'JournalEntry',\r\n                title:{ type: #STANDARD, label: 'JournalEntry', value: 'JournalEntry' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_C_COSTING_RPR with\r\n{\r\n\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'JournalEntry',\r\n                 position:        10 }\r\n               ]\r\n\r\n\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Dosya no'\r\n  Filen;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Şirket kodu'\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ]}\r\n  @Consumption.semanticObject: 'AccountingDocument'\r\n  @Consumption.semanticObjectMapping.additionalBinding: [{ localElement: 'CompanyCode'  , element: 'CompanyCode'},\r\n                                                         { localElement: 'JournalEntry' , element: 'JournalEntry' },\r\n                                                         { localElement: 'FiscalYear'   , element: 'FiscalYear' }]\r\n  @EndUserText.label: 'Belge no'\r\n  JournalEntry;\r\n  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Mali yıl'\r\n  FiscalYear;\r\n  @UI: { lineItem:       [ { position: 50, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratma tarihi'\r\n  Erdat;\r\n  @UI: { lineItem:       [ { position: 60, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratma saati'\r\n  Erzet;\r\n  @UI: { lineItem:       [ { position: 70, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratan'\r\n  Ernam;\r\n\r\n  @UI: { lineItem:       [ { position: 80, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Masraf Ttplamı'\r\n  CostTotal;\r\n  @UI: { lineItem:       [ { position: 90, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Vergi toplamı'\r\n  TaxTotal;\r\n  @UI: { lineItem:       [ { position: 100, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Tedarikçi'\r\n  Supplier;\r\n\r\n  @UI.hidden: false\r\n  SupplierFullName;\r\n\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'JournalEntry',\r\n                typeName: 'JournalEntry',\r\n                title:{ type: #STANDARD, label: 'JournalEntry', value: 'JournalEntry' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_C_COSTING_RPR with\r\n{\r\n\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'JournalEntry',\r\n                 position:        10 }\r\n               ]\r\n\r\n\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Dosya no'\r\n  Filen;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Şirket kodu'\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ]}\r\n  @Consumption.semanticObject: 'AccountingDocument'\r\n  @Consumption.semanticObjectMapping.additionalBinding: [{ localElement: 'CompanyCode'  , element: 'CompanyCode'},\r\n                                                         { localElement: 'JournalEntry' , element: 'AccountingDocument' },\r\n                                                         { localElement: 'FiscalYear'   , element: 'FiscalYear' }]\r\n  @EndUserText.label: 'Belge no'\r\n  JournalEntry;\r\n  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Mali yıl'\r\n  FiscalYear;\r\n  @UI: { lineItem:       [ { position: 50, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratma tarihi'\r\n  Erdat;\r\n  @UI: { lineItem:       [ { position: 60, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratma saati'\r\n  Erzet;\r\n  @UI: { lineItem:       [ { position: 70, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratan'\r\n  Ernam;\r\n\r\n  @UI: { lineItem:       [ { position: 80, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Masraf Toplamı'\r\n  CostTotal;\r\n  @UI: { lineItem:       [ { position: 90, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Vergi toplamı'\r\n  TaxTotal;\r\n  @UI: { lineItem:       [ { position: 100, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Tedarikçi'\r\n  Supplier;\r\n\r\n  @UI.hidden: false\r\n  SupplierFullName;\r\n\r\n\r\n}"
    }
   ]
  },
@@ -103,7 +103,7 @@
     "ELEMENT":"COSTTOTAL",
     "NAME":"ENDUSERTEXT.LABEL",
     "ELEMENT_TYPE":"S",
-    "VALUE":"'Masraf Ttplamı'"
+    "VALUE":"'Masraf Toplamı'"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
@@ -285,7 +285,7 @@
     "ELEMENT":"JOURNALENTRY",
     "NAME":"CONSUMPTION.SEMANTICOBJECTMAPPING.ADDITIONALBINDING$2$.ELEMENT",
     "ELEMENT_TYPE":"S",
-    "VALUE":"'JournalEntry'"
+    "VALUE":"'AccountingDocument'"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
@@ -417,7 +417,7 @@
     "DDLANGUAGE":"E",
     "ELEMENT":"COSTTOTAL",
     "NAME":"ENDUSERTEXT.LABEL",
-    "TEXT":"Masraf Ttplamı"
+    "TEXT":"Masraf Toplamı"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
@@ -493,8 +493,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_COSTING_RPR",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"FA163EBBCF7E1FE0B7FBAA31F9924740",
-    "RT_HASH":"CA18CA0EB2444D5D1B5F17B392322C26A2EC37AE",
+    "DT_UUID":"FA163EBBCF7E1FE0B8B242DEED57E744",
+    "RT_HASH":"B46113F1089A2F99DF0C2B472537980F5AA04272",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
