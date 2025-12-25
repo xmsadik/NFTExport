@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-12-10",
-    "CHANGED_AT":"15:24:05",
-    "UUID":"FA163EBBCF7E1FE0B5BB886A3272E715",
+    "CHANGED_ON":"2025-12-23",
+    "CHANGED_AT":"08:56:50",
+    "UUID":"FA163EBBCF7E1FE0B7FBAA31F9924740",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'JournalEntry',\r\n                typeName: 'JournalEntry',\r\n                title:{ type: #STANDARD, label: 'JournalEntry', value: 'JournalEntry' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_C_COSTING_RPR with\r\n{\r\n\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'JournalEntry',\r\n                 position:        10 }\r\n               ]\r\n\r\n\r\n  @UI: {  identification: [{ position: 10 }] }\r\n  Filen;\r\n  @UI: {  identification: [{ position: 20 }] }\r\n  CompanyCode;\r\n  @UI: {  identification: [{ position: 30 }] }\r\n  @Consumption.semanticObject: 'AccountingDocument'\r\n  @Consumption.semanticObjectMapping.additionalBinding: [{ localElement: 'CompanyCode', element: 'CompanyCode'},\r\n                                                         { localElement: 'FiscalYear', element: 'FiscalYear' }]\r\n  JournalEntry;\r\n  @UI: {  identification: [{ position: 40 }] }\r\n  FiscalYear;\r\n  @UI: {  identification: [{ position: 50 }] }\r\n  Erdat;\r\n  @UI: {  identification: [{ position: 60 }] }\r\n  Erzet;\r\n  @UI: {  identification: [{ position: 70 }] }\r\n  Ernam;\r\n\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'JournalEntry',\r\n                typeName: 'JournalEntry',\r\n                title:{ type: #STANDARD, label: 'JournalEntry', value: 'JournalEntry' }\r\n    }\r\n}\r\nannotate entity ZETR_DDL_C_COSTING_RPR with\r\n{\r\n\r\n  @UI.facet: [ { id:              'Layout',\r\n                 purpose:         #STANDARD,\r\n                 type:            #IDENTIFICATION_REFERENCE,\r\n                 label:           'JournalEntry',\r\n                 position:        10 }\r\n               ]\r\n\r\n\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Dosya no'\r\n  Filen;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Şirket kodu'\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ]}\r\n  @Consumption.semanticObject: 'AccountingDocument'\r\n  @Consumption.semanticObjectMapping.additionalBinding: [{ localElement: 'CompanyCode'  , element: 'CompanyCode'},\r\n                                                         { localElement: 'JournalEntry' , element: 'JournalEntry' },\r\n                                                         { localElement: 'FiscalYear'   , element: 'FiscalYear' }]\r\n  @EndUserText.label: 'Belge no'\r\n  JournalEntry;\r\n  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Mali yıl'\r\n  FiscalYear;\r\n  @UI: { lineItem:       [ { position: 50, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratma tarihi'\r\n  Erdat;\r\n  @UI: { lineItem:       [ { position: 60, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratma saati'\r\n  Erzet;\r\n  @UI: { lineItem:       [ { position: 70, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Yaratan'\r\n  Ernam;\r\n\r\n  @UI: { lineItem:       [ { position: 80, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Masraf Ttplamı'\r\n  CostTotal;\r\n  @UI: { lineItem:       [ { position: 90, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Vergi toplamı'\r\n  TaxTotal;\r\n  @UI: { lineItem:       [ { position: 100, importance: #HIGH } ]}\r\n  @EndUserText.label: 'Tedarikçi'\r\n  Supplier;\r\n\r\n  @UI.hidden: false\r\n  SupplierFullName;\r\n\r\n\r\n}"
    }
   ]
  },
@@ -80,30 +80,114 @@
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"COMPANYCODE",
-    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Şirket kodu'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"COMPANYCODE",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"COMPANYCODE",
+    "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"20"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"COSTTOTAL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Masraf Ttplamı'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"COSTTOTAL",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"COSTTOTAL",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"80"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"ERDAT",
-    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Yaratma tarihi'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"ERDAT",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"ERDAT",
+    "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"50"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"ERNAM",
-    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Yaratan'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"ERNAM",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"ERNAM",
+    "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"70"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"ERZET",
-    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Yaratma saati'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"ERZET",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"ERZET",
+    "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"60"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"FILEN",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Dosya no'"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
@@ -143,14 +227,35 @@
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"FILEN",
-    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"FILEN",
+    "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"10"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"FISCALYEAR",
-    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Mali yıl'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"FISCALYEAR",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"FISCALYEAR",
+    "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"40"
    },
@@ -180,21 +285,98 @@
     "ELEMENT":"JOURNALENTRY",
     "NAME":"CONSUMPTION.SEMANTICOBJECTMAPPING.ADDITIONALBINDING$2$.ELEMENT",
     "ELEMENT_TYPE":"S",
-    "VALUE":"'FiscalYear'"
+    "VALUE":"'JournalEntry'"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"JOURNALENTRY",
     "NAME":"CONSUMPTION.SEMANTICOBJECTMAPPING.ADDITIONALBINDING$2$.LOCALELEMENT",
     "ELEMENT_TYPE":"S",
+    "VALUE":"'JournalEntry'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"JOURNALENTRY",
+    "NAME":"CONSUMPTION.SEMANTICOBJECTMAPPING.ADDITIONALBINDING$3$.ELEMENT",
+    "ELEMENT_TYPE":"S",
     "VALUE":"'FiscalYear'"
    },
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"JOURNALENTRY",
-    "NAME":"UI.IDENTIFICATION$1$.POSITION",
+    "NAME":"CONSUMPTION.SEMANTICOBJECTMAPPING.ADDITIONALBINDING$3$.LOCALELEMENT",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'FiscalYear'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"JOURNALENTRY",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Belge no'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"JOURNALENTRY",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"JOURNALENTRY",
+    "NAME":"UI.LINEITEM$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"30"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"SUPPLIER",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Tedarikçi'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"SUPPLIER",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"SUPPLIER",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"100"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"SUPPLIERFULLNAME",
+    "NAME":"UI.HIDDEN",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"false"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"TAXTOTAL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Vergi toplamı'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"TAXTOTAL",
+    "NAME":"UI.LINEITEM$1$.IMPORTANCE",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"#HIGH"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"TAXTOTAL",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"90"
    }
   ]
  },
@@ -226,9 +408,79 @@
    {
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "DDLANGUAGE":"E",
+    "ELEMENT":"COMPANYCODE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Şirket kodu"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"COSTTOTAL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Masraf Ttplamı"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"ERDAT",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Yaratma tarihi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"ERNAM",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Yaratan"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"ERZET",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Yaratma saati"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"FILEN",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Dosya no"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
     "ELEMENT":"FILEN",
     "NAME":"UI.FACET$1$.LABEL",
     "TEXT":"JournalEntry"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"FISCALYEAR",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Mali yıl"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"JOURNALENTRY",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Belge no"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"SUPPLIER",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Tedarikçi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"TAXTOTAL",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Vergi toplamı"
    }
   ]
  },
@@ -241,8 +493,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_COSTING_RPR",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"FA163EBBCF7E1FE0B5BB886A3272E715",
-    "RT_HASH":"CD468C066A2B33FC56694FAB11D39541B040365F",
+    "DT_UUID":"FA163EBBCF7E1FE0B7FBAA31F9924740",
+    "RT_HASH":"CA18CA0EB2444D5D1B5F17B392322C26A2EC37AE",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
@@ -276,6 +528,16 @@
     "DDLXNAME":"ZETR_E_COSTING_RPR",
     "ELEMENT":"JOURNALENTRY",
     "NAME":"CONSUMPTION.SEMANTICOBJECTMAPPING.ADDITIONALBINDING$2$.LOCALELEMENT",
+    "PATH":"JOURNALENTRY",
+    "REF_OBJECT_TYPE":"STOB",
+    "REF_OBJECT_SUBTYPE":"DOF",
+    "REF_OBJECT_NAME":"ZETR_DDL_C_COSTING_RPR",
+    "REF_OBJECT_ELEMENT":"JOURNALENTRY"
+   },
+   {
+    "DDLXNAME":"ZETR_E_COSTING_RPR",
+    "ELEMENT":"JOURNALENTRY",
+    "NAME":"CONSUMPTION.SEMANTICOBJECTMAPPING.ADDITIONALBINDING$3$.LOCALELEMENT",
     "PATH":"FISCALYEAR",
     "REF_OBJECT_TYPE":"STOB",
     "REF_OBJECT_SUBTYPE":"DOF",

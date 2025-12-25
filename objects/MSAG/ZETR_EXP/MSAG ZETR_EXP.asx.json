@@ -38,6 +38,24 @@
     "DOKLRELES":"",
     "DOKLDATE":"0000-00-00",
     "DOKLTIME":"00:00:00"
+   },
+   {
+    "ID":"NA",
+    "OBJECT":"ZETR_EXP006",
+    "LANGU":"D",
+    "TYP":"E",
+    "DOKVERSION":1,
+    "DOKSTATE":"N",
+    "DOKFORM":"S_DOCU_SHOW",
+    "DOKSTYLE":"S_DOCUS1",
+    "DOKFUSER":"SAP_CUSTOMER",
+    "DOKFRELES":"",
+    "DOKFDATE":"0000-00-00",
+    "DOKFTIME":"00:00:00",
+    "DOKLUSER":"SAP_CUSTOMER",
+    "DOKLRELES":"",
+    "DOKLDATE":"0000-00-00",
+    "DOKLTIME":"00:00:00"
    }
   ]
  },
@@ -59,6 +77,17 @@
    {
     "ID":"NA",
     "OBJECT":"ZETR_EXP005",
+    "LANGU":"D",
+    "TYP":"E",
+    "VERSION":1,
+    "MASTERLANG":"X",
+    "TXTLINES":0,
+    "DOKSTATE":"N",
+    "SELFDEF":"3"
+   },
+   {
+    "ID":"NA",
+    "OBJECT":"ZETR_EXP006",
     "LANGU":"D",
     "TYP":"E",
     "VERSION":1,
@@ -108,6 +137,12 @@
     "ARBGB":"ZETR_EXP",
     "MSGNR":"005",
     "TEXT":"1& document created."
+   },
+   {
+    "SPRSL":"E",
+    "ARBGB":"ZETR_EXP",
+    "MSGNR":"006",
+    "TEXT":"Dosya kapatıldı."
    }
   ]
  },
@@ -146,42 +181,49 @@
     "ARBGB":"ZETR_EXP",
     "MSGNR":"000",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-11",
+    "DATUM":"2025-12-25",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"001",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-11",
+    "DATUM":"2025-12-25",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"002",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-11",
+    "DATUM":"2025-12-25",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"003",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-11",
+    "DATUM":"2025-12-25",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"004",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-11",
+    "DATUM":"2025-12-25",
     "SELFDEF":"3"
    },
    {
     "ARBGB":"ZETR_EXP",
     "MSGNR":"005",
     "NAME":"SAP_CUSTOMER",
-    "DATUM":"2025-12-11",
+    "DATUM":"2025-12-25",
+    "SELFDEF":"3"
+   },
+   {
+    "ARBGB":"ZETR_EXP",
+    "MSGNR":"006",
+    "NAME":"SAP_CUSTOMER",
+    "DATUM":"2025-12-25",
     "SELFDEF":"3"
    }
   ]

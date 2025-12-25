@@ -8,6 +8,7 @@ define behavior for ZETR_DDL_C_EXP_HEADER
   use delete;
 
   action releaseToAccounting;
+  action ClosedExport;
 
 
   use association _InvoiceHeader;

@@ -37,6 +37,7 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
     DATA lt_data TYPE  zjournal_entry_create_requ_tab.
     DATA(ls_key) = VALUE #( keys[ 1 ] OPTIONAL ).
     DATA(ls_headers) = ls_key-%param-_table2.
+    DATA lt_log_journal_entry TYPE TABLE OF zetr_t_exp130.
 
     SELECT * FROM zetr_t_exp120 INTO TABLE @DATA(lt_costing_account).
     SELECT * FROM zetr_t_exp129 INTO TABLE @DATA(lt_tax_account).
@@ -168,20 +169,24 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
                                                 severity = if_abap_behv_message=>severity-success ) ) TO reported-zetr_ddl_c_costing.
             TRY.
 
-                DATA(ls_log_journal_entry) = VALUE zetr_t_exp130( filen         = ls_invoice_item-filen
-                                                                  company_code  = ls_headers-company_code
-                                                                  journal_entry = lv_accountingdoc
-                                                                  fiscal_year   = lv_fiscalyear
-                                                                  erdat         = cl_abap_context_info=>get_system_date( )
-                                                                  erzet         = cl_abap_context_info=>get_system_time( )
-                                                                  ernam         = cl_abap_context_info=>get_user_business_partner_id( ) ).
 
-                MODIFY zetr_t_exp130 FROM @ls_log_journal_entry.
+
+                APPEND VALUE zetr_t_exp130( filen         = ls_invoice_item-filen
+                                            company_code  = ls_headers-company_code
+                                            journal_entry = lv_accountingdoc
+                                            fiscal_year   = lv_fiscalyear
+                                            erdat         = cl_abap_context_info=>get_system_date( )
+                                            erzet         = cl_abap_context_info=>get_system_time( )
+                                            ernam         = cl_abap_context_info=>get_user_business_partner_id( ) ) TO lt_log_journal_entry.
 
               CATCH cx_abap_context_info_error.
             ENDTRY.
           ENDIF.
         ENDLOOP.
+
+        IF lt_log_journal_entry[] IS NOT INITIAL.
+          MODIFY zetr_t_exp130 FROM TABLE @lt_log_journal_entry.
+        ENDIF.
 
       CATCH cx_soap_destination_error cx_ai_system_fault.
     ENDTRY.

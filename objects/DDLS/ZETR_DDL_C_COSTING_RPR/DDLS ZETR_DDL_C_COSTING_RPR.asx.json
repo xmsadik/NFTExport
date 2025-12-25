@@ -9,10 +9,10 @@
     "AS4USER":"SAP_CUSTOMER",
     "AS4DATE":"0000-00-00",
     "AS4TIME":"00:00:00",
-    "SOURCE":"@AccessControl.authorizationCheck: #NOT_REQUIRED\r\n@EndUserText.label: 'Costing projection view'\r\n@Metadata.ignorePropagatedAnnotations: true\r\n@Metadata.allowExtensions: true\r\ndefine view entity ZETR_DDL_C_COSTING_RPR\r\n  as projection on ZETR_DDL_I_COSTING\r\n{\r\n  key Filen,\r\n  key CompanyCode,\r\n  key JournalEntry,\r\n  key FiscalYear,\r\n      Erdat,\r\n      Erzet,\r\n      Ernam,\r\n      /* Associations */\r\n      _ExportFile : redirected to parent ZETR_DDL_C_EXP_HEADER\r\n\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"ZETR_DDL_I_COSTING\"\n],\n\"ASSOCIATED\":\n[\n\"ZETR_DDL_C_EXP_HEADER\",\n\"ZETR_DDL_I_EXP_HEAD\"\n],\n\"BASE\":\n[\n\"ZETR_DDL_I_COSTING\"\n],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
+    "SOURCE":"@AccessControl.authorizationCheck: #NOT_REQUIRED\r\n@EndUserText.label: 'Costing projection view'\r\n@Metadata.allowExtensions: true\r\ndefine view entity ZETR_DDL_C_COSTING_RPR\r\n  as projection on ZETR_DDL_I_COSTING\r\n{\r\n  key Filen,\r\n  key CompanyCode,\r\n  key JournalEntry,\r\n  key FiscalYear,\r\n      Erdat,\r\n      Erzet,\r\n      Ernam,\r\n      TransactionCurrency,\r\n      CostTotal,\r\n      TaxTotal,\r\n      @ObjectModel.text.element: [ 'SupplierFullName' ]\r\n      Supplier,\r\n      SupplierFullName,\r\n\r\n\r\n      /* Associations */\r\n      _ExportFile : redirected to parent ZETR_DDL_C_EXP_HEADER\r\n\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"ZETR_DDL_I_COSTING\"\n],\n\"ASSOCIATED\":\n[\n\"ZETR_DDL_C_EXP_HEADER\",\n\"ZETR_DDL_I_EXP_HEAD\"\n],\n\"BASE\":\n[\n\"ZETR_DDL_I_COSTING\"\n],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
     "PARENTNAME":"",
     "ACTFLAG":"",
-    "CHGFLAG":"D",
+    "CHGFLAG":"4D",
     "SOURCE_TYPE":"P",
     "SOURCE_ORIGIN":"0",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -61,6 +61,20 @@
     "NAME":"ABAPCATALOG.INTERNAL.ISMANDT",
     "POSITION":2,
     "VALUE":""
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_C_COSTING_RPR",
+    "LFIELDNAME":"SUPPLIER",
+    "NAME":"OBJECTMODEL",
+    "POSITION":3,
+    "VALUE":""
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_C_COSTING_RPR",
+    "LFIELDNAME":"SUPPLIER",
+    "NAME":"OBJECTMODEL.TEXT.ELEMENT$1$",
+    "POSITION":4,
+    "VALUE":"'SupplierFullName'"
    }
   ]
  },
@@ -100,19 +114,7 @@
    },
    {
     "STRUCOBJN":"ZETR_DDL_C_COSTING_RPR",
-    "NAME":"METADATA",
-    "POSITION":7,
-    "VALUE":""
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_C_COSTING_RPR",
     "NAME":"METADATA.ALLOWEXTENSIONS",
-    "POSITION":8,
-    "VALUE":"true"
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_C_COSTING_RPR",
-    "NAME":"METADATA.IGNOREPROPAGATEDANNOTATIONS",
     "POSITION":6,
     "VALUE":"true"
    }
