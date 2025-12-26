@@ -7,9 +7,9 @@
     "SRVDNAME":"ZETR_SD_EXP_HEAD_RPR",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-12-10",
-    "CHANGED_AT":"14:54:57",
-    "DT_UUID":"FA163EBBCF7E1FE0B5BB062939DDA715",
+    "CHANGED_ON":"2025-12-26",
+    "CHANGED_AT":"12:14:30",
+    "DT_UUID":"FA163EBBCF7E1FE0B8CA8DC312564745",
     "SOURCE_ORIGIN":"0",
     "SRVD_SOURCE_TYPE":"S",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -35,7 +35,7 @@
    {
     "SRVDNAME":"ZETR_SD_EXP_HEAD_RPR",
     "VERSION":"A",
-    "SOURCE":"@EndUserText.label: 'Export Header Report Service Desf.'\r\ndefine service ZETR_SD_EXP_HEAD_RPR {\r\n  expose ZETR_DDL_C_EXP_HEAD_RPR as ExportHeader;\r\n  expose ZETR_DDL_C_EXP_INVH     as ExportHeaderInvoice;\r\n  expose ZETR_DDL_C_EXP_INVI     as ExportHeaderInvoiceItem;\r\n  expose ZETR_DDL_I_EXP_TXT      as ExportTexts;\r\n}"
+    "SOURCE":"@EndUserText.label: 'Export Header Report Service Desf.'\r\ndefine service ZETR_SD_EXP_HEAD_RPR {\r\n  expose ZETR_DDL_C_EXP_HEAD_RPR as ExportHeader;\r\n  expose ZETR_DDL_C_EXP_INVH     as ExportHeaderInvoice;\r\n  expose ZETR_DDL_C_EXP_INVI     as ExportHeaderInvoiceItem;\r\n  expose ZETR_DDL_I_EXP_TXT      as ExportTexts;\r\n  expose ZETR_DDL_C_COSTING_RPR  as CostingReport;\r\n}"
    }
   ]
  },
@@ -66,6 +66,15 @@
   "table":"SRVD_RT_ENTITIES",
   "data":
   [
+   {
+    "SRVDNAME":"ZETR_SD_EXP_HEAD_RPR",
+    "SERVICE":"ZETR_SD_EXP_HEAD_RPR",
+    "EXPOSED_ARTIFACT":"ZETR_DDL_C_COSTING_RPR",
+    "EXPOSED_ARTIFACT_TYPE":"E",
+    "EXPOSED_ALIAS":"COSTINGREPORT",
+    "EXPOSED_ALIAS_RAW":"CostingReport",
+    "INCL_SERVICE":""
+   },
    {
     "SRVDNAME":"ZETR_SD_EXP_HEAD_RPR",
     "SERVICE":"ZETR_SD_EXP_HEAD_RPR",
@@ -113,8 +122,8 @@
     "SERVICE":"ZETR_SD_EXP_HEAD_RPR",
     "SERVICE_RAW":"ZETR_SD_EXP_HEAD_RPR",
     "SOURCE_TYPE":"S",
-    "DT_UUID":"FA163EBBCF7E1FE0B5BB062939DDA715",
-    "RT_HASH":"A615BB686164BFA7342AD1EE058EA12CB03E7F57",
+    "DT_UUID":"FA163EBBCF7E1FE0B8CA8DC312564745",
+    "RT_HASH":"DA7CC54A5FF4EBBEF25E58FA86F9929858FEF425",
     "GEN_VERSION":"0"
    }
   ]
