@@ -19,6 +19,7 @@ authorization master ( instance )
   association _InvoiceItem { create; }
   association _Texts { create; }
   association _BillingDocument { create; }
+  association _Costing { create; }
 
 
 }
@@ -104,5 +105,18 @@ authorization dependent by _ExportFile
 
 
   field ( readonly ) FileExportNo;
+  association _ExportFile;
+}
+
+define behavior for ZETR_DDL_I_COSTING
+late numbering
+with unmanaged save
+lock dependent by _ExportFile
+authorization dependent by _ExportFile
+{
+  action releaseToAccountingBilDoc;
+
+
+  field ( readonly ) Filen;
   association _ExportFile;
 }
