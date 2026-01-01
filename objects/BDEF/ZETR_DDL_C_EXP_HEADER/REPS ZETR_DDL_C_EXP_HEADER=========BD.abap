@@ -1,5 +1,6 @@
 projection implementation in class zbp_etr_ddl_c_exp_header unique;
 strict;
+use side effects;
 
 define behavior for ZETR_DDL_C_EXP_HEADER
 {

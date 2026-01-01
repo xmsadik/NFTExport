@@ -297,6 +297,8 @@ CLASS lhc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_handle
       IMPORTING keys REQUEST requested_authorizations FOR zetr_ddl_i_exp_head RESULT result.
     METHODS releasetoaccounting FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_exp_head~releasetoaccounting.
+    METHODS searchbankaccount FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR zetr_ddl_i_exp_head~searchbankaccount.
 
     METHODS earlynumbering_create FOR NUMBERING
       IMPORTING entities FOR CREATE zetr_ddl_i_exp_head.
@@ -342,5 +344,41 @@ CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
   ENDMETHOD.
 
 
+
+  METHOD searchbankaccount.
+
+    READ ENTITIES OF zetr_ddl_i_exp_head IN LOCAL MODE
+      ENTITY zetr_ddl_i_exp_head
+      FIELDS ( kunrg iban )
+      WITH CORRESPONDING #( keys )
+      RESULT DATA(lt_data).
+
+    LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<ls_data>).
+
+      IF <ls_data>-kunrg IS NOT INITIAL.
+
+        " Örnek: KUNRG'den IBAN bul
+*        SELECT SINGLE iban
+*          INTO @<ls_data>-iban
+*          FROM zbank_table
+*          WHERE kunrg = @<ls_data>-kunrg.
+
+      ENDIF.
+
+    ENDLOOP.
+
+    MODIFY ENTITIES OF zetr_ddl_i_exp_head IN LOCAL MODE
+      ENTITY zetr_ddl_i_exp_head
+      UPDATE FIELDS ( iban )
+      WITH VALUE #( (   "%tky = row-%tky
+                        iban = '1111111111'  )
+      "FOR row IN lt_data (
+      "  %tky = row-%tky
+      "  iban = row-iban
+     " )
+
+       ).
+
+  ENDMETHOD.
 
 ENDCLASS.

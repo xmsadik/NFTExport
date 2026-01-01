@@ -10,8 +10,18 @@ authorization master ( instance )
   create;
   update;
   delete;
-  field ( readonly ) Filen, Pymty, Iban;
+  field ( readonly ) Filen, Pymty, Iban, Clsed, StatusClosed;
   field ( mandatory : create ) Kunrg, Bldat, Bukrs, Expty;
+
+  side effects
+  {
+    field Kunrg affects field iban;
+  }
+
+
+
+
+  determination SearchBankAccount on modify { field Kunrg; }
 
   action releaseToAccounting;
 
