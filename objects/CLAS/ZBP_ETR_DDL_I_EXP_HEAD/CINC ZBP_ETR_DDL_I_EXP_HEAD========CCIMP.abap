@@ -318,11 +318,28 @@ ENDCLASS.
 CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
   METHOD earlynumbering_create.
-    DATA(ls_mapped) = mapped.
+    DATA(ls_mapped)   = mapped.
+    DATA(ls_entities) = entities.
     DATA lv_filen   TYPE zetr_e_filen.
+    DATA(lv_nr_range_nr) = VALUE char2( ).
+
+    IF ls_entities IS NOT INITIAL.
+
+      SELECT *
+        FROM zetr_ddl_i_doc_type
+     FOR ALL ENTRIES IN @ls_entities
+       WHERE exporttype = @ls_entities-expty
+        INTO TABLE @DATA(lt_doc_type).
+      IF lt_doc_type IS NOT INITIAL.
+        lv_nr_range_nr = lt_doc_type[ 1 ]-numki.
+      ELSE.
+        lv_nr_range_nr = '10'.
+      ENDIF.
+
+    ENDIF.
 
     TRY.
-        cl_numberrange_runtime=>number_get( EXPORTING nr_range_nr       = '10'
+        cl_numberrange_runtime=>number_get( EXPORTING nr_range_nr       = lv_nr_range_nr
                                                       object            = 'ZETR_EXP'
                                             IMPORTING number            = DATA(number_range_key)
                                                      returncode         = DATA(number_range_return_code)
@@ -359,7 +376,11 @@ CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
         %action-searchbankaccount = if_abap_behv=>fc-o-enabled
       ) TO result.
 
+
+
     ENDLOOP.
+
+
   ENDMETHOD.
 
   METHOD releasetoaccounting.

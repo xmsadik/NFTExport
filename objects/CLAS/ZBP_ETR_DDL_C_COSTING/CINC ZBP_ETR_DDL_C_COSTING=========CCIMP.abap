@@ -62,7 +62,8 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
 
     ls_header = VALUE #( original_reference_document_ty = cv_original_refdoc_type
                          business_transaction_type      = cv_business_trans_type
-                         accounting_document_type       = ls_vorgang-blart
+                        " accounting_document_type       = ls_vorgang-blart
+                         accounting_document_type       = ls_headers-document_type
                          document_reference_id          = ls_headers-reference
                          document_header_text           = ls_headers-text
                          created_by_user                = cv_created_by_user

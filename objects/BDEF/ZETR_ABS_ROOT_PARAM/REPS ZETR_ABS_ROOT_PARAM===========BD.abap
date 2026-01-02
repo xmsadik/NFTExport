@@ -60,6 +60,7 @@ define behavior for ZETR_ABS_costing_header_fields
       company_code  = company_Code;
       supplier      = supplier;
       process       = process;
+      document_type = document_type;
     }
 
   association _Header;
