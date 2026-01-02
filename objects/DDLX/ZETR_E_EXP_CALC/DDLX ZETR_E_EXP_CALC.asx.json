@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_CALC",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2025-09-01",
-    "CHANGED_AT":"06:58:43",
-    "UUID":"FA163EBBCF7E1FE0A1E0231BBA67E5C4",
+    "CHANGED_ON":"2026-01-02",
+    "CHANGED_AT":"01:43:01",
+    "UUID":"FA163EBBCF7E1FE0B9EF8BE0C3000756",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_CALC",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Masraf Dağıtım Hesaplama',\r\n                typeName: 'Masraf Dağıtım Hesaplama',\r\n                title:{ type: #STANDARD, label: 'Masraf Dağıtım Hesaplama', value: 'Bukrs' }\r\n    }\r\n}\r\nannotate view ZETR_DDL_I_EXP_CALC with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                   purpose:         #STANDARD,\r\n                   type:            #IDENTIFICATION_REFERENCE,\r\n                   label:           'Masraf Dağıtım Hesaplama',\r\n                   position:        10 }\r\n                 ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n     selectionField: [ { position: 10 } ],\r\n     identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n  valueHelpDefinition:[{ entity :{ name :'I_CompanyCode', element: 'CompanyCode' } } ],\r\n  filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Bukrs;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n     selectionField: [ { position: 20 } ],\r\n     identification: [{ position: 20 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'zetr_DDL_C_CST_TYP', element: 'Ctype' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Ctype;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n         selectionField: [ { position: 30 } ],\r\n         identification: [{ position: 30 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'ZETR_VH_CALTY_EXP', element: 'Value' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Calty;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Masraf Dağıtım Hesaplama',\r\n                typeName: 'Masraf Dağıtım Hesaplama',\r\n                title:{ type: #STANDARD, label: 'Masraf Dağıtım Hesaplama', value: 'Bukrs' }\r\n    }\r\n}\r\nannotate view ZETR_DDL_I_EXP_CALC with\r\n{\r\n  @UI.facet: [ { id:              'Layout',\r\n                   purpose:         #STANDARD,\r\n                   type:            #IDENTIFICATION_REFERENCE,\r\n                   label:           'Masraf Dağıtım Hesaplama',\r\n                   position:        10 }\r\n                 ]\r\n  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],\r\n     selectionField: [ { position: 10 } ],\r\n     identification: [{ position: 10 }] }\r\n  @Consumption :{\r\n  valueHelpDefinition:[{ entity :{ name :'I_CompanyCode', element: 'CompanyCode' } } ],\r\n  filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  Bukrs;\r\n  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],\r\n     selectionField: [ { position: 20 } ],\r\n     identification: [{ position: 20 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'zetr_DDL_C_CST_TYP', element: 'Ctype' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  @EndUserText.label: 'Masraf Tipi'\r\n  Ctype;\r\n  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],\r\n         selectionField: [ { position: 30 } ],\r\n         identification: [{ position: 30 }] }\r\n  @Consumption :{\r\n   valueHelpDefinition:[{ entity :{ name :'ZETR_VH_CALTY_EXP', element: 'Value' } } ],\r\n   filter: {selectionType: #SINGLE, multipleSelections: false}\r\n  }\r\n  @EndUserText.label: 'İhracat masraf tipi'\r\n  Calty;\r\n\r\n}"
    }
   ]
  },
@@ -199,6 +199,13 @@
    {
     "DDLXNAME":"ZETR_E_EXP_CALC",
     "ELEMENT":"CALTY",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'İhracat masraf tipi'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "ELEMENT":"CALTY",
     "NAME":"UI.IDENTIFICATION$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"30"
@@ -251,6 +258,13 @@
     "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
     "ELEMENT_TYPE":"S",
     "VALUE":"'zetr_DDL_C_CST_TYP'"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "ELEMENT":"CTYPE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"'Masraf Tipi'"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_CALC",
@@ -313,6 +327,20 @@
     "ELEMENT":"BUKRS",
     "NAME":"UI.FACET$1$.LABEL",
     "TEXT":"Masraf Dağıtım Hesaplama"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"CALTY",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"İhracat masraf tipi"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_CALC",
+    "DDLANGUAGE":"E",
+    "ELEMENT":"CTYPE",
+    "NAME":"ENDUSERTEXT.LABEL",
+    "TEXT":"Masraf Tipi"
    }
   ]
  },
@@ -325,8 +353,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_I_EXP_CALC",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"FA163EBBCF7E1FE0A1E0231BBA67E5C4",
-    "RT_HASH":"6ED4CAACD4F0F1E964383CFB91836FD35D0E4FBC",
+    "DT_UUID":"FA163EBBCF7E1FE0B9EF8BE0C3000756",
+    "RT_HASH":"55212307515AE87FEC64D901C5FC32FD231D4359",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }

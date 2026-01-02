@@ -4,7 +4,7 @@
   "data":
   [
    {
-    "APP_ID":"ZETR_IAM_EXP_ACC_EXT",
+    "APP_ID":"ZETR_IAM_CST_BKM_EXT",
     "APP_TYPE":"EXT",
     "ABAP_LANGUAGE_VERSION":"5",
     "REL_FOR_CUST_CAT_EXT":"",
@@ -15,27 +15,14 @@
     "BSP_APPL_NAME":"",
     "EXT_OBJECT_ID":"",
     "TCODE":"",
-    "UI_APP_ID":"ZETR_EXP_ACC_2_UI5R",
+    "UI_APP_ID":"",
     "CREATE_USER":"SAP_CUSTOMER",
-    "CREATE_TIMESTAMP":"+020231220143252",
+    "CREATE_TIMESTAMP":"+020260102012731",
     "CHANGE_USER":"SAP_CUSTOMER",
-    "CHANGE_TIMESTAMP":"+020260102012919",
+    "CHANGE_TIMESTAMP":"+020260102012731",
     "EXCLUDE_START_AUTH":"",
     "FORBID_USE_WITH_SUCCESSOR":"",
     "NO_DIRECT_ASSIGNMENT":""
-   }
-  ]
- },
- {
-  "table":"APS_IAM_W_APPSRV",
-  "data":
-  [
-   {
-    "APP_ID":"ZETR_IAM_EXP_ACC_EXT",
-    "SRVC_NAME":"6E2EF84F348B8389E26252477B39DA",
-    "SRVC_TYPE":"HT",
-    "UIAD_SRC":"ZETR_EXP_ACC_2_UI5R",
-    "ACTIVE":""
    }
   ]
  },
@@ -45,8 +32,8 @@
   [
    {
     "LANGU":"E",
-    "APP_ID":"ZETR_IAM_EXP_ACC_EXT",
-    "TEXT":"eSolution - Export Account"
+    "APP_ID":"ZETR_IAM_CST_BKM_EXT",
+    "TEXT":"Masraf tipi bazlı ana hesap tayinleri"
    }
   ]
  },
@@ -57,7 +44,7 @@
    {
     "PGMID":"R3TR",
     "OBJECT":"SIA6",
-    "OBJ_NAME":"ZETR_IAM_EXP_ACC_EXT",
+    "OBJ_NAME":"ZETR_IAM_CST_BKM_EXT",
     "KORRNUM":"",
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP_CUSTOMER",
@@ -74,8 +61,8 @@
     "CRELEASE":"",
     "DELFLAG":"",
     "TRANSLTTXT":"",
-    "CREATED_ON":"2023-12-20",
-    "CHECK_DATE":"2023-12-20",
+    "CREATED_ON":"2026-01-02",
+    "CHECK_DATE":"2026-01-02",
     "CHECK_CFG":""
    }
   ]

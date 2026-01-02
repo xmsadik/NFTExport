@@ -11,7 +11,6 @@ define behavior for ZETR_DDL_C_EXP_HEADER
   action releaseToAccounting;
   action ClosedExport;
 
-
   use association _InvoiceHeader;
   use association _InvoiceItem;
   use association _Texts { create; }

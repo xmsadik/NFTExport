@@ -105,9 +105,13 @@ CLASS lsc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_saver.
 
 
 
+
+
+
 ENDCLASS.
 
 CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
+
 
   METHOD adjust_numbers.
   ENDMETHOD.
@@ -297,8 +301,12 @@ CLASS lhc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_handle
       IMPORTING keys REQUEST requested_authorizations FOR zetr_ddl_i_exp_head RESULT result.
     METHODS releasetoaccounting FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_exp_head~releasetoaccounting.
-    METHODS searchbankaccount FOR DETERMINE ON MODIFY
-      IMPORTING keys FOR zetr_ddl_i_exp_head~searchbankaccount.
+*    METHODS get_instance_features FOR INSTANCE FEATURES
+*      IMPORTING keys REQUEST requested_features FOR zetr_ddl_i_exp_head RESULT result.
+
+    METHODS searchbankaccount FOR MODIFY
+      IMPORTING keys FOR ACTION zetr_ddl_i_exp_head~searchbankaccount.
+
 
     METHODS earlynumbering_create FOR NUMBERING
       IMPORTING entities FOR CREATE zetr_ddl_i_exp_head.
@@ -336,6 +344,22 @@ CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD get_instance_authorizations.
+
+    " Gerekli değilse bile yine de minimal okuma yapalım (UI genelde ister)
+    READ ENTITIES OF zetr_ddl_i_exp_head IN LOCAL MODE
+      ENTITY zetr_ddl_i_exp_head
+      ALL FIELDS WITH CORRESPONDING #( keys )
+      RESULT DATA(lt_data).
+
+    LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<fs_data>).
+
+      " Sonuç paketi
+      APPEND VALUE #(
+        %key = CORRESPONDING #( <fs_data>-%key )
+        %action-searchbankaccount = if_abap_behv=>fc-o-enabled
+      ) TO result.
+
+    ENDLOOP.
   ENDMETHOD.
 
   METHOD releasetoaccounting.
@@ -343,6 +367,12 @@ CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
 
   ENDMETHOD.
 
+
+
+
+
+*  METHOD get_instance_features.
+*  ENDMETHOD.
 
 
   METHOD searchbankaccount.

@@ -4,18 +4,18 @@
   "data":
   [
    {
-    "APP_ID":"ZETR_EXP_CST_UI5R",
+    "APP_ID":"ZETR_EXP_ACC_2_UI5R",
     "CAT_ID":"SAP_TC_UI5_REPO_UIAD",
-    "SEM_OBJ":"ExportCost",
-    "SEM_ACT":"manage",
-    "TARGET_MAPPING_ID":"UI5R_F2047F801D1D9AB6CE09AEAF1A6DB009E62B0B26_TM",
-    "TILE_ID":"UI5R_F2047F801D1D9AB6CE09AEAF1A6DB009E62B0B26_AL",
+    "SEM_OBJ":"ExpenseDocumentType2",
+    "SEM_ACT":"Manage",
+    "TARGET_MAPPING_ID":"UI5R_F65B04FDB7622C682A8E040E64549467C87B4B46_TM",
+    "TILE_ID":"UI5R_F65B04FDB7622C682A8E040E64549467C87B4B46_AL",
     "APP_TYPE":"U",
     "TCODE":"",
     "WD_APPL_ID":"",
     "WD_CONF_ID":"",
     "WCF_TARGET_ID":"",
-    "UI5_APP_ID":"nttdata.etr.costscreen",
+    "UI5_APP_ID":"export_account",
     "FIORI_ID":"",
     "ICF_PATH":"",
     "SYSTEM_ALIAS":"",
@@ -33,7 +33,7 @@
     "REFRESH_INTERVALL":0,
     "DISPLAY_NUMBER_UNIT":"",
     "FLAVOR_ID":"",
-    "CHANGED_AT":"+020260102084046",
+    "CHANGED_AT":"+020260102012633",
     "CHANGED_BY":"SAP_CUSTOMER",
     "MASTERLANG":"",
     "ACH_COMPONENT":"",
@@ -56,12 +56,12 @@
   "data":
   [
    {
-    "APP_ID":"ZETR_EXP_CST_UI5R",
-    "TILE_ID":"UI5R_F2047F801D1D9AB6CE09AEAF1A6DB009E62B0B26_AL",
+    "APP_ID":"ZETR_EXP_ACC_2_UI5R",
+    "TILE_ID":"UI5R_F65B04FDB7622C682A8E040E64549467C87B4B46_AL",
     "TILE_TYPE":"S",
     "CUSTOM_TILE_TYPE":"",
     "DEFAULT_TILE":"X",
-    "TILE_CONFIG_STRING":"{\"tileConfiguration\":\"{\\\"display_icon_url\\\":\\\"\\\",\\\"display_info_text\\\":\\\"\\\",\\\"display_title_text\\\":\\\"Masraf Ekranı\\\",\\\"display_subtitle_text\\\":\\\"\\\",\\\"navigation_use_semantic_object\\\":true,\\\"navigation_target_url\\\":\\\"#ExportCost-manage\\\",\\\"navigation_semantic_object\\\":\\\"ExportCost\\\",\\\"navigation_semantic_action\\\":\\\"manage\\\",\\\"navigation_semantic_parameters\\\":\\\"\\\",\\\"display_search_keywords\\\":\\\"\\\",\\\"display_number_unit\\\":\\\"\\\",\\\"service_url\\\":\\\"\\\",\\\"service_refresh_interval\\\":0}\"}",
+    "TILE_CONFIG_STRING":"{\"tileConfiguration\":\"{\\\"display_icon_url\\\":\\\"\\\",\\\"display_info_text\\\":\\\"\\\",\\\"display_title_text\\\":\\\"Masraf tipi bazlı ana hesap tayinleri\\\",\\\"display_subtitle_text\\\":\\\"\\\",\\\"navigation_use_semantic_object\\\":true,\\\"navigation_target_url\\\":\\\"#ExpenseDocumentType2-Manage\\\",\\\"navigation_semantic_object\\\":\\\"ExpenseDocumentType2\\\",\\\"navigation_semantic_action\\\":\\\"Manage\\\",\\\"navigation_semantic_parameters\\\":\\\"\\\",\\\"display_search_keywords\\\":\\\"\\\",\\\"display_number_unit\\\":\\\"\\\",\\\"service_url\\\":\\\"\\\",\\\"service_refresh_interval\\\":0}\"}",
     "TILE_ICON":"",
     "TILE_PARAMETERS":"",
     "SERVICE_BASE_URL":"",
@@ -79,9 +79,9 @@
   [
    {
     "LANGU":"E",
-    "APP_ID":"ZETR_EXP_CST_UI5R",
-    "TILE_ID":"UI5R_F2047F801D1D9AB6CE09AEAF1A6DB009E62B0B26_AL",
-    "TILE_TITLE":"Masraf Ekranı",
+    "APP_ID":"ZETR_EXP_ACC_2_UI5R",
+    "TILE_ID":"UI5R_F65B04FDB7622C682A8E040E64549467C87B4B46_AL",
+    "TILE_TITLE":"Masraf tipi bazlı ana hesap tayinleri",
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":""
@@ -93,24 +93,14 @@
   "data":
   [
    {
-    "APP_ID":"ZETR_EXP_CST_UI5R",
+    "APP_ID":"ZETR_EXP_ACC_2_UI5R",
     "LANGU":"E",
-    "TILE_TITLE":"Masraf Ekranı",
+    "TILE_TITLE":"Masraf tipi bazlı ana hesap tayinleri",
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Masraf Ekranı",
-    "DESCRIPTION":"Cost"
-   },
-   {
-    "APP_ID":"ZETR_EXP_CST_UI5R",
-    "LANGU":"T",
-    "TILE_TITLE":"",
-    "TILE_SUBTITLE":"",
-    "TILE_KEYWORDS":"",
-    "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"",
-    "DESCRIPTION":"Masraf"
+    "ALT_SMART_LINK_TITLE":"Masraf tipi bazlı ana hesap tayinleri",
+    "DESCRIPTION":"{{appDescription}}"
    }
   ]
  },
@@ -121,7 +111,7 @@
    {
     "PGMID":"R3TR",
     "OBJECT":"UIAD",
-    "OBJ_NAME":"ZETR_EXP_CST_UI5R",
+    "OBJ_NAME":"ZETR_EXP_ACC_2_UI5R",
     "KORRNUM":"",
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP_CUSTOMER",
