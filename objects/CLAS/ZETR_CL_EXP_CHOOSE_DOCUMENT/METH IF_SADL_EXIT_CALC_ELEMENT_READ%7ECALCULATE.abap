@@ -15,6 +15,11 @@
           <fs_vbeln>-vbeln = <fs_output>-billingdocument.
         ENDLOOP.
 
+        DATA(lv_deneme) = VALUE vbeln( ).
+
+
+
+
         IF lo_instance IS BOUND.
           CALL BADI lo_instance->get_choosed_document
             EXPORTING
