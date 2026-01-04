@@ -12,13 +12,8 @@
 
         LOOP AT lt_output ASSIGNING FIELD-SYMBOL(<fs_output>).
           APPEND INITIAL LINE TO lt_vbeln ASSIGNING FIELD-SYMBOL(<fs_vbeln>).
-          <fs_vbeln>-vbeln = <fs_output>-billingdocument.
+          <fs_vbeln>-vbeln = |{ <fs_output>-billingdocument ALPHA = IN }|.
         ENDLOOP.
-
-        DATA(lv_deneme) = VALUE vbeln( ).
-
-
-
 
         IF lo_instance IS BOUND.
           CALL BADI lo_instance->get_choosed_document
