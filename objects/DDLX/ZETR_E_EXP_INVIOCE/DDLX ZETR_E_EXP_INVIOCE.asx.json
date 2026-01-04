@@ -7,9 +7,9 @@
     "DDLXNAME":"ZETR_E_EXP_INVIOCE",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2024-02-22",
-    "CHANGED_AT":"13:47:59",
-    "UUID":"AB54FC360F6F1EDEB4B11F9FB2531F6F",
+    "CHANGED_ON":"2026-01-04",
+    "CHANGED_AT":"20:09:02",
+    "UUID":"FA163EBBCF7E1FE0BAB526C4C636275D",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_E_EXP_INVIOCE",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\n    headerInfo:{\r\n                typeNamePlural: 'Invoice',\r\n                typeName: 'Invoice',\r\n                title:{ type: #STANDARD, label: 'Invoice', value: 'CompanyCodeName' }\r\n                }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_INVOICE with\r\n{\r\n\r\n  @UI: {lineItem:       [ { type: #FOR_ACTION, dataAction: 'Added', label: 'Invoice Added' ,invocationGrouping: #ISOLATED } ,\r\n                            { position: 10 } ],selectionField: [ { position: 30 } ] }\r\n  @Consumption.valueHelpDefinition: [ { entity:  { name:    'I_BillingDocumentStdVH', element: 'BillingDocument' } }]\r\n  BillingDocument;\r\n  @UI: { lineItem:       [ { position: 20 } ],selectionField: [ { position: 50 } ] }\r\n  @Consumption.valueHelpDefinition: [ { entity:  { name: 'I_BillingDocumentTypeStdVH', element: 'BillingDocumentType' } }]\r\n  BillingDocumentType;\r\n  @UI: { lineItem:       [ { position: 40 } ],selectionField: [ { position: 70 } ] }\r\n  DistributionChannel;\r\n  @UI: { lineItem:       [ { position: 50 } ],selectionField: [ { position: 80 } ] }\r\n  Division;\r\n  @UI: { lineItem:       [ { position: 60 } ],selectionField: [ { position: 20 } ] }\r\n  @Consumption :{ valueHelpDefinition:[{ entity :{ name :'I_Customer_VH', element: 'Customer' } } ]}\r\n  PayerParty;\r\n  @UI: { lineItem:       [ { position: 70 } ],selectionField: [ { position: 60 } ] }\r\n  SalesOrganization;\r\n  @UI: { lineItem:       [ { position: 80 } ],selectionField: [ { position: 90 } ] }\r\n  SoldToParty;\r\n  @EndUserText.label: 'Reference'\r\n  @UI: { lineItem:       [ { position: 90 } ],selectionField: [ { position: 100 } ] }\r\n  kunre;\r\n  @UI: { lineItem:       [ { position: 100 } ] }\r\n  TotalNetAmount;\r\n  @UI: { lineItem:       [ { position: 110 } ],identification: [{ position: 10 }] }\r\n  TotalTaxAmount;\r\n  @UI: { lineItem:       [ { position: 120 } ] }\r\n  TransactionCurrency;\r\n  @UI: { lineItem:       [ { position: 130 } ],selectionField: [ { position: 40 } ] }\r\n  BillingDocumentDate;\r\n  @UI: { lineItem:       [ { position: 140 } ] }\r\n  DocumentReferenceID;\r\n  @UI: { lineItem:       [ { position: 150 } ] }\r\n  CustomerPaymentTerms;\r\n  @UI: { lineItem:       [ { position: 160 } ] }\r\n  IncotermsClassification;\r\n  @UI: { lineItem:       [ { position: 170 } ] }\r\n  IncotermsTransferLocation;\r\n  @UI: { lineItem:       [ { position: 180 } ],selectionField: [ { position: 110 } ] }\r\n  CreationDate;\r\n  @UI: { lineItem:       [ { position: 190 } ],identification: [{ position: 10 }] }\r\n  CreationTime;\r\n  @UI: { lineItem:       [ { position: 200 } ] }\r\n  CreatedByUser;\r\n  @UI: { lineItem:       [ { position: 210 } ] }\r\n  AccountingTransferStatus;\r\n  @UI: { lineItem:       [ { position: 220 } ] }\r\n  AccountingDocument;\r\n  @UI: { lineItem:       [ { position: 230 } ],selectionField: [ { position: 10 } ] }\r\n  @Consumption :{ valueHelpDefinition:[{ entity :{ name :'I_CompanyCode', element: 'CompanyCode' } } ]}\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 240 } ] }\r\n  FiscalYear;\r\n\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\n    headerInfo:{\r\n                typeNamePlural: 'Invoice',\r\n                typeName: 'Invoice',\r\n                title:{ type: #STANDARD, label: 'Invoice', value: 'CompanyCodeName' }\r\n                }\r\n}\r\nannotate entity ZETR_DDL_C_EXP_INVOICE with\r\n{\r\n\r\n  @UI: {lineItem:       [ { type: #FOR_ACTION, dataAction: 'Added', label: 'Invoice Added' ,invocationGrouping: #ISOLATED } ,\r\n                            { position: 10 } ],selectionField: [ { position: 30 } ] }\r\n  @Consumption.valueHelpDefinition: [ { entity:  { name:    'I_BillingDocumentStdVH', element: 'BillingDocument' } }]\r\n  BillingDocument;\r\n  @UI: { lineItem:       [ { position: 20 } ],selectionField: [ { position: 50 } ] }\r\n  @Consumption.valueHelpDefinition: [ { entity:  { name: 'I_BillingDocumentTypeStdVH', element: 'BillingDocumentType' } }]\r\n  BillingDocumentType;\r\n  @UI: { lineItem:       [ { position: 40 } ],selectionField: [ { position: 70 } ] }\r\n  DistributionChannel;\r\n  @UI: { lineItem:       [ { position: 50 } ],selectionField: [ { position: 80 } ] }\r\n  Division;\r\n  @UI: { lineItem:       [ { position: 60 } ],selectionField: [ { position: 20 } ] }\r\n  @Consumption :{ valueHelpDefinition:[{ entity :{ name :'I_Customer_VH', element: 'Customer' } } ]}\r\n  PayerParty;\r\n  @UI: { lineItem:       [ { position: 70 } ],selectionField: [ { position: 60 } ] }\r\n  SalesOrganization;\r\n  @UI: { lineItem:       [ { position: 80 } ],selectionField: [ { position: 90 } ] }\r\n  SoldToParty;\r\n  @EndUserText.label: 'Reference'\r\n  @UI: { lineItem:       [ { position: 90 } ],selectionField: [ { position: 100 } ] }\r\n  kunre;\r\n  @UI: { lineItem:       [ { position: 100 } ] }\r\n  TotalNetAmount;\r\n  @UI: { lineItem:       [ { position: 110 } ],identification: [{ position: 10 }] }\r\n  TotalTaxAmount;\r\n  @UI: { lineItem:       [ { position: 120 } ] }\r\n  TransactionCurrency;\r\n  @UI: { lineItem:       [ { position: 130 } ],selectionField: [ { position: 40 } ] }\r\n  BillingDocumentDate;\r\n  @UI: { lineItem:       [ { position: 140 } ] }\r\n  DocumentReferenceID;\r\n  @UI: { lineItem:       [ { position: 150 } ] }\r\n  CustomerPaymentTerms;\r\n  @UI: { lineItem:       [ { position: 160 } ] }\r\n  IncotermsClassification;\r\n  @UI: { lineItem:       [ { position: 170 } ] }\r\n  IncotermsTransferLocation;\r\n  @UI: { lineItem:       [ { position: 180 } ],selectionField: [ { position: 110 } ] }\r\n  CreationDate;\r\n  @UI: { lineItem:       [ { position: 190 } ],identification: [{ position: 10 }] }\r\n  CreationTime;\r\n  @UI: { lineItem:       [ { position: 200 } ] }\r\n  CreatedByUser;\r\n  @UI: { lineItem:       [ { position: 210 } ] }\r\n  AccountingTransferStatus;\r\n  @UI: { lineItem:       [ { position: 220 } ] }\r\n  AccountingDocument;\r\n  @UI: { lineItem:       [ { position: 230 } ],selectionField: [ { position: 10 } ] }\r\n  @Consumption :{ valueHelpDefinition:[{ entity :{ name :'I_CompanyCode', element: 'CompanyCode' } } ]}\r\n  CompanyCode;\r\n  @UI: { lineItem:       [ { position: 240 } ] }\r\n  FiscalYear;\r\n  @UI: { lineItem:       [ { position: 250 } ] }\r\n  CanceledByOrder;\r\n\r\n}"
    }
   ]
  },
@@ -188,6 +188,13 @@
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
     "ELEMENT_TYPE":"S",
     "VALUE":"50"
+   },
+   {
+    "DDLXNAME":"ZETR_E_EXP_INVIOCE",
+    "ELEMENT":"CANCELEDBYORDER",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "ELEMENT_TYPE":"S",
+    "VALUE":"250"
    },
    {
     "DDLXNAME":"ZETR_E_EXP_INVIOCE",
@@ -472,8 +479,8 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_C_EXP_INVOICE",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"AB54FC360F6F1EDEB4B11F9FB2531F6F",
-    "RT_HASH":"A198A67846EE4B6759A61D5767340320C91181D7",
+    "DT_UUID":"FA163EBBCF7E1FE0BAB526C4C636275D",
+    "RT_HASH":"189E5E6249ABCC4F9CBB51AA3F65A637D4E85154",
     "GEN_VERSION":"0",
     "TYPE":"0"
    }
