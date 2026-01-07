@@ -10,21 +10,18 @@ authorization master ( instance )
   create;
   update;
   delete;
-  field ( readonly ) Filen, Pymty, Iban, Clsed, StatusClosed;
+  field ( readonly ) Filen, Iban, Pymty, Clsed, StatusClosed;
   field ( mandatory : create ) Kunrg, Bldat, Bukrs, Expty;
 
-  action SearchBankAccount;
-
-  side effects
-  {
-    //    field DbsFlag affects field TotalLimit, field TTSLimit;
-    field Kunrg affects field iban, field bankl;
-
-    action SearchBankAccount affects field Kunrg, field iban, field bankl;
-  }
-
-
-  //determination SearchBankAccount on modify { field Kunrg; }
+  //  action SearchBankAccount;
+  //
+  //  side effects
+  //  {
+  //
+  //    field Kunrg affects field iban, field bankl;
+  //
+  //    action SearchBankAccount affects field Kunrg, field iban, field bankl;
+  //  }
 
   action releaseToAccounting;
 

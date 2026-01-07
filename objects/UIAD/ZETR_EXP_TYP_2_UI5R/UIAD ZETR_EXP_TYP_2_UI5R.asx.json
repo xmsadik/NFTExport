@@ -4,18 +4,18 @@
   "data":
   [
    {
-    "APP_ID":"ZETR_EXP_HED_UI5R",
+    "APP_ID":"ZETR_EXP_TYP_2_UI5R",
     "CAT_ID":"SAP_TC_UI5_REPO_UIAD",
-    "SEM_OBJ":"Export",
+    "SEM_OBJ":"ExpenseDocumentTypeV2",
     "SEM_ACT":"manage",
-    "TARGET_MAPPING_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_TM",
-    "TILE_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_AL",
+    "TARGET_MAPPING_ID":"UI5R_71A65935A82EC51108559732B1911832EC4A6468_TM",
+    "TILE_ID":"UI5R_71A65935A82EC51108559732B1911832EC4A6468_AL",
     "APP_TYPE":"U",
     "TCODE":"",
     "WD_APPL_ID":"",
     "WD_CONF_ID":"",
     "WCF_TARGET_ID":"",
-    "UI5_APP_ID":"nttdata.etr.export",
+    "UI5_APP_ID":"ntt.exp.expensedoctype",
     "FIORI_ID":"",
     "ICF_PATH":"",
     "SYSTEM_ALIAS":"",
@@ -33,7 +33,7 @@
     "REFRESH_INTERVALL":0,
     "DISPLAY_NUMBER_UNIT":"",
     "FLAVOR_ID":"",
-    "CHANGED_AT":"+020260107140035",
+    "CHANGED_AT":"+020260107064719",
     "CHANGED_BY":"SAP_CUSTOMER",
     "MASTERLANG":"",
     "ACH_COMPONENT":"",
@@ -56,12 +56,12 @@
   "data":
   [
    {
-    "APP_ID":"ZETR_EXP_HED_UI5R",
-    "TILE_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_AL",
+    "APP_ID":"ZETR_EXP_TYP_2_UI5R",
+    "TILE_ID":"UI5R_71A65935A82EC51108559732B1911832EC4A6468_AL",
     "TILE_TYPE":"S",
     "CUSTOM_TILE_TYPE":"",
     "DEFAULT_TILE":"X",
-    "TILE_CONFIG_STRING":"{\"tileConfiguration\":\"{\\\"display_icon_url\\\":\\\"\\\",\\\"display_info_text\\\":\\\"\\\",\\\"display_title_text\\\":\\\"Export Portal\\\",\\\"display_subtitle_text\\\":\\\"\\\",\\\"navigation_use_semantic_object\\\":true,\\\"navigation_target_url\\\":\\\"#Export-manage\\\",\\\"navigation_semantic_object\\\":\\\"Export\\\",\\\"navigation_semantic_action\\\":\\\"manage\\\",\\\"navigation_semantic_parameters\\\":\\\"\\\",\\\"display_search_keywords\\\":\\\"\\\",\\\"display_number_unit\\\":\\\"\\\",\\\"service_url\\\":\\\"\\\",\\\"service_refresh_interval\\\":0}\"}",
+    "TILE_CONFIG_STRING":"{\"tileConfiguration\":\"{\\\"display_icon_url\\\":\\\"\\\",\\\"display_info_text\\\":\\\"\\\",\\\"display_title_text\\\":\\\"Masraf Belge Türü\\\",\\\"display_subtitle_text\\\":\\\"\\\",\\\"navigation_use_semantic_object\\\":true,\\\"navigation_target_url\\\":\\\"#ExpenseDocumentTypeV2-manage\\\",\\\"navigation_semantic_object\\\":\\\"ExpenseDocumentTypeV2\\\",\\\"navigation_semantic_action\\\":\\\"manage\\\",\\\"navigation_semantic_parameters\\\":\\\"\\\",\\\"display_search_keywords\\\":\\\"\\\",\\\"display_number_unit\\\":\\\"\\\",\\\"service_url\\\":\\\"\\\",\\\"service_refresh_interval\\\":0}\"}",
     "TILE_ICON":"",
     "TILE_PARAMETERS":"",
     "SERVICE_BASE_URL":"",
@@ -79,18 +79,9 @@
   [
    {
     "LANGU":"E",
-    "APP_ID":"ZETR_EXP_HED_UI5R",
-    "TILE_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_AL",
-    "TILE_TITLE":"Export Portal",
-    "TILE_SUBTITLE":"",
-    "TILE_KEYWORDS":"",
-    "TILE_INFORMATION":""
-   },
-   {
-    "LANGU":"T",
-    "APP_ID":"ZETR_EXP_HED_UI5R",
-    "TILE_ID":"UI5R_92E5C411BEA8092EFCC8CAA1A5414A5C52D05E4B_AL",
-    "TILE_TITLE":"İhracat kokpiti",
+    "APP_ID":"ZETR_EXP_TYP_2_UI5R",
+    "TILE_ID":"UI5R_71A65935A82EC51108559732B1911832EC4A6468_AL",
+    "TILE_TITLE":"Masraf Belge Türü",
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":""
@@ -102,24 +93,14 @@
   "data":
   [
    {
-    "APP_ID":"ZETR_EXP_HED_UI5R",
+    "APP_ID":"ZETR_EXP_TYP_2_UI5R",
     "LANGU":"E",
-    "TILE_TITLE":"Export Portal",
+    "TILE_TITLE":"Masraf Belge Türü",
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"Export Portal",
-    "DESCRIPTION":"Export"
-   },
-   {
-    "APP_ID":"ZETR_EXP_HED_UI5R",
-    "LANGU":"T",
-    "TILE_TITLE":"İhracat kokpiti",
-    "TILE_SUBTITLE":"",
-    "TILE_KEYWORDS":"",
-    "TILE_INFORMATION":"",
-    "ALT_SMART_LINK_TITLE":"İhracat kokpiti",
-    "DESCRIPTION":"İhracat"
+    "ALT_SMART_LINK_TITLE":"Masraf Belge Türü",
+    "DESCRIPTION":"Masraf Belge Türü"
    }
   ]
  },
@@ -130,7 +111,7 @@
    {
     "PGMID":"R3TR",
     "OBJECT":"UIAD",
-    "OBJ_NAME":"ZETR_EXP_HED_UI5R",
+    "OBJ_NAME":"ZETR_EXP_TYP_2_UI5R",
     "KORRNUM":"",
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP_CUSTOMER",

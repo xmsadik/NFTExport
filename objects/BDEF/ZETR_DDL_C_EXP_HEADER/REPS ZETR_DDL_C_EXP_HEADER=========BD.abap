@@ -10,6 +10,17 @@ define behavior for ZETR_DDL_C_EXP_HEADER
 
   action releaseToAccounting;
   action ClosedExport;
+  action SearchBankAccount;
+
+
+
+  side effects
+  {
+    //    field DbsFlag affects field TotalLimit, field TTSLimit;
+    field Kunrg affects field iban, field bankl;
+
+    action SearchBankAccount affects field Kunrg, field iban, field bankl;
+  }
 
   use association _InvoiceHeader;
   use association _InvoiceItem;

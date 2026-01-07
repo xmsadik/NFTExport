@@ -33,8 +33,6 @@ CLASS lhc_zetr_ddl_i_export_invh DEFINITION INHERITING FROM cl_abap_behavior_han
 
     METHODS getpdf FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_export_invh~getpdf RESULT result.
-*    METHODS deletedinvoice FOR MODIFY
-*      IMPORTING keys FOR ACTION zetr_ddl_i_export_invh~deletedinvoice RESULT result.
 
 
 ENDCLASS.
@@ -73,24 +71,6 @@ CLASS lhc_zetr_ddl_i_export_invh IMPLEMENTATION.
 
   ENDMETHOD.
 
-*  METHOD deletedinvoice.
-*
-*    LOOP AT keys INTO DATA(ls_key).
-*
-*      DELETE FROM zetr_t_r102
-*            WHERE filen = @ls_key-fileexportnumber
-*              AND vbeln = @ls_key-billingdocument.
-*
-*      DELETE FROM zetr_t_r103
-*            WHERE filen = @ls_key-fileexportnumber
-*              AND vbeln = @ls_key-billingdocument.
-*
-*
-*      result = VALUE #( ( billingdocument  = ls_key-billingdocument
-*                          fileexportnumber = ls_key-fileexportnumber ) ) .
-*    ENDLOOP.
-*  ENDMETHOD.
-
 ENDCLASS.
 
 CLASS lsc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_saver.
@@ -99,14 +79,6 @@ CLASS lsc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_saver.
     METHODS save_modified  REDEFINITION .
 
     METHODS adjust_numbers REDEFINITION.
-
-
-
-
-
-
-
-
 
 ENDCLASS.
 
@@ -185,6 +157,11 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
           IF <fs_name> = if_abap_behv=>mk-on.
             ASSIGN COMPONENT <fs_components>-name OF STRUCTURE ls_update TO <fs_update_data>.
             ASSIGN COMPONENT <fs_components>-name OF STRUCTURE ls_r101   TO <fs_export_value>.
+
+            IF <fs_components>-name = 'BANKL' AND <fs_update_data> IS INITIAL.
+              ls_r101-bankid = ''.
+              ls_r101-iban   = ''.
+            ENDIF.
             <fs_export_value> = <fs_update_data>.
           ENDIF.
 
@@ -301,17 +278,9 @@ CLASS lhc_zetr_ddl_i_exp_head DEFINITION INHERITING FROM cl_abap_behavior_handle
       IMPORTING keys REQUEST requested_authorizations FOR zetr_ddl_i_exp_head RESULT result.
     METHODS releasetoaccounting FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_i_exp_head~releasetoaccounting.
-*    METHODS get_instance_features FOR INSTANCE FEATURES
-*      IMPORTING keys REQUEST requested_features FOR zetr_ddl_i_exp_head RESULT result.
-
-    METHODS searchbankaccount FOR MODIFY
-      IMPORTING keys FOR ACTION zetr_ddl_i_exp_head~searchbankaccount.
-
 
     METHODS earlynumbering_create FOR NUMBERING
       IMPORTING entities FOR CREATE zetr_ddl_i_exp_head.
-
-
 
 ENDCLASS.
 
@@ -353,8 +322,6 @@ CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
     ENDTRY.
 
 
-*    mapped-zetr_ddl_i_exp_head     = VALUE #(  ( filen = lv_filen ) ).
-
 
     mapped-zetr_ddl_i_exp_head = VALUE #( ( %cid = entities[ 1 ]-%cid
                                            filen = lv_filen ) ).
@@ -362,74 +329,11 @@ CLASS lhc_zetr_ddl_i_exp_head IMPLEMENTATION.
   ENDMETHOD.
   METHOD get_instance_authorizations.
 
-    " Gerekli değilse bile yine de minimal okuma yapalım (UI genelde ister)
-    READ ENTITIES OF zetr_ddl_i_exp_head IN LOCAL MODE
-      ENTITY zetr_ddl_i_exp_head
-      ALL FIELDS WITH CORRESPONDING #( keys )
-      RESULT DATA(lt_data).
-
-    LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<fs_data>).
-
-      " Sonuç paketi
-      APPEND VALUE #(
-        %key = CORRESPONDING #( <fs_data>-%key )
-        %action-searchbankaccount = if_abap_behv=>fc-o-enabled
-      ) TO result.
-
-
-
-    ENDLOOP.
-
 
   ENDMETHOD.
 
   METHOD releasetoaccounting.
     DATA(lv_deneme) = 1.
-
-  ENDMETHOD.
-
-
-
-
-
-*  METHOD get_instance_features.
-*  ENDMETHOD.
-
-
-  METHOD searchbankaccount.
-
-    READ ENTITIES OF zetr_ddl_i_exp_head IN LOCAL MODE
-      ENTITY zetr_ddl_i_exp_head
-      FIELDS ( kunrg iban )
-      WITH CORRESPONDING #( keys )
-      RESULT DATA(lt_data).
-
-    LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<ls_data>).
-
-      IF <ls_data>-kunrg IS NOT INITIAL.
-
-        " Örnek: KUNRG'den IBAN bul
-*        SELECT SINGLE iban
-*          INTO @<ls_data>-iban
-*          FROM zbank_table
-*          WHERE kunrg = @<ls_data>-kunrg.
-
-      ENDIF.
-
-    ENDLOOP.
-
-    MODIFY ENTITIES OF zetr_ddl_i_exp_head IN LOCAL MODE
-      ENTITY zetr_ddl_i_exp_head
-      UPDATE FIELDS ( iban )
-      WITH VALUE #( (   "%tky = row-%tky
-                        iban = '1111111111'  )
-      "FOR row IN lt_data (
-      "  %tky = row-%tky
-      "  iban = row-iban
-     " )
-
-       ).
-
   ENDMETHOD.
 
 ENDCLASS.

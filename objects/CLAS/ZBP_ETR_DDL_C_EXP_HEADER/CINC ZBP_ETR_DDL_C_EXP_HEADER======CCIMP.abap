@@ -22,6 +22,8 @@ CLASS lhc_zetr_ddl_c_exp_header DEFINITION INHERITING FROM cl_abap_behavior_hand
       IMPORTING keys FOR ACTION zetr_ddl_c_exp_header~releasetoaccounting.
     METHODS closedexport FOR MODIFY
       IMPORTING keys FOR ACTION zetr_ddl_c_exp_header~closedexport.
+    METHODS searchbankaccount FOR MODIFY
+      IMPORTING keys FOR ACTION zetr_ddl_c_exp_header~searchbankaccount.
 
 
 
@@ -76,6 +78,11 @@ CLASS lhc_zetr_ddl_c_exp_header IMPLEMENTATION.
                                         severity = if_abap_behv_message=>severity-success ) ) TO reported-zetr_ddl_c_exp_header.
   ENDMETHOD.
 
+  METHOD searchbankaccount.
+
+
+
+  ENDMETHOD.
 ENDCLASS.
 
 CLASS lhc_zetr_ddl_c_exp_invh DEFINITION INHERITING FROM cl_abap_behavior_handler.
