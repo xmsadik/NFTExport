@@ -7,9 +7,9 @@
     "SRVDNAME":"ZETR_SD_EXP_HEAD",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2026-01-07",
-    "CHANGED_AT":"01:03:33",
-    "DT_UUID":"FA163EBBCF7E1FE0BAEC95F340C26762",
+    "CHANGED_ON":"2026-01-08",
+    "CHANGED_AT":"10:52:03",
+    "DT_UUID":"FA163EBBCF7E1FE0BB900207AAF1A766",
     "SOURCE_ORIGIN":"0",
     "SRVD_SOURCE_TYPE":"S",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -35,7 +35,7 @@
    {
     "SRVDNAME":"ZETR_SD_EXP_HEAD",
     "VERSION":"A",
-    "SOURCE":"@EndUserText.label: 'Export Header Service Desf.'\r\ndefine service ZETR_SD_EXP_HEAD {\r\n  expose ZETR_DDL_C_EXP_HEADER       as ExportHeader;\r\n  expose ZETR_DDL_C_EXP_INVH         as InvoiceHeader;\r\n  expose ZETR_DDL_C_EXP_INVI         as InvoiceItem;\r\n  expose ZETR_DDL_C_EXP_TXT          as ExportText;\r\n  expose ZETR_DDL_C_PRN_OPR          as PrintOperation;\r\n  expose ZETR_DDL_C_BIL_DOC          as BillingDocument;\r\n  expose ZETR_DDL_C_EXP_INVOICE_P    as InvoiceChoose;\r\n  expose zetr_DDL_C_CST_TYP          as CostType;\r\n  expose ZETR_DDL_C_TAX_CDE          as TaxCode;\r\n  expose I_Supplier                  as Supplier;\r\n  expose ZETR_DDL_C_EXP_ACCOUNT      as ExpenseAccount;\r\n  expose ZETR_DDL_C_VORGANG          as ExpenseDocumentType;\r\n  expose ZETR_DDL_C_COSTING_RPR      as CostingReport;\r\n  expose ZETR_DDL_I_CURRENCY         as CurrencyVH;\r\n  expose ZETR_DDL_I_ACC_DOC_TYPE_VH  as DocumentTypeVH;\r\n  expose ZETR_DDL_I_CUSTOMER_COMPANY as CustomerCompanyVH;\r\n}"
+    "SOURCE":"@EndUserText.label: 'Export Header Service Desf.'\r\ndefine service ZETR_SD_EXP_HEAD {\r\n  expose ZETR_DDL_C_EXP_HEADER       as ExportHeader;\r\n  expose ZETR_DDL_C_EXP_INVH         as InvoiceHeader;\r\n  expose ZETR_DDL_C_EXP_INVI         as InvoiceItem;\r\n  expose ZETR_DDL_C_EXP_TXT          as ExportText;\r\n  expose ZETR_DDL_C_PRN_OPR          as PrintOperation;\r\n  expose ZETR_DDL_C_BIL_DOC          as BillingDocument;\r\n  expose ZETR_DDL_C_EXP_INVOICE_P    as InvoiceChoose;\r\n  expose zetr_DDL_C_CST_TYP          as CostType;\r\n  expose ZETR_DDL_C_TAX_CDE          as TaxCode;\r\n  expose I_Supplier                  as Supplier;\r\n  expose ZETR_DDL_C_EXP_ACCOUNT      as ExpenseAccount;\r\n  expose ZETR_DDL_C_VORGANG          as ExpenseDocumentType;\r\n  expose ZETR_DDL_C_COSTING_RPR      as CostingReport;\r\n  expose ZETR_DDL_I_CURRENCY         as CurrencyVH;\r\n  expose ZETR_DDL_I_ACC_DOC_TYPE_VH  as DocumentTypeVH;\r\n  expose ZETR_DDL_I_CUSTOMER_COMPANY as CustomerCompanyVH;\r\n  expose ZETR_DDL_C_EXP_INVOICE      as ExportInvoice;\r\n}"
    }
   ]
  },
@@ -141,6 +141,15 @@
    {
     "SRVDNAME":"ZETR_SD_EXP_HEAD",
     "SERVICE":"ZETR_SD_EXP_HEAD",
+    "EXPOSED_ARTIFACT":"ZETR_DDL_C_EXP_INVOICE",
+    "EXPOSED_ARTIFACT_TYPE":"E",
+    "EXPOSED_ALIAS":"EXPORTINVOICE",
+    "EXPOSED_ALIAS_RAW":"ExportInvoice",
+    "INCL_SERVICE":""
+   },
+   {
+    "SRVDNAME":"ZETR_SD_EXP_HEAD",
+    "SERVICE":"ZETR_SD_EXP_HEAD",
     "EXPOSED_ARTIFACT":"ZETR_DDL_C_EXP_INVOICE_P",
     "EXPOSED_ARTIFACT_TYPE":"E",
     "EXPOSED_ALIAS":"INVOICECHOOSE",
@@ -221,8 +230,8 @@
     "SERVICE":"ZETR_SD_EXP_HEAD",
     "SERVICE_RAW":"ZETR_SD_EXP_HEAD",
     "SOURCE_TYPE":"S",
-    "DT_UUID":"FA163EBBCF7E1FE0BAEC95F340C26762",
-    "RT_HASH":"B2BD1E64E9E27BF144121262C132539433A34265",
+    "DT_UUID":"FA163EBBCF7E1FE0BB900207AAF1A766",
+    "RT_HASH":"C6061D8B618993F28C8CC3299F04C3FE16FF08EE",
     "GEN_VERSION":"0"
    }
   ]
