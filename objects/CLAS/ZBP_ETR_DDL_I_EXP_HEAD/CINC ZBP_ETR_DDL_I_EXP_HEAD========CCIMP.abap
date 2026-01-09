@@ -158,10 +158,10 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
             ASSIGN COMPONENT <fs_components>-name OF STRUCTURE ls_update TO <fs_update_data>.
             ASSIGN COMPONENT <fs_components>-name OF STRUCTURE ls_r101   TO <fs_export_value>.
 
-            IF <fs_components>-name = 'BANKID' AND <fs_update_data> IS INITIAL.
-              ls_r101-bankl = ''.
-              ls_r101-iban   = ''.
-            ENDIF.
+*            IF <fs_components>-name = 'BANKID' AND <fs_update_data> IS INITIAL.
+*              ls_r101-bankl = ''.
+*              ls_r101-iban   = ''.
+*            ENDIF.
             <fs_export_value> = <fs_update_data>.
           ENDIF.
 
@@ -170,6 +170,13 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
       ENDLOOP.
 
       IF ls_r101 IS NOT INITIAL.
+
+
+        IF ls_r101-iban IS INITIAL OR ls_r101-bankl IS INITIAL OR ls_r101-bankid IS INITIAL.
+          ls_r101-bankl  = ''.
+          ls_r101-iban   = ''.
+          ls_r101-bankid = ''.
+        ENDIF.
 
         ls_r101-aedat = cl_abap_context_info=>get_system_date( ).
         ls_r101-aezet = cl_abap_context_info=>get_system_time( ).
