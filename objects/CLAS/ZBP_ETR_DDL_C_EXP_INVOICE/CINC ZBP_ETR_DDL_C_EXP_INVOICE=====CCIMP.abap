@@ -198,7 +198,7 @@ CLASS lhc_zetr_ddl_c_exp_invoice IMPLEMENTATION.
          SET pymty       = @ls_bill-customerpaymentterms,
              inc01       = @ls_bill-incotermsclassification,
              inc02       = @ls_bill-incotermstransferlocation,
-             chind       = @ls_sales-shippingtype,
+             trnty       = @ls_sales-shippingtype,
              desco       = @ls_customer_country-country,
              brgew       = @lv_gross_total,
              brgew_gewei = @lv_weight_unit,
