@@ -158,8 +158,8 @@ CLASS lsc_zetr_ddl_i_exp_head IMPLEMENTATION.
             ASSIGN COMPONENT <fs_components>-name OF STRUCTURE ls_update TO <fs_update_data>.
             ASSIGN COMPONENT <fs_components>-name OF STRUCTURE ls_r101   TO <fs_export_value>.
 
-            IF <fs_components>-name = 'BANKL' AND <fs_update_data> IS INITIAL.
-              ls_r101-bankid = ''.
+            IF <fs_components>-name = 'BANKID' AND <fs_update_data> IS INITIAL.
+              ls_r101-bankl = ''.
               ls_r101-iban   = ''.
             ENDIF.
             <fs_export_value> = <fs_update_data>.
