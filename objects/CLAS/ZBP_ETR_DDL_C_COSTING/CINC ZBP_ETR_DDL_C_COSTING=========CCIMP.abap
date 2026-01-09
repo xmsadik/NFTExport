@@ -85,16 +85,28 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
         DATA(ls_invoice_item) = VALUE #( lt_invoice_item[ vbeln  = ls_data-document_no  ] OPTIONAL ).
       ENDIF.
 
-      APPEND VALUE #( reference_document_item              = lv_tabix
-                      company_code                         = ls_headers-company_code
-                      glaccount                            = VALUE #( content = VALUE #( lt_costing_account[  ctype  = ls_data-costing_type  ]-saknr OPTIONAL )  )
-                      account_assignment                   = VALUE #( cost_center = ls_data-cost_center )
-                      debit_credit_code                    = cv_debit_credit_code_s
-                      amount_in_transaction_currency       = VALUE #( currency_code = ls_headers-waers
-                                                                      content       = ls_data-cost_amount  )
-                      document_item_text                   = ls_data-text
-                      assignment_reference                 = ls_invoice_item-filen
-                      tax                                  = VALUE #( tax_code = VALUE #( content = ls_data-tax_type ) ) ) TO lt_items.
+      APPEND VALUE #( reference_document_item        = lv_tabix
+                      company_code                   = ls_headers-company_code
+                      glaccount                      = VALUE #( content = VALUE #( lt_costing_account[ ctype = ls_data-costing_type ]-saknr OPTIONAL )  )
+                      account_assignment             = VALUE #( cost_center = ls_data-cost_center )
+                      debit_credit_code              = cv_debit_credit_code_s
+                      amount_in_transaction_currency = VALUE #( currency_code = ls_headers-waers
+                                                                content       = ls_data-cost_amount  )
+                      document_item_text             = ls_data-text
+                      assignment_reference           = ls_invoice_item-filen
+                      tax                            = COND #( WHEN ls_data-tax_type IS NOT INITIAL
+                                                               THEN VALUE #( tax_code = VALUE #( content = ls_data-tax_type ) )  ) ) TO lt_items.
+
+*      APPEND VALUE #( reference_document_item              = lv_tabix
+*                      company_code                         = ls_headers-company_code
+*                      glaccount                            = VALUE #( content = VALUE #( lt_costing_account[  ctype  = ls_data-costing_type  ]-saknr OPTIONAL )  )
+*                      account_assignment                   = VALUE #( cost_center = ls_data-cost_center )
+*                      debit_credit_code                    = cv_debit_credit_code_s
+*                      amount_in_transaction_currency       = VALUE #( currency_code = ls_headers-waers
+*                                                                      content       = ls_data-cost_amount  )
+*                      document_item_text                   = ls_data-text
+*                      assignment_reference                 = ls_invoice_item-filen
+*                      tax                                  = VALUE #( tax_code = VALUE #( content = ls_data-tax_type ) ) ) TO lt_items.
 
 
       IF ls_data-tax_type IS NOT INITIAL AND ls_headers-tax_amount IS NOT INITIAL.
@@ -106,11 +118,9 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
         <fs_tax>-debit_credit_code                            = cv_debit_credit_code_s.
 
         <fs_tax>-tax_base_amount_in_trans_crcy-currency_code  = cv_currency_try.
-        " <fs_tax>-tax_base_amount_in_trans_crcy-content        = ls_headers-amount.
         <fs_tax>-tax_base_amount_in_trans_crcy-content        = ls_data-cost_amount.
 
         <fs_tax>-amount_in_transaction_currency-content       = ls_data-tax_amount .
-        "<fs_tax>-amount_in_transaction_currency-content       = ls_headers-tax_amount .
         <fs_tax>-amount_in_transaction_currency-currency_code = cv_currency_try.
       ENDIF.
     ENDLOOP.
