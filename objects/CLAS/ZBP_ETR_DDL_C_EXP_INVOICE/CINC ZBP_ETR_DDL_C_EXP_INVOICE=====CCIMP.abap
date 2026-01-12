@@ -45,9 +45,9 @@ CLASS lhc_zetr_ddl_c_exp_invoice IMPLEMENTATION.
 *    " --- Hesaplamalar
     DATA(lv_weight_unit) = VALUE string( ).
     DATA(lv_volume_unit) = VALUE string( ).
-    DATA(lv_gross_total) = 0.
-    DATA(lv_net_total)   = 0.
-    DATA(lv_vol_total)   = 0.
+    DATA(lv_gross_total) = VALUE brgew_15( ).
+    DATA(lv_net_total)   = VALUE ntgew_15( ).
+    DATA(lv_vol_total)   = VALUE volum_15( ).
 
     IF invoice_key-%param IS NOT INITIAL.
       DATA(lv_invoice_keys) = invoice_key-%param-content.
