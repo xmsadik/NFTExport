@@ -117,11 +117,11 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
         <fs_tax>-condition_type                               = VALUE #( lt_tax_account[ vergikodu = ls_data-tax_type  ]-kosul OPTIONAL ) .
         <fs_tax>-debit_credit_code                            = cv_debit_credit_code_s.
 
-        <fs_tax>-tax_base_amount_in_trans_crcy-currency_code  = cv_currency_try.
+        <fs_tax>-tax_base_amount_in_trans_crcy-currency_code  = ls_headers-waers.
         <fs_tax>-tax_base_amount_in_trans_crcy-content        = ls_data-cost_amount.
 
         <fs_tax>-amount_in_transaction_currency-content       = ls_data-tax_amount .
-        <fs_tax>-amount_in_transaction_currency-currency_code = cv_currency_try.
+        <fs_tax>-amount_in_transaction_currency-currency_code = ls_headers-waers.
       ENDIF.
     ENDLOOP.
 
