@@ -138,26 +138,58 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
 
         LOOP AT lt_response REFERENCE INTO DATA(lr_response).
           DATA(lv_message_text) = ``.
+          DATA(lv_lines) = lines( lr_response->log-item ).
+
           LOOP AT lr_response->log-item ASSIGNING FIELD-SYMBOL(<fs_logitem>).
-            IF sy-tabix > 1.
 
-              DATA(lv_msg) = <fs_logitem>-note.
-              DATA(lv_v1)  = lv_msg(50).
-              DATA(lv_v2)  = lv_msg+50(50).
-              DATA(lv_v3)  = lv_msg+100(50).
-              DATA(lv_v4)  = lv_msg+150(50).
-
-              CONDENSE: lv_v1, lv_v2, lv_v3, lv_v4.
-
-              APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
-                                                  number   = '000'
-                                                  severity = if_abap_behv_message=>severity-error
-                                                  v1       = lv_v1
-                                                  v2       = lv_v2
-                                                  v3       = lv_v3
-                                                  v4       = lv_v4 )  ) TO reported-zetr_ddl_c_costing.
+            " Eğer birden fazla satır varsa ilk satırı atla
+            IF lv_lines > 1 AND sy-tabix = 1.
+              CONTINUE.
             ENDIF.
+
+            DATA(lv_msg) = <fs_logitem>-note.
+            DATA(lv_v1)  = lv_msg(50).
+            DATA(lv_v2)  = lv_msg+50(50).
+            DATA(lv_v3)  = lv_msg+100(50).
+            DATA(lv_v4)  = lv_msg+150(50).
+
+            CONDENSE: lv_v1, lv_v2, lv_v3, lv_v4.
+
+            APPEND VALUE #(
+              %msg = new_message(
+                id       = 'ZETR_EXP'
+                number   = '000'
+                severity = if_abap_behv_message=>severity-error
+                v1       = lv_v1
+                v2       = lv_v2
+                v3       = lv_v3
+                v4       = lv_v4
+              )
+            ) TO reported-zetr_ddl_c_costing.
+
           ENDLOOP.
+*          LOOP AT lr_response->log-item ASSIGNING FIELD-SYMBOL(<fs_logitem>).
+*
+*
+*            IF sy-tabix > 1.
+*
+*              DATA(lv_msg) = <fs_logitem>-note.
+*              DATA(lv_v1)  = lv_msg(50).
+*              DATA(lv_v2)  = lv_msg+50(50).
+*              DATA(lv_v3)  = lv_msg+100(50).
+*              DATA(lv_v4)  = lv_msg+150(50).
+*
+*              CONDENSE: lv_v1, lv_v2, lv_v3, lv_v4.
+*
+*              APPEND VALUE #( %msg = new_message( id       = 'ZETR_EXP'
+*                                                  number   = '000'
+*                                                  severity = if_abap_behv_message=>severity-error
+*                                                  v1       = lv_v1
+*                                                  v2       = lv_v2
+*                                                  v3       = lv_v3
+*                                                  v4       = lv_v4 )  ) TO reported-zetr_ddl_c_costing.
+*            ENDIF.
+*          ENDLOOP.
 
           IF lr_response->journal_entry_create_confirmat-accounting_document IS INITIAL
           OR lr_response->journal_entry_create_confirmat-accounting_document = '0000000000'.
