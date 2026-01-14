@@ -109,7 +109,7 @@ CLASS lhc_zetr_ddl_c_costing IMPLEMENTATION.
 *                      tax                                  = VALUE #( tax_code = VALUE #( content = ls_data-tax_type ) ) ) TO lt_items.
 
 
-      IF ls_data-tax_type IS NOT INITIAL AND ls_headers-tax_amount IS NOT INITIAL.
+      IF ls_data-tax_type IS NOT INITIAL. "AND ls_headers-tax_amount IS NOT INITIAL.
         APPEND INITIAL LINE TO lt_tax ASSIGNING FIELD-SYMBOL(<fs_tax>).
 
         <fs_tax>-tax_code-content                             = ls_data-tax_type.
